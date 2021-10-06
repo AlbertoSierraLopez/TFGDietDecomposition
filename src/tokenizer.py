@@ -1,6 +1,6 @@
 import nltk
-from torchtext.data import get_tokenizer
 import spacy
+from torchtext.data import get_tokenizer
 
 
 class Tokenizer:

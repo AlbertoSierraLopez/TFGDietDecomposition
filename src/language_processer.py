@@ -1,10 +1,11 @@
 import os
 import pickle
-from scipy.spatial.distance import cosine
+
 from gensim.models import Word2Vec
 from glove import Glove
+from scipy.spatial.distance import cosine
 
-from src.trainer import Trainer
+from trainer import Trainer
 
 
 class LanguageProcesser:

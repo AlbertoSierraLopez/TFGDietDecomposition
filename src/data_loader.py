@@ -1,16 +1,20 @@
 import re
+from collections import Counter
+
 import pandas as pd
 from IPython.display import display
-from collections import Counter
 
 
 class DataLoader:
-    def __init__(self, path_csv='datasets/RAW_recipes.csv', cap=None):
+    def __init__(self, path_csv='/datasets/RAW_recipes.csv', cap=None):
         self.dataframe = pd.read_csv(path_csv)
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', 680)
 
         if cap is not None:
             # Me quedo con todas las filas hasta cap y con todas las columnas
-            self.dataframe = self.dataframe.iloc[:-cap, :]
+            self.dataframe = self.dataframe.iloc[:cap, :]
 
     def display_dataframe(self):
         display(self.dataframe)
