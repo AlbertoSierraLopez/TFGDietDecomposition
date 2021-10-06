@@ -26,7 +26,7 @@ class Trainer:
         for vector in vectors:
             vector.shape = (np.shape(vector)[1], 1024)
 
-        pickle_out = open("/datasets/elmo.pickle", "wb")
+        pickle_out = open("/models/elmo.pickle", "wb")
         pickle.dump(vectors, pickle_out)
         pickle_out.close()
 

@@ -1,18 +1,40 @@
-import numpy as np
-import tensorflow as tf
-import tensorflow_hub as hub
-from gensim.models import Word2Vec
-from glove import Corpus, Glove
+import os
+import pickle
 from scipy.spatial.distance import cosine
+from gensim.models import Word2Vec
+from glove import Glove
+
+from src.trainer import Trainer
 
 
 class LanguageProcesser:
-    def __init__(self):
+    def __init__(self, recipes, elmo=False, word2vec=False, glove=True):
+        self.trainer = Trainer()
+
         self.elmo_model = None
         self.word2vec_model = None
         self.glove_model = None
 
-    def closest_words_glove(self, word, n=5):
+        if os.path.exists("/models/elmo.pickle"):
+            pickle_in = open("/models/elmo.pickle", "rb")
+            self.elmo_model = pickle.load(pickle_in)
+        elif elmo:
+            self.elmo_model = self.trainer.elmo_model(recipes)
+
+        if os.path.exists("/models/word2vec.model"):
+            self.word2vec_model = Word2Vec.load("/models/word2vec.model")
+        elif word2vec:
+            self.word2vec_model = self.trainer.word2vec_model(recipes)
+
+        if os.path.exists("/models/glove.model"):
+            self.glove_model = Glove.load("/models/glove.model")
+        elif glove:
+            self.glove_model = self.trainer.glove_model(recipes)
+
+    def closest_words_word2vec(self, word, n=10):
+        return self.word2vec_model.wv.most_similar(word, topn=n)
+
+    def closest_words_glove(self, word, n=10):
         distances = [(cosine(self.glove_model.word_vectors[self.glove_model.dictionary[word]], self.glove_model.word_vectors[self.glove_model.dictionary[X]]), X) for X in self.glove_model.dictionary.keys()]
         sorted_distances = sorted(distances)
 
