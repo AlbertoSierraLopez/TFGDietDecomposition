@@ -1,10 +1,10 @@
 import pickle
+
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
-
 from gensim.models import Word2Vec
-from glove import Corpus, Glove
+# from glove import Corpus, Glove
 
 
 class Trainer:
@@ -50,6 +50,7 @@ class Trainer:
 
         return model
 
+    '''
     @staticmethod
     def glove_model(recipes):
         corpus = Corpus()
@@ -62,3 +63,4 @@ class Trainer:
         glove.save("/models/glove.model")
 
         return glove
+    '''
