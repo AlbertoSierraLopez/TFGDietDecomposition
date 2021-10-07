@@ -2,7 +2,7 @@ from time import time
 
 from data_loader import DataLoader
 from tokenizer import Tokenizer
-from collections import Counter
+from knowledge_manager import KnowledgeManager
 
 
 requirement = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -25,6 +25,11 @@ tokenized_recipes = [tokenizer.nltk_tokenize(recipe) for recipe in steps]
 print(">Extrayendo vocabulario...")
 vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
 
+print(">Elaborando grafo de conocimiento...")
+knowledge_manager = KnowledgeManager(ingredients, tags)
+KG_ing = knowledge_manager.KG_ing
+KG_tag = knowledge_manager.KG_tag
+print("\tIngredientes con los que se relaciona la 'manzana':", KG_ing['apple'])
+print("\tIngredientes relacionados con 'low-protein'", KG_tag['low-protein'])
 
-
-print("Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
+print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")

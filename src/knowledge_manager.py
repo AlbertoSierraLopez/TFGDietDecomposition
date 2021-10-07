@@ -7,14 +7,14 @@ import networkx as nx
 class KnowledgeManager:
     def __init__(self, ingredients, tags=None):
         self.KG_ing = None      # Grafo con pesos
-        self.KG_tags = None     # Grafo dirigido
+        self.KG_tag = None     # Grafo dirigido
 
         self.relations_ing = []         # Relaciones ingrediente-ingrediente
         self.relations_tags = set()     # Relaciones etiqueta-ingrediente
 
         self.build_kg_ingredients(ingredients)
         if tags is not None:
-            self.build_kg_tags(tags, ingredients)
+            self.build_kg_tag(tags, ingredients)
 
     def build_kg_ingredients(self, ingredients):
         for recipe in ingredients:
@@ -23,7 +23,7 @@ class KnowledgeManager:
                 # da igual el orden en el que nos encontramos los ingredientes. Esto también significa que por cada
                 # pareja en una receta se mete la tupla dos veces, por lo que el contador debe dividirse por 2
                 self.relations_ing += [(min(main_ingredient, ingredient), max(main_ingredient, ingredient))
-                                       for ingredient in ingredients if ingredient != main_ingredient]
+                                       for ingredient in recipe if ingredient != main_ingredient]
 
         relation_counter = Counter(self.relations_ing)
         for key in relation_counter.keys():
@@ -36,18 +36,20 @@ class KnowledgeManager:
         for relation in list(relation_counter.keys()):
             self.KG_ing.add_edge(relation[0], relation[1], weight=relation_counter[relation])
 
-    def build_kg_tags(self, tags, ingredients):
+    def build_kg_tag(self, tags, ingredients):
 
         for i in range(len(tags)):
             self.relations_tags.update([(tag, ingredient) for ingredient in ingredients[i] for tag in tags[i]])
 
-            self.KG_tags = nx.DiGraph(list(self.relations_tags))
+        self.KG_tag = nx.DiGraph(list(self.relations_tags))
 
     def display(self, ing=0, tag=0):
         if ing != 0:
             plt.figure(figsize=(18, 12))
             nx.draw(self.KG_ing, with_labels=True)
+            plt.show()
 
-        if tag != 0:
+        if (self.KG_tag is not None) and (tag != 0):
             plt.figure(figsize=(18, 12))
-            nx.draw(self.KG_tags, with_labels=True)
+            nx.draw(self.KG_tag, with_labels=True)
+            plt.show()
