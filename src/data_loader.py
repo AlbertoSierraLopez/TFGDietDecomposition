@@ -44,7 +44,7 @@ class DataLoader:
 
         return element_list
 
-    def get_counter(self, column):
+    def get_column_counter(self, column):
         element_list = self.get_list(column.lower())
 
         return Counter(element_list)

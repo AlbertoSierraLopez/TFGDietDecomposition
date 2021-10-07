@@ -1,8 +1,8 @@
 import pickle
-
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
+
 from gensim.models import Word2Vec
 from glove import Corpus, Glove
 

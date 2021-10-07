@@ -1,6 +1,8 @@
 import nltk
 import spacy
+
 from torchtext.data import get_tokenizer
+from collections import Counter
 
 
 class Tokenizer:
@@ -50,3 +52,14 @@ class Tokenizer:
                     # Se guarda el lema
                     tokens.append(token.lemma_)
         return tokens
+
+    def get_vocab(self, recipes):
+        word_list = [token for recipe in recipes for token in recipe]
+        word_counter = Counter(word_list)
+
+        vocab = sorted(set([token for token in word_list if word_counter[token] >= 45]))
+
+        word2ind = dict(zip(vocab, range(0, len(vocab))))
+        ind2word = dict(zip(range(0, len(vocab)), vocab))
+
+        return vocab, word2ind, ind2word

@@ -2,6 +2,7 @@ from time import time
 
 from data_loader import DataLoader
 from tokenizer import Tokenizer
+from collections import Counter
 
 
 requirement = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -21,6 +22,8 @@ print(">Tokenizando recetas...")
 tokenizer = Tokenizer()
 tokenized_recipes = [tokenizer.nltk_tokenize(recipe) for recipe in steps]
 
+print(">Extrayendo vocabulario...")
+vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
 
 
 
