@@ -16,20 +16,20 @@ class LanguageProcesser:
         self.word2vec_model = None
         self.glove_model = None
 
-        if os.path.exists("/models/elmo.pickle"):
+        if os.path.exists("../models/elmo.pickle"):
             pickle_in = open("/models/elmo.pickle", "rb")
             self.elmo_model = pickle.load(pickle_in)
         elif elmo:
             self.elmo_model = self.trainer.elmo_model(recipes)
 
-        if os.path.exists("/models/word2vec.model"):
-            self.word2vec_model = Word2Vec.load("/models/word2vec.model")
+        if os.path.exists("../models/word2vec.model"):
+            self.word2vec_model = Word2Vec.load("../models/word2vec.model")
         elif word2vec:
             self.word2vec_model = self.trainer.word2vec_model(recipes)
 
         '''
-        if os.path.exists("/models/glove.model"):
-            self.glove_model = Glove.load("/models/glove.model")
+        if os.path.exists("../models/glove.model"):
+            self.glove_model = Glove.load("../models/glove.model")
         elif glove:
             self.glove_model = self.trainer.glove_model(recipes)
         '''

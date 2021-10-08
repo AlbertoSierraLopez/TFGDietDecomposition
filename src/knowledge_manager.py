@@ -53,3 +53,10 @@ class KnowledgeManager:
             plt.figure(figsize=(18, 12))
             nx.draw(self.KG_tag, with_labels=True)
             plt.show()
+
+    def top_edges(self, ingredient, n=10):
+        edges = [list(edge) for edge in self.KG_ing.edges(data=True)]
+
+        ingredient_edges = [edge for edge in edges if edge[0] == ingredient or edge[1] == ingredient]
+
+        return sorted(ingredient_edges, key=lambda y: y[2].get('weight', 1), reverse=True)[:n]

@@ -27,7 +27,7 @@ class Trainer:
         for vector in vectors:
             vector.shape = (np.shape(vector)[1], 1024)
 
-        pickle_out = open("/models/elmo.pickle", "wb")
+        pickle_out = open("../models/elmo.pickle", "wb")
         pickle.dump(vectors, pickle_out)
         pickle_out.close()
 
@@ -46,7 +46,7 @@ class Trainer:
         model.build_vocab(recipes, progress_per=10000)
         model.train(recipes, total_examples=model.corpus_count, epochs=10, report_delay=1)
 
-        model.save("/models/word2vec.model")
+        model.save("../models/word2vec.model")
 
         return model
 
@@ -60,7 +60,7 @@ class Trainer:
         glove.fit(corpus.matrix, epochs=64, no_threads=4, verbose=True)
         glove.add_dictionary(corpus.dictionary)
 
-        glove.save("/models/glove.model")
+        glove.save("../models/glove.model")
 
         return glove
     '''

@@ -1,8 +1,8 @@
+from collections import Counter
+
 import nltk
 import spacy
-
 from torchtext.data import get_tokenizer
-from collections import Counter
 
 
 class Tokenizer:
