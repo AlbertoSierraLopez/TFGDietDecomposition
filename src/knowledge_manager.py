@@ -2,19 +2,28 @@ from collections import Counter
 
 import matplotlib.pyplot as plt
 import networkx as nx
+import os
 
 
 class KnowledgeManager:
-    def __init__(self, ingredients, tags=None):
+    def __init__(self, ingredients, tags):
         self.KG_ing = None      # Grafo con pesos
         self.KG_tag = None     # Grafo dirigido
 
         self.relations_ing = []         # Relaciones ingrediente-ingrediente
         self.relations_tags = set()     # Relaciones etiqueta-ingrediente
 
-        self.build_kg_ingredients(ingredients)
-        if tags is not None:
+        if os.path.exists("../models/kg_ingredients.pickle"):
+            self.KG_ing = nx.read_gpickle("../models/kg_ingredients.pickle")
+        else:
+            self.build_kg_ingredients(ingredients)
+            nx.write_gpickle(self.KG_ing, "../models/kg_ingredients.pickle")
+
+        if os.path.exists("../models/kg_tags.pickle"):
+            self.KG_tag = nx.read_gpickle("../models/kg_tags.pickle")
+        else:
             self.build_kg_tag(tags, ingredients)
+            nx.write_gpickle(self.KG_tag, "../models/kg_tags.pickle")
 
     def build_kg_ingredients(self, ingredients):
         for recipe in ingredients:
@@ -39,7 +48,7 @@ class KnowledgeManager:
     def build_kg_tag(self, tags, ingredients):
 
         for i in range(len(tags)):
-            self.relations_tags.update([(tag, ingredient) for ingredient in ingredients[i] for tag in tags[i]])
+            self.relations_tags.update([(tag, ingredient) for ingredient in ingredients.iloc[i] for tag in tags.iloc[i]])
 
         self.KG_tag = nx.DiGraph(list(self.relations_tags))
 

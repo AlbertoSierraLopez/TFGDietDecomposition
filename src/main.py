@@ -15,8 +15,11 @@ dataset = "RAW_recipes.csv"
 start_time = time()
 
 print(">Leyendo dataset: ", dataset, "...", sep='')
-data_loader = DataLoader(path_csv="../datasets/"+dataset)
-# data_loader.display_dataframe()
+data_loader = DataLoader(path_csv="../datasets/"+dataset)    # El cap sólo se aplica al train, no al test
+
+test_recipes = data_loader.test_recipes()
+input_recipe = next(test_recipes)
+print("\tEntrada receta:", input_recipe)
 
 print(">Extrayendo columnas...")
 tags = data_loader.get_column('tags')
