@@ -1,25 +1,24 @@
 import os
 import pickle
+import numpy as np
 
 from time import time
 
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
+from ingredient_manager import IngredientManager
 from tokenizer import Tokenizer
 
-#               1  2  3  4  5  6  7  8  9 10 11
-requirements = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+#                        1  2  3  4  5  6  7  8  9 10 11
+requirements = np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], dtype=bool)
 
 dataset = "RAW_recipes.csv"
 start_time = time()
 
+# MODULO 1
 print(">Leyendo dataset: ", dataset, "...", sep='')
 data_loader = DataLoader(path_csv="../datasets/"+dataset)    # El cap sólo se aplica al train, no al test
-
-test_recipes = data_loader.test_recipes()
-input_recipe = next(test_recipes)
-print("\tEntrada receta:", input_recipe)
 
 print(">Extrayendo columnas...")
 tags = data_loader.get_column('tags')
@@ -56,5 +55,16 @@ print("\tPalabras más próximas a 'huevos':", nlp.closest_words_word2vec(word='
 print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='salt'))
 print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
 print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
+
+# MODULO 2
+print(">Leyendo entrada")
+test_recipes = data_loader.test_recipes()
+input_recipe = next(test_recipes)
+print("\tReceta:", input_recipe)
+
+print(">Detectando ingredientes en la receta...")
+ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), requirements, data_loader.get_list('ingredients'))
+print("\tIngredientes detectados:", ingredient_manager.ingredients)
+print("\tIngredientes incompatibles:", ingredient_manager.unwanted_ingredients())
 
 print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")

@@ -9,7 +9,8 @@ class Tokenizer:
     def __init__(self):
         # nltk.download('punkt')
         self.torch = get_tokenizer("basic_english")
-        self.spacy = spacy.load(r'C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/site-packages/en_core_web_sm/en_core_web_sm-3.1.0')
+        self.spacy = spacy.load(r'C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/site-packages/'
+                                r'en_core_web_sm/en_core_web_sm-3.1.0')
 
     @staticmethod
     def nltk_tokenize(sentences):
@@ -53,7 +54,8 @@ class Tokenizer:
                     tokens.append(token.lemma_)
         return tokens
 
-    def get_vocab(self, recipes):
+    @staticmethod
+    def get_vocab(recipes):
         word_list = [token for recipe in recipes for token in recipe]
         word_counter = Counter(word_list)
 
