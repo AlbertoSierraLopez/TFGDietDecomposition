@@ -46,3 +46,7 @@ class LanguageProcesser:
 
         return sorted_distances[1:n+1]    # Se elimina el primero porque es uno mismo
     '''
+
+    def get_embedding_word2vec(self, word):
+        if self.word2vec_model is not None:
+            return self.word2vec_model.wv[word]
