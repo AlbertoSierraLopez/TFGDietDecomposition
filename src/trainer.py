@@ -36,7 +36,7 @@ class Trainer:
     @staticmethod
     def word2vec_model(recipes, sg=0):
         model = Word2Vec(min_count=20,
-                         window=2,
+                         window=8,
                          sample=6e-5,
                          alpha=0.03,
                          min_alpha=0.0007,
