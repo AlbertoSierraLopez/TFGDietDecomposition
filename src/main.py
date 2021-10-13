@@ -47,7 +47,7 @@ knowledge_manager = KnowledgeManager(ingredients, tags)
 KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
 print("\tIngredientes con los que se más veces se relaciona la 'manzana':", knowledge_manager.top_edges('apple'))
-print("\tAlgunos ingredientes relacionados con 'vegan'", list(KG_tag['low-protein'])[:10])
+print("\tAlgunos ingredientes relacionados con 'low-protein'", list(KG_tag['low-protein'])[:10])
 
 print(">Entrenando modelo...")
 nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
@@ -64,7 +64,7 @@ print("\tReceta:", input_recipe)
 
 print(">Detectando ingredientes en la receta...")
 ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), requirements,
-                                       data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model)
+                                       data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model, kg_tag=KG_tag)
 print("\tIngredientes detectados:", ingredient_manager.ingredients)
 print("\tIngredientes incompatibles:", ingredient_manager.unwanted_ingredients())
 
