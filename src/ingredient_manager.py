@@ -15,7 +15,7 @@ class IngredientManager:
                                           'Intolerancia a la lactosa', 'Alergia los frutos secos', 'Alergia al marisco',
                                           'Intolerancia al gluten', 'Celiaquía'])
         self.requirements = self.requirement_list[requirements]
-        # set para evitar repeticiones, sorted por comodidad
+        # set para evitar repeticiones, sorted por comodidad:
         self.ingredients = sorted(set([ingredient for ingredient in recipe if ingredient in ing_vocab]))
 
     def unwanted_ingredients(self):
@@ -120,3 +120,18 @@ class IngredientManager:
 
         ingredients = info['ingredients']
         return [token.lower() for token in nltk.word_tokenize(ingredients)]     # Devolver en minuscula
+
+    def get_total_nutrients(self):
+        total_nutrients = None
+
+        for ingredient in self.ingredients:
+            nutrients = self.get_nutrients(ingredient)
+
+            if total_nutrients is None:
+                total_nutrients = nutrients
+            else:
+                join = pd.concat([total_nutrients, nutrients], join='inner')
+                total_nutrients = join.groupby(["nutrientId", "nutrientName", "nutrientNumber", "unitName"],
+                                               as_index=False).sum()
+
+        return total_nutrients

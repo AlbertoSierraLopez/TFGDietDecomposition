@@ -67,5 +67,6 @@ ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), re
                                        data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model, kg_tag=KG_tag)
 print("\tIngredientes detectados:", ingredient_manager.ingredients)
 print("\tIngredientes incompatibles:", ingredient_manager.unwanted_ingredients())
+print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
 
 print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
