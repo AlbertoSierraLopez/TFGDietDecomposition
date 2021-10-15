@@ -75,11 +75,9 @@ while cont == 'Y':
     print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
     print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
 
-
     # MODULO 3
     print(">Buscando sustituciones...")
-    print("\tReceta válida:", ingredient_manager.replace_unwanted())
-
+    print("\tReceta válida:", ingredient_manager.replace_unwanted(), sep="\n\t")
 
     print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
 

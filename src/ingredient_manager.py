@@ -143,4 +143,18 @@ class IngredientManager:
         return total_nutrients
 
     def replace_unwanted(self):
-        return self.recipe
+        new_recipe = []
+        for token in self.recipe:
+            if token in self.unwanted:
+                token = self.find_replacement(token)
+            new_recipe.append(token)
+
+        return self.untokenize(new_recipe)
+
+    @staticmethod
+    def find_replacement(token):
+        return '<UNWANTED>'
+
+    @staticmethod
+    def untokenize(recipe):
+        return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(recipe)
