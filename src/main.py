@@ -58,10 +58,12 @@ print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='sal
 print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
 print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
 
+
 # MODULO 2
+test_recipes = data_loader.test_recipes()
+
 while cont == 'Y':
-    print(">Leyendo entrada")
-    test_recipes = data_loader.test_recipes()
+    print(">Leyendo entrada...")
     input_recipe = next(test_recipes)
     print("\tReceta:", input_recipe)
 
@@ -73,9 +75,11 @@ while cont == 'Y':
     print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
     print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
 
+
     # MODULO 3
     print(">Buscando sustituciones...")
     print("\tReceta válida:", ingredient_manager.replace_unwanted())
+
 
     print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
 

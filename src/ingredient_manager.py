@@ -31,6 +31,8 @@ class IngredientManager:
 
         return unwanted_ingredients
 
+    # Si por cualquier razón, una propiedad del ingrediente no se puede evaluar,
+    # se da por buena y el ingrediente pasa como válido
     def passes_requirements(self, food):
         nutrients = self.get_nutrients(food)
         category = self.get_food_category(food)
@@ -45,23 +47,24 @@ class IngredientManager:
                 return False
 
         if 'Dieta hipocalórica' in self.requirements and nutrients is not None:
-            kcals = nutrients.loc[nutrients['nutrientName'] == 'Energy']
-            if kcals['value'].item() > 200.0:
+            # La energía puede aparecer en julios, sólo la queremos en KCals:
+            kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
+            if len(kcals) > 0 and kcals['value'].item() > 200.0:
                 return False
 
         if 'Dieta proteica' in self.requirements and nutrients is not None:
             protein = nutrients.loc[nutrients['nutrientName'] == 'Protein']
-            if protein['value'].item() < 15.0:
+            if len(protein) > 0 and protein['value'].item() < 15.0:
                 return False
 
         if 'Dieta baja en carbohidratos' in self.requirements and nutrients is not None:
             carbs = nutrients.loc[nutrients['nutrientName'] == 'Carbohydrate, by difference']
-            if carbs['value'].item() > 150.0:
+            if len(carbs) > 0 and carbs['value'].item() > 150.0:
                 return False
 
         if 'Dieta baja en sodio' in self.requirements and nutrients is not None:
             sodium = nutrients.loc[nutrients['nutrientName'] == 'Sodium, Na']
-            if sodium['value'].item() > 100.0:
+            if len(sodium) > 0 and sodium['value'].item() > 100.0:
                 return False
 
         if 'Intolerancia a la lactosa' in self.requirements and ingredients is not None:
@@ -99,7 +102,7 @@ class IngredientManager:
     def get_nutrients(self, food):
         info = self.get_info(food)
 
-        if info is None:
+        if info is None or 'foodNutrients' not in info:
             return None
 
         nutrients = info['foodNutrients']
@@ -109,7 +112,7 @@ class IngredientManager:
     def get_food_category(self, food):
         info = self.get_info(food)
 
-        if info is None:
+        if info is None or 'foodCategory' not in info:
             return None
 
         food_cat = info['foodCategory']
@@ -119,7 +122,7 @@ class IngredientManager:
     def get_ingredients(self, food):
         info = self.get_info(food)
 
-        if info is None:
+        if info is None or 'ingredients' not in info:
             return None
 
         ingredients = info['ingredients']
