@@ -11,7 +11,7 @@ from ingredient_manager import IngredientManager
 from tokenizer import Tokenizer
 
 #                        1  2  3  4  5  6  7  8  9 10 11
-requirements = np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], dtype=bool)
+requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
 
 dataset = "RAW_recipes.csv"
 start_time = time()
@@ -48,27 +48,30 @@ print(">Elaborando grafo de conocimiento...")
 knowledge_manager = KnowledgeManager(ingredients, tags)
 KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
-print("\tIngredientes con los que se más veces se relaciona la 'manzana':", knowledge_manager.top_edges('apple'))
-print("\tAlgunos ingredientes relacionados con 'low-protein'", list(KG_tag['low-protein'])[:10])
+# print("\tIngredientes con los que se más veces se relaciona la 'manzana':", knowledge_manager.top_edges('apple'))
+# print("\tAlgunos ingredientes relacionados con 'low-protein'", list(KG_tag['low-protein'])[:10])
 
 print(">Entrenando modelo...")
 nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
-print("\tPalabras más próximas a 'huevos':", nlp.closest_words_word2vec(word='eggs'))
-print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='salt'))
-print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
-print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
+# print("\tPalabras más próximas a 'huevos':", nlp.closest_words_word2vec(word='eggs'))
+# print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='salt'))
+# print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
+# print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
 
 
 # MODULO 2
 test_recipes = data_loader.test_recipes()
+counter = 1
 
 while cont == 'Y':
     print(">Leyendo entrada...")
     input_recipe = next(test_recipes)
-    print("\tReceta:", input_recipe)
+    clean_recipe = ', '.join(input_recipe)
+    clean_recipe = clean_recipe[0].upper() + clean_recipe[1:] + '.\n'
+    print("\tReceta:", clean_recipe, end="\n", sep="\n\t")
 
     print(">Detectando ingredientes en la receta...")
-    ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), requirements,
+    ingredient_manager = IngredientManager(clean_recipe, tokenizer.nltk_tokenize(input_recipe), requirements,
                                            data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model,
                                            kg_ing=KG_ing, kg_tag=KG_tag)
     print("\tIngredientes detectados:", ingredient_manager.ingredients)
@@ -77,9 +80,21 @@ while cont == 'Y':
 
     # MODULO 3
     print(">Buscando sustituciones...")
-    print("\tReceta válida:", ingredient_manager.replace_unwanted(), sep="\n\t")
+    new_recipe = ingredient_manager.replace_unwanted()
+    print("\tReemplazos:", ingredient_manager.replacements, sep="\n\t")
+    print("\tReceta válida:", new_recipe, end="\n", sep="\n\t")
+
+    print(">Guardando receta...")
+    with open('../output/in_recipes.txt', 'w+') as f:
+        f.write(str(counter) + '.')
+        f.write(clean_recipe)
+    with open('../output/out_recipes.txt', 'w+') as f:
+        f.write(str(counter) + '.')
+        f.write(new_recipe)
+    print("\tListo.")
 
     print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
 
     cont = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
     start_time = time()
+    counter += 1

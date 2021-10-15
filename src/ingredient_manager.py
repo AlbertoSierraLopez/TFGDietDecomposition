@@ -6,8 +6,9 @@ import pandas as pd
 
 
 class IngredientManager:
-    def __init__(self, recipe, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
+    def __init__(self, recipe, tokenized_recipe, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
         self.recipe = recipe
+        self.tokenized_recipe = tokenized_recipe
         self.wvmodel = wvmodel
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
@@ -18,10 +19,13 @@ class IngredientManager:
                                           'Intolerancia al gluten', 'Celiaquía'])
 
         self.requirements = self.requirement_list[requirements]
+        self.ing_vocab = ing_vocab
         # set para evitar repeticiones, sorted por comodidad:
-        self.ingredients = sorted(set([ingredient for ingredient in recipe if ingredient in ing_vocab]))
+        self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in ing_vocab]))
         self.unwanted = self.unwanted_ingredients()
+        self.replacements = self.get_replacements()
 
+# MODULO 2
     def unwanted_ingredients(self):
         unwanted_ingredients = []
 
@@ -142,19 +146,27 @@ class IngredientManager:
                                                as_index=False).sum()
         return total_nutrients
 
+# MODULO 3
     def replace_unwanted(self):
         new_recipe = []
-        for token in self.recipe:
+        for token in nltk.word_tokenize(self.recipe):
             if token in self.unwanted:
-                token = self.find_replacement(token)
+                token = self.replacements[token]
             new_recipe.append(token)
 
-        return self.reverse_tokenize(new_recipe)
+        return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(new_recipe)
 
-    @staticmethod
-    def find_replacement(token):
-        return '<UNWANTED>'
+    def get_replacements(self):
+        replacements = dict()
 
-    @staticmethod
-    def reverse_tokenize(recipe):
-        return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(recipe)
+        for ingredient in self.unwanted:
+            replacements[ingredient] = self.find_replacement(ingredient)
+
+        return replacements
+
+    def find_replacement(self, ingredient):
+        # Comprueba los 25 ingredientes más cercanos:
+        for alternative in self.wvmodel.wv.most_similar(ingredient, topn=50):
+            if alternative in self.ing_vocab and self.passes_requirements(alternative):
+                return alternative
+        return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
