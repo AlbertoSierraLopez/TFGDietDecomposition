@@ -149,12 +149,12 @@ class IngredientManager:
                 token = self.find_replacement(token)
             new_recipe.append(token)
 
-        return self.untokenize(new_recipe)
+        return self.reverse_tokenize(new_recipe)
 
     @staticmethod
     def find_replacement(token):
         return '<UNWANTED>'
 
     @staticmethod
-    def untokenize(recipe):
+    def reverse_tokenize(recipe):
         return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(recipe)
