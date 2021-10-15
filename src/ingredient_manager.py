@@ -6,17 +6,21 @@ import pandas as pd
 
 
 class IngredientManager:
-    def __init__(self, recipe, requirements, ing_vocab, wvmodel, kg_tag):
+    def __init__(self, recipe, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
         self.recipe = recipe
         self.wvmodel = wvmodel
+        self.kg_ing = kg_ing
         self.kg_tag = kg_tag
+
         self.requirement_list = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                                           'Dieta baja en carbohidratos', 'Dieta baja en sodio',
                                           'Intolerancia a la lactosa', 'Alergia los frutos secos', 'Alergia al marisco',
                                           'Intolerancia al gluten', 'Celiaquía'])
+
         self.requirements = self.requirement_list[requirements]
         # set para evitar repeticiones, sorted por comodidad:
         self.ingredients = sorted(set([ingredient for ingredient in recipe if ingredient in ing_vocab]))
+        self.unwanted = self.unwanted_ingredients()
 
     def unwanted_ingredients(self):
         unwanted_ingredients = []
@@ -133,5 +137,7 @@ class IngredientManager:
                 join = pd.concat([total_nutrients, nutrients], join='inner')
                 total_nutrients = join.groupby(["nutrientId", "nutrientName", "nutrientNumber", "unitName"],
                                                as_index=False).sum()
-
         return total_nutrients
+
+    def replace_unwanted(self):
+        return self.recipe

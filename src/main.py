@@ -15,6 +15,8 @@ requirements = np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], dtype=bool)
 
 dataset = "RAW_recipes.csv"
 start_time = time()
+cont = 'Y'
+
 
 # MODULO 1
 print(">Leyendo dataset: ", dataset, "...", sep='')
@@ -57,16 +59,25 @@ print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word=
 print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
 
 # MODULO 2
-print(">Leyendo entrada")
-test_recipes = data_loader.test_recipes()
-input_recipe = next(test_recipes)
-print("\tReceta:", input_recipe)
+while cont == 'Y':
+    print(">Leyendo entrada")
+    test_recipes = data_loader.test_recipes()
+    input_recipe = next(test_recipes)
+    print("\tReceta:", input_recipe)
 
-print(">Detectando ingredientes en la receta...")
-ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), requirements,
-                                       data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model, kg_tag=KG_tag)
-print("\tIngredientes detectados:", ingredient_manager.ingredients)
-print("\tIngredientes incompatibles:", ingredient_manager.unwanted_ingredients())
-print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
+    print(">Detectando ingredientes en la receta...")
+    ingredient_manager = IngredientManager(tokenizer.nltk_tokenize(input_recipe), requirements,
+                                           data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model,
+                                           kg_ing=KG_ing, kg_tag=KG_tag)
+    print("\tIngredientes detectados:", ingredient_manager.ingredients)
+    print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
+    print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
 
-print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
+    # MODULO 3
+    print(">Buscando sustituciones...")
+    print("\tReceta válida:", ingredient_manager.replace_unwanted())
+
+    print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
+
+    cont = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
+    start_time = time()
