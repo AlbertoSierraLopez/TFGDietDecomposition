@@ -101,7 +101,11 @@ class IngredientManager:
                                 "&pageSize=5&api_key=dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio")
         food_df = pd.json_normalize(response.json()['foods'])
         if len(food_df) > 0:
-            return food_df.iloc[0]
+            # Cogemos la primera fila de la query (asumimos que la más parecida a la búsqueda):
+            row = food_df.iloc[0]
+            # Eliminar columnas sin valor (ya se comprueba si existe columna más adelante):
+            clean_row = row.replace(["", " "], float("NaN"))
+            return clean_row.dropna()
         else:
             return None
 
@@ -163,14 +167,14 @@ class IngredientManager:
         replacements = dict()
 
         for ingredient in self.unwanted:
-            if self.get_info(ingredient) is not None:   # Comprobar que es un ingrediente
-                replacements[ingredient] = self.find_replacement(ingredient)
+            replacements[ingredient] = self.find_replacement(ingredient)
 
         return replacements
 
     def find_replacement(self, ingredient):
         # Comprueba los 25 ingredientes más cercanos:
         for (alternative, similarity) in self.wvmodel.wv.most_similar(ingredient, topn=50):
-            if self.passes_requirements(alternative):
+            # Comprobar que es un ingrediente y que es válido
+            if (self.get_info(alternative) is not None) and (self.passes_requirements(alternative)):
                 return alternative
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo

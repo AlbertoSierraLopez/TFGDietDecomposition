@@ -63,9 +63,8 @@ test_recipes = data_loader.test_recipes()
 counter = 1
 key_continue = 'Y'
 
-# Pasar la primera receta
-next(test_recipes)
-next(test_recipes)
+# Saltar recetas:
+# next(test_recipes)
 
 while (key_continue == 'Y') or (key_continue == 'S'):
     print(">Leyendo entrada...")
