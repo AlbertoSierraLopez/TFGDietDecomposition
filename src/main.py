@@ -15,7 +15,6 @@ requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
 
 dataset = "RAW_recipes.csv"
 start_time = time()
-cont = 'Y'
 
 
 # MODULO 1
@@ -62,8 +61,13 @@ nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
 # MODULO 2
 test_recipes = data_loader.test_recipes()
 counter = 1
+key_continue = 'Y'
 
-while cont == 'Y':
+# Pasar la primera receta
+next(test_recipes)
+next(test_recipes)
+
+while (key_continue == 'Y') or (key_continue == 'S'):
     print(">Leyendo entrada...")
     input_recipe = next(test_recipes)
     clean_recipe = ', '.join(input_recipe)
@@ -95,6 +99,6 @@ while cont == 'Y':
 
     print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
 
-    cont = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
+    key_continue = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
     start_time = time()
     counter += 1

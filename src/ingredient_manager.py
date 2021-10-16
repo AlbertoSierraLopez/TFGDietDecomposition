@@ -23,6 +23,7 @@ class IngredientManager:
         # set para evitar repeticiones, sorted por comodidad:
         self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in ing_vocab]))
         self.unwanted = self.unwanted_ingredients()
+        print(">Buscando alternativas a ingredientes...")
         self.replacements = self.get_replacements()
 
 # MODULO 2
@@ -101,6 +102,8 @@ class IngredientManager:
         food_df = pd.json_normalize(response.json()['foods'])
         if len(food_df) > 0:
             return food_df.iloc[0]
+        else:
+            return None
 
     # Devuelve la columna 'Food Nutrients' de la primera fila de la query, en forma de dataframe
     def get_nutrients(self, food):
@@ -160,13 +163,14 @@ class IngredientManager:
         replacements = dict()
 
         for ingredient in self.unwanted:
-            replacements[ingredient] = self.find_replacement(ingredient)
+            if self.get_info(ingredient) is not None:   # Comprobar que es un ingrediente
+                replacements[ingredient] = self.find_replacement(ingredient)
 
         return replacements
 
     def find_replacement(self, ingredient):
         # Comprueba los 25 ingredientes más cercanos:
-        for alternative in self.wvmodel.wv.most_similar(ingredient, topn=50):
-            if alternative in self.ing_vocab and self.passes_requirements(alternative):
+        for (alternative, similarity) in self.wvmodel.wv.most_similar(ingredient, topn=50):
+            if self.passes_requirements(alternative):
                 return alternative
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
