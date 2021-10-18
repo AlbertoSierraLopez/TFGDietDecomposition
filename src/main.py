@@ -58,7 +58,6 @@ nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
 # print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
 
 
-# MODULO 2
 test_recipes = data_loader.test_recipes()
 counter = 1
 key_continue = 'Y'
@@ -67,11 +66,12 @@ key_continue = 'Y'
 # next(test_recipes)
 
 while (key_continue == 'Y') or (key_continue == 'S'):
+    # MODULO 2
     print(">Leyendo entrada...")
     input_recipe = next(test_recipes)
     clean_recipe = ', '.join(input_recipe)
     clean_recipe = clean_recipe[0].upper() + clean_recipe[1:] + '.\n'
-    print("\tReceta:", clean_recipe, end="\n", sep="\n\t")
+    print("\tReceta:", clean_recipe, sep="\n\t")
 
     print(">Detectando ingredientes en la receta...")
     ingredient_manager = IngredientManager(clean_recipe, tokenizer.nltk_tokenize(input_recipe), requirements,
@@ -96,8 +96,12 @@ while (key_continue == 'Y') or (key_continue == 'S'):
         f.write(new_recipe)
     print("\tListo.")
 
-    print("\nTiempo transcurrido:", round(time() - start_time, 4), "segundos")
+    print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
 
     key_continue = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
     start_time = time()
     counter += 1
+
+print(">El archivo de recetas se encuentra en:")
+print("\t", os.path.abspath('../output/'))
+print("\n>Proceso terminado")
