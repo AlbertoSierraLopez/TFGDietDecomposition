@@ -1,0 +1,11 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.data_loader.DataLoader" [color="black", fontcolor="black", label="{DataLoader|dataframe\ltest\ltrain\l|display_test()\ldisplay_train()\lget_column(column)\lget_column_counter(column)\lget_list(column)\lsentencizer(string)\ltest_recipes()\l}", shape="record", style="solid"];
+"src.dimensionality_reduction.DimensionalityReduction" [color="black", fontcolor="black", label="{DimensionalityReduction|PCA\lTSNE\l|pca_reduce(vectors)\ltsne_reduce(vectors)\l}", shape="record", style="solid"];
+"src.ingredient_manager.IngredientManager" [color="black", fontcolor="black", label="{IngredientManager|ing_vocab\lingredients\lkg_ing\lkg_tag\lrecipe\lreplacements : dict\lrequirement_list : ndarray\lrequirements\ltokenized_recipe\lunwanted : list\lwvmodel\l|find_replacement(ingredient)\lget_food_category(food)\lget_info(food)\lget_ingredients(food)\lget_nutrients(food)\lget_replacements()\lget_total_nutrients()\lpasses_requirements(food)\lreplace_unwanted()\lunwanted_ingredients()\l}", shape="record", style="solid"];
+"src.knowledge_manager.KnowledgeManager" [color="black", fontcolor="black", label="{KnowledgeManager|KG_ing : NoneType\lKG_tag : NoneType\lrelations_ing : list\lrelations_tags : set\l|build_kg_ingredients(ingredients)\lbuild_kg_tag(tags, ingredients)\ldisplay(ing, tag)\ltop_edges(ingredient, n)\l}", shape="record", style="solid"];
+"src.language_processer.LanguageProcesser" [color="black", fontcolor="black", label="{LanguageProcesser|elmo_model : NoneType\lglove_model : NoneType\ltrainer\lword2vec_model : NoneType\l|closest_words_word2vec(word, n)\lget_embedding_word2vec(word)\l}", shape="record", style="solid"];
+"src.tokenizer.Tokenizer" [color="black", fontcolor="black", label="{Tokenizer|spacy\ltorch\l|get_vocab(recipes)\lnltk_tokenize(sentences)\lspacy_tokenize(sentences)\lspacy_tokenize_pro(sentences)\ltorch_tokenize(sentences)\l}", shape="record", style="solid"];
+"src.trainer.Trainer" [color="black", fontcolor="black", label="{Trainer|\l|elmo_model(recipes)\lword2vec_model(recipes, sg)\l}", shape="record", style="solid"];
+}
