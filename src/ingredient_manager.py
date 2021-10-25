@@ -6,24 +6,33 @@ import pandas as pd
 
 
 class IngredientManager:
-    def __init__(self, recipe, tokenized_recipe, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
-        self.recipe = recipe
-        self.tokenized_recipe = tokenized_recipe
-        self.wvmodel = wvmodel
-        self.kg_ing = kg_ing
-        self.kg_tag = kg_tag
+    def __init__(self, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
+        self.recipe = None
+        self.tokenized_recipe = None
+        self.ingredients = None
+        self.unwanted = None
+        self.replacements = None
 
         self.requirement_list = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                                           'Dieta baja en carbohidratos', 'Dieta baja en sodio',
                                           'Intolerancia a la lactosa', 'Alergia los frutos secos', 'Alergia al marisco',
                                           'Intolerancia al gluten', 'Celiaquía'])
-
         self.requirements = self.requirement_list[requirements]
+        self.wvmodel = wvmodel
+        self.kg_ing = kg_ing
+        self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
-        # set para evitar repeticiones, sorted por comodidad:
-        self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in ing_vocab]))
+
+    def load_recipe(self, recipe, tokenized_recipe, debug=False):
+        self.recipe = recipe
+        self.tokenized_recipe = tokenized_recipe
+
+        self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in self.ing_vocab]))
         self.unwanted = self.unwanted_ingredients()
-        print(">Buscando alternativas a ingredientes...")
+
+        if debug:
+            print(">Buscando alternativas a ingredientes...")
+
         self.replacements = self.get_replacements()
 
 # MODULO 2
@@ -155,6 +164,9 @@ class IngredientManager:
 
 # MODULO 3
     def replace_unwanted(self):
+        if self.recipe is None:
+            raise Exception("No recipe is loaded.")
+
         new_recipe = []
         for token in nltk.word_tokenize(self.recipe):
             if token in self.unwanted:
