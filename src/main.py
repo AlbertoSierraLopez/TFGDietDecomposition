@@ -114,4 +114,6 @@ else:
 
     print(">El archivo de recetas se encuentra en:")
     print("\t", os.path.abspath('../output/'))
+
 print("\n>Proceso terminado")
+exit()

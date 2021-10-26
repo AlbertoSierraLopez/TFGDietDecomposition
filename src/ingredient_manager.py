@@ -1,5 +1,8 @@
+import json
+import os
 import requests
 import nltk
+import atexit
 
 import numpy as np
 import pandas as pd
@@ -22,6 +25,15 @@ class IngredientManager:
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
+
+        # proxy cache
+        if os.path.exists('../models/usda_cache.json'):
+            with open('../models/usda_cache.json') as json_file:
+                self.usda_cache = json.load(json_file)
+        else:
+            self.usda_cache = dict()
+
+        atexit.register(self.exit_handler)
 
     def load_recipe(self, recipe, tokenized_recipe, debug=False):
         self.recipe = recipe
@@ -103,12 +115,20 @@ class IngredientManager:
 
         return True
 
-    @staticmethod
+    def query(self, food):
+        if food in self.usda_cache:
+            response = self.usda_cache[food]
+        else:
+            response = requests.get("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food +
+                                    "&pageSize=10&api_key=dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio").json()
+            self.usda_cache[food] = response
+        return response
+
     # Devuelve la primera fila de la query como dataframe
-    def get_info(food):
-        response = requests.get("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food +
-                                "&pageSize=5&api_key=dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio")
-        food_df = pd.json_normalize(response.json()['foods'])
+    def get_info(self, food):
+        response = self.query(food)
+
+        food_df = pd.json_normalize(response['foods'])
         if len(food_df) > 0:
             # Cogemos la primera fila de la query (asumimos que la más parecida a la búsqueda):
             row = food_df.iloc[0]
@@ -190,3 +210,8 @@ class IngredientManager:
             if (self.get_info(alternative) is not None) and (self.passes_requirements(alternative)):
                 return alternative
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
+
+    def exit_handler(self):
+        print("\tSalvando caché...")
+        with open('../models/usda_cache.json', 'w+') as json_file:
+            json.dump(self.usda_cache, json_file)
