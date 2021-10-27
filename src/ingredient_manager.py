@@ -83,12 +83,17 @@ class IngredientManager:
 
         if 'Dieta baja en carbohidratos' in self.requirements and nutrients is not None:
             carbs = nutrients.loc[nutrients['nutrientName'] == 'Carbohydrate, by difference']
-            if len(carbs) > 0 and carbs['value'].item() > 150.0:
-                return False
+            kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
+            if len(carbs) > 0 and len(kcals) > 0:
+                v_carbs = carbs['value'].item()
+                v_kcals = kcals['value'].item()
+                # Un alimento es alto en carbs si éstos representan más del 65% de su aporte calórico
+                if (4 * v_carbs) < (0.65 * v_kcals):
+                    return False
 
         if 'Dieta baja en sodio' in self.requirements and nutrients is not None:
             sodium = nutrients.loc[nutrients['nutrientName'] == 'Sodium, Na']
-            if len(sodium) > 0 and sodium['value'].item() > 100.0:
+            if len(sodium) > 0 and sodium['value'].item() > 140.0:
                 return False
 
         if 'Intolerancia a la lactosa' in self.requirements and ingredients is not None:
