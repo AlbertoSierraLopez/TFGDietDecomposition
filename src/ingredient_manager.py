@@ -68,13 +68,18 @@ class IngredientManager:
         if 'Dieta hipocalórica' in self.requirements and nutrients is not None:
             # La energía puede aparecer en julios, sólo la queremos en KCals:
             kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
-            if len(kcals) > 0 and kcals['value'].item() > 200.0:
+            if len(kcals) > 0 and kcals['value'].item() > 300.0:
                 return False
 
         if 'Dieta proteica' in self.requirements and nutrients is not None:
             protein = nutrients.loc[nutrients['nutrientName'] == 'Protein']
-            if len(protein) > 0 and protein['value'].item() < 15.0:
-                return False
+            kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
+            if len(protein) > 0 and len(kcals) > 0:
+                v_protein = protein['value'].item()
+                v_kcals = kcals['value'].item()
+                # Un alimento es alto en proteínas si éstas representan más del 16% de su aporte calórico
+                if (4 * v_protein) < (0.16 * v_kcals):
+                    return False
 
         if 'Dieta baja en carbohidratos' in self.requirements and nutrients is not None:
             carbs = nutrients.loc[nutrients['nutrientName'] == 'Carbohydrate, by difference']
