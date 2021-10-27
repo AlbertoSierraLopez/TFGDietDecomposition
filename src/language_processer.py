@@ -4,7 +4,6 @@ import pickle
 from gensim.models import Word2Vec
 # from glove import Glove
 # from scipy.spatial.distance import cosine
-
 from trainer import Trainer
 
 

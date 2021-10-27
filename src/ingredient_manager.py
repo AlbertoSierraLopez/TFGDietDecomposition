@@ -3,9 +3,9 @@ import os
 import requests
 import nltk
 import atexit
-
-import numpy as np
 import pandas as pd
+
+from constants import REQUIREMENT_LIST
 
 
 class IngredientManager:
@@ -16,11 +16,7 @@ class IngredientManager:
         self.unwanted = None
         self.replacements = None
 
-        self.requirement_list = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
-                                          'Dieta baja en carbohidratos', 'Dieta baja en sodio',
-                                          'Intolerancia a la lactosa', 'Alergia los frutos secos', 'Alergia al marisco',
-                                          'Intolerancia al gluten', 'Celiaquía'])
-        self.requirements = self.requirement_list[requirements]
+        self.requirements = REQUIREMENT_LIST[requirements]
         self.wvmodel = wvmodel
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
@@ -35,15 +31,12 @@ class IngredientManager:
 
         atexit.register(self.exit_handler)
 
-    def load_recipe(self, recipe, tokenized_recipe, debug=False):
+    def load_recipe(self, recipe, tokenized_recipe):
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
 
         self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in self.ing_vocab]))
         self.unwanted = self.unwanted_ingredients()
-
-        if debug:
-            print(">Buscando alternativas a ingredientes...")
 
         self.replacements = self.get_replacements()
 

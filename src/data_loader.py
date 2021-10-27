@@ -1,17 +1,18 @@
 import re
+import pandas as pd
+
+from constants import TEST_SIZE
 from collections import Counter
 # from sklearn.model_selection import train_test_split
-
-import pandas as pd
 from IPython.display import display
 
 
 class DataLoader:
-    def __init__(self, path_csv='/datasets/RAW_recipes.csv', test_size=100):
+    def __init__(self, path_csv='/datasets/RAW_recipes.csv'):
         self.dataframe = pd.read_csv(path_csv)  # 231.637 recetas
 
         # self.train, self.test = train_test_split(self.dataframe, test_size=0.001, random_state=1)
-        self.train, self.test = self.train_test_split(self.dataframe, test_size)
+        self.train, self.test = self.train_test_split(self.dataframe, TEST_SIZE)
 
         pd.set_option('display.max_rows', None)
         pd.set_option('display.max_columns', None)

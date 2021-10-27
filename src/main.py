@@ -4,6 +4,7 @@ import numpy as np
 
 from time import time
 
+from constants import DATASET, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -13,15 +14,11 @@ from tokenizer import Tokenizer
 
 #                        1  2  3  4  5  6  7  8  9 10 11
 requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
-
-dataset = "RAW_recipes.csv"
 start_time = time()
-test_size = 5
-
 
 # MODULO 1
-print(">Leyendo dataset: ", dataset, "...", sep='')
-data_loader = DataLoader(path_csv="../datasets/"+dataset, test_size=test_size)
+print(">Leyendo dataset: ", DATASET, "...", sep='')
+data_loader = DataLoader(path_csv="../datasets/"+DATASET)
 
 print(">Extrayendo columnas...")
 tags = data_loader.get_column('tags')
@@ -70,8 +67,8 @@ key_mode = input("\n¿Desea procesar recetas una a una? (Y/N)\n").upper()
 if not (key_mode == 'Y') and not (key_mode == 'S'):
     # Sacar estadísticas:
     print(">Calculando estadísticas...")
-    statistics = Statistics(data_loader.test, test_recipes_generator, ingredient_manager, debug=True)
-    print("\tTamaño del conjunto de test:", test_size, sep="\t")
+    statistics = Statistics(data_loader.test, test_recipes_generator, ingredient_manager)
+    print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
     print("\tPrecisión:", statistics.compute_statistics(), sep="\t")
 
 else:
@@ -86,7 +83,7 @@ else:
         print("\tReceta:", clean_recipe, sep="\n\t")
 
         print(">Detectando ingredientes en la receta...")
-        ingredient_manager.load_recipe(clean_recipe, tokenizer.nltk_tokenize(input_recipe), debug=True)
+        ingredient_manager.load_recipe(clean_recipe, tokenizer.nltk_tokenize(input_recipe))
         print("\tIngredientes detectados:", ingredient_manager.ingredients)
         print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
         print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
