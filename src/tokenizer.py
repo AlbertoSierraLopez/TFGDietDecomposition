@@ -2,6 +2,8 @@ from collections import Counter
 
 import nltk
 import spacy
+import json
+import pandas as pd
 from torchtext.data import get_tokenizer
 
 
@@ -43,15 +45,15 @@ class Tokenizer:
                     tokens.append('<number>')
         return tokens
 
-    # Más costoso
+    # Más costoso. Devuelve el type Token, no str
     def spacy_tokenize_pro(self, sentences):
         tokens = []
         for doc in list(self.spacy.pipe(sentences)):
             for token in doc:
                 # Se filtran signos de puntuación, números y palabras vacías
                 if not token.is_punct and not token.is_digit and not token.is_stop:
-                    # Se guarda el lema
-                    tokens.append(token.lemma_)
+                    # Se guarda el Token
+                    tokens.append(token)
         return tokens
 
     @staticmethod
@@ -65,3 +67,14 @@ class Tokenizer:
         ind2word = dict(zip(range(0, len(vocab)), vocab))
 
         return vocab, word2ind, ind2word
+
+    @staticmethod
+    def get_ing_vocab():
+        with open('../datasets/ingredients.json', encoding="utf8") as json_file:
+            off_json = json.load(json_file)     # OFF = OpenFoodFacts
+
+        off = pd.json_normalize(off_json['tags'])
+
+        # Hay que hacer un pelín de limpieza en los datos, minúsculas y quitar guiones y números
+        return sorted([ingredient.lower().replace('-', ' ') for ingredient in off['name'] if len(ingredient) > 0 and
+                       ingredient[0] not in ['', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']])

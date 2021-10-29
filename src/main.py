@@ -42,6 +42,7 @@ else:
 # No se utiliza ahora mismo
 print(">Extrayendo vocabulario...")
 vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
+ing_vocab = tokenizer.get_ing_vocab()
 
 print(">Elaborando grafo de conocimiento...")
 knowledge_manager = KnowledgeManager(ingredients, tags)
@@ -59,7 +60,7 @@ nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
 
 
 test_recipes_generator = data_loader.test_recipes_generator()
-ingredient_manager = IngredientManager(requirements, data_loader.get_list('ingredients'), wvmodel=nlp.word2vec_model,
+ingredient_manager = IngredientManager(requirements, ing_vocab, wvmodel=nlp.word2vec_model,
                                        kg_ing=KG_ing, kg_tag=KG_tag)
 
 key_mode = input("\n¿Desea procesar recetas una a una? (Y/N)\n").upper()

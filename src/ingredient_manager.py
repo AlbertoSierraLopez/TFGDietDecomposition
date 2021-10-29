@@ -35,7 +35,7 @@ class IngredientManager:
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
 
-        self.ingredients = sorted(set([ingredient for ingredient in tokenized_recipe if ingredient in self.ing_vocab]))
+        self.ingredients = sorted(set([token for token in tokenized_recipe if token in self.ing_vocab]))
         self.unwanted = self.unwanted_ingredients()
 
         self.replacements = self.get_replacements()
@@ -207,11 +207,13 @@ class IngredientManager:
         return replacements
 
     def find_replacement(self, ingredient):
-        # Comprueba los 25 ingredientes más cercanos:
-        for (alternative, similarity) in self.wvmodel.wv.most_similar(ingredient, topn=50):
-            # Comprobar que es un ingrediente y que es válido
-            if (self.get_info(alternative) is not None) and (self.passes_requirements(alternative)):
-                return alternative
+        # Comprueba que exista la palabra en el modelo NLP:
+        if ingredient in self.wvmodel.wv:
+            # Comprueba los 25 ingredientes más cercanos:
+            for (alternative, similarity) in self.wvmodel.wv.most_similar(ingredient, topn=50):
+                # Comprobar que es un ingrediente y que es válido
+                if (alternative in self.ing_vocab) and (self.passes_requirements(alternative)):
+                    return alternative
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
 
     def exit_handler(self):
