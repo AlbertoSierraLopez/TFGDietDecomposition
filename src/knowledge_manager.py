@@ -7,7 +7,7 @@ import os
 
 
 class KnowledgeManager:
-    def __init__(self, ingredients, tags):
+    def __init__(self, ingredients, tags):  # Tanto ingredients como tags son List
         self.KG_ing = None      # Grafo con pesos
         self.KG_tag = None     # Grafo dirigido
 
@@ -49,7 +49,7 @@ class KnowledgeManager:
     def build_kg_tag(self, tags, ingredients):
 
         for i in range(len(tags)):
-            self.relations_tags.update([(tag, ingredient) for ingredient in ingredients.iloc[i] for tag in tags.iloc[i]])
+            self.relations_tags.update([(tag, ingredient) for ingredient in ingredients[i] for tag in tags[i]])
 
         self.KG_tag = nx.DiGraph(list(self.relations_tags))
 

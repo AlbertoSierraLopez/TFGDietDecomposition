@@ -1,10 +1,9 @@
 import os
-import pickle
 import numpy as np
 
 from time import time
 
-from constants import PATH_DATASET, PATH_TOKENS, PATH_OUTPUT, TEST_SIZE
+from constants import PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -27,25 +26,17 @@ ingredients = data_loader.get_column('ingredients')
 
 print(">Tokenizando recetas...")
 tokenizer = Tokenizer()
-if os.path.exists(PATH_TOKENS):
-    print("\tCargando tokens guardados...")
-    pickle_in = open(PATH_TOKENS, "rb")
-    tokenized_recipes = pickle.load(pickle_in)
-    pickle_in.close()
-else:
-    print("\tCreando tokens nuevos...")
-    tokenized_recipes = [tokenizer.nltk_tokenize(recipe) for recipe in recipes]
-    pickle_out = open(PATH_TOKENS, "wb")
-    pickle.dump(tokenized_recipes, pickle_out)
-    pickle_out.close()
+tokenized_recipes = tokenizer.get_tokenized_recipes(recipes)
+print(">Mejorando ingredientes...")
+improved_ingredients = tokenizer.get_improved_ingredients(ingredients)
 
-# No se utiliza ahora mismo
+# No se utiliza ahora mismo:
 print(">Extrayendo vocabulario...")
 vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
-ing_vocab = tokenizer.get_ing_vocab()
+ing_vocab = tokenizer.ing_vocab
 
 print(">Elaborando grafo de conocimiento...")
-knowledge_manager = KnowledgeManager(ingredients, tags)
+knowledge_manager = KnowledgeManager(improved_ingredients, tags.tolist())
 KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
 # print("\tIngredientes con los que se más veces se relaciona la 'manzana':", knowledge_manager.top_edges('apple'))
