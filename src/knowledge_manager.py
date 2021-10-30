@@ -1,5 +1,6 @@
 from collections import Counter
 
+from constants import PATH_KG_ING, PATH_KG_TAG
 import matplotlib.pyplot as plt
 import networkx as nx
 import os
@@ -13,17 +14,17 @@ class KnowledgeManager:
         self.relations_ing = []         # Relaciones ingrediente-ingrediente
         self.relations_tags = set()     # Relaciones etiqueta-ingrediente
 
-        if os.path.exists("../models/kg_ingredients.pickle"):
-            self.KG_ing = nx.read_gpickle("../models/kg_ingredients.pickle")
+        if os.path.exists(PATH_KG_ING):
+            self.KG_ing = nx.read_gpickle(PATH_KG_ING)
         else:
             self.build_kg_ingredients(ingredients)
-            nx.write_gpickle(self.KG_ing, "../models/kg_ingredients.pickle")
+            nx.write_gpickle(self.KG_ing, PATH_KG_ING)
 
-        if os.path.exists("../models/kg_tags.pickle"):
-            self.KG_tag = nx.read_gpickle("../models/kg_tags.pickle")
+        if os.path.exists(PATH_KG_TAG):
+            self.KG_tag = nx.read_gpickle(PATH_KG_TAG)
         else:
             self.build_kg_tag(tags, ingredients)
-            nx.write_gpickle(self.KG_tag, "../models/kg_tags.pickle")
+            nx.write_gpickle(self.KG_tag, PATH_KG_TAG)
 
     def build_kg_ingredients(self, ingredients):
         for recipe in ingredients:

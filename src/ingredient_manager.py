@@ -5,7 +5,7 @@ import nltk
 import atexit
 import pandas as pd
 
-from constants import REQUIREMENT_LIST
+from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY
 
 
 class IngredientManager:
@@ -23,8 +23,8 @@ class IngredientManager:
         self.ing_vocab = ing_vocab
 
         # proxy cache
-        if os.path.exists('../models/usda_cache.json'):
-            with open('../models/usda_cache.json') as json_file:
+        if os.path.exists(PATH_CACHE):
+            with open(PATH_CACHE) as json_file:
                 self.usda_cache = json.load(json_file)
         else:
             self.usda_cache = dict()
@@ -123,7 +123,7 @@ class IngredientManager:
             response = self.usda_cache[food]
         else:
             response = requests.get("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food +
-                                    "&pageSize=10&api_key=dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio").json()
+                                    "&pageSize=10&api_key=" + API_KEY).json()
             self.usda_cache[food] = response
         return response
 
@@ -218,5 +218,5 @@ class IngredientManager:
 
     def exit_handler(self):
         print("\tSalvando caché...")
-        with open('../models/usda_cache.json', 'w+') as json_file:
+        with open(PATH_CACHE, 'w+') as json_file:
             json.dump(self.usda_cache, json_file)

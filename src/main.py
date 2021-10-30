@@ -4,7 +4,7 @@ import numpy as np
 
 from time import time
 
-from constants import DATASET, TEST_SIZE
+from constants import PATH_DATASET, PATH_TOKENS, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -17,8 +17,8 @@ requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
 start_time = time()
 
 # MODULO 1
-print(">Leyendo dataset: ", DATASET, "...", sep='')
-data_loader = DataLoader(path_csv="../datasets/"+DATASET)
+print(">Leyendo dataset: '", PATH_DATASET, "'...", sep='')
+data_loader = DataLoader(PATH_DATASET)
 
 print(">Extrayendo columnas...")
 tags = data_loader.get_column('tags')
@@ -27,15 +27,15 @@ ingredients = data_loader.get_column('ingredients')
 
 print(">Tokenizando recetas...")
 tokenizer = Tokenizer()
-if os.path.exists("../models/tokenized_recipes.pickle"):
+if os.path.exists(PATH_TOKENS):
     print("\tCargando tokens guardados...")
-    pickle_in = open("../models/tokenized_recipes.pickle", "rb")
+    pickle_in = open(PATH_TOKENS, "rb")
     tokenized_recipes = pickle.load(pickle_in)
     pickle_in.close()
 else:
     print("\tCreando tokens nuevos...")
     tokenized_recipes = [tokenizer.nltk_tokenize(recipe) for recipe in recipes]
-    pickle_out = open("../models/tokenized_recipes.pickle", "wb")
+    pickle_out = open(PATH_TOKENS, "wb")
     pickle.dump(tokenized_recipes, pickle_out)
     pickle_out.close()
 
@@ -63,7 +63,8 @@ test_recipes_generator = data_loader.test_recipes_generator()
 ingredient_manager = IngredientManager(requirements, ing_vocab, wvmodel=nlp.word2vec_model,
                                        kg_ing=KG_ing, kg_tag=KG_tag)
 
-key_mode = input("\n¿Desea procesar recetas una a una? (Y/N)\n").upper()
+key_mode = input("\n¿Desea procesar recetas una a una? (Y/N)\n"
+                 "(En caso contrario se ejecutarán todas de golpe)\n").upper()
 
 if not (key_mode == 'Y') and not (key_mode == 'S'):
     # Sacar estadísticas:
@@ -96,10 +97,10 @@ else:
         print("\tReceta válida:", new_recipe, end="\n", sep="\n\t")
 
         print(">Guardando receta...")
-        with open('../output/in_recipes.txt', 'w+') as f:
+        with open(PATH_OUTPUT + "in_recipes.txt", 'w+') as f:
             f.write(str(counter) + '.')
             f.write(clean_recipe)
-        with open('../output/out_recipes.txt', 'w+') as f:
+        with open(PATH_OUTPUT + "out_recipes.txt", 'w+') as f:
             f.write(str(counter) + '.')
             f.write(new_recipe)
         print("\tListo.")
@@ -111,7 +112,7 @@ else:
         counter += 1
 
     print(">El archivo de recetas se encuentra en:")
-    print("\t", os.path.abspath('../output/'))
+    print("\t", os.path.abspath(PATH_OUTPUT))
 
 print("\n>Proceso terminado")
 exit()

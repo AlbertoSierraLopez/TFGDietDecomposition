@@ -1,5 +1,6 @@
 from collections import Counter
 
+from constants import PATH_ING_VOCAB, TORCH_TOKENIZER, SPACY_TOKENIZER
 import nltk
 import spacy
 import json
@@ -10,9 +11,8 @@ from torchtext.data import get_tokenizer
 class Tokenizer:
     def __init__(self):
         # nltk.download('punkt')
-        self.torch = get_tokenizer("basic_english")
-        self.spacy = spacy.load(r'C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/site-packages/'
-                                r'en_core_web_sm/en_core_web_sm-3.1.0')
+        self.torch = get_tokenizer(TORCH_TOKENIZER)
+        self.spacy = spacy.load(SPACY_TOKENIZER)
 
     @staticmethod
     def nltk_tokenize(sentences):
@@ -70,7 +70,7 @@ class Tokenizer:
 
     @staticmethod
     def get_ing_vocab():
-        with open('../datasets/ingredients.json', encoding="utf8") as json_file:
+        with open(PATH_ING_VOCAB, encoding="utf8") as json_file:
             off_json = json.load(json_file)     # OFF = OpenFoodFacts
 
         off = pd.json_normalize(off_json['tags'])

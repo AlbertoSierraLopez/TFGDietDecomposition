@@ -1,18 +1,24 @@
 import re
+import os
 import pandas as pd
 
-from constants import TEST_SIZE
+from constants import PATH_TRAIN, PATH_TEST, TEST_SIZE
 from collections import Counter
-# from sklearn.model_selection import train_test_split
 from IPython.display import display
 
 
 class DataLoader:
-    def __init__(self, path_csv='/datasets/RAW_recipes.csv'):
+    def __init__(self, path_csv):
         self.dataframe = pd.read_csv(path_csv)  # 231.637 recetas
+        self.train, self.test = None, None
 
-        # self.train, self.test = train_test_split(self.dataframe, test_size=0.001, random_state=1)
-        self.train, self.test = self.train_test_split(self.dataframe, TEST_SIZE)
+        # Si existen train/test, no se calculan
+        if (os.path.exists(PATH_TRAIN)) and (os.path.exists(PATH_TEST)):
+            self.train = pd.read_csv(PATH_TRAIN)
+            self.test = pd.read_csv(PATH_TEST)
+        # Si no existen o ha cambiado TEST_SIZE, se recalculan train y test
+        if (self.train is None) or (self.test is None) or (len(self.test) != TEST_SIZE):
+            self.train, self.test = self.train_test_split(self.dataframe, TEST_SIZE)
 
         pd.set_option('display.max_rows', None)
         pd.set_option('display.max_columns', None)
@@ -23,8 +29,8 @@ class DataLoader:
         train = dataframe.iloc[n:, :]
         test = dataframe.iloc[:n, :]    # test <- n primeros
         # Salvar en /datasets
-        train.to_csv("../datasets/train_recipes.csv")
-        test.to_csv("../datasets/test_recipes.csv")
+        train.to_csv(PATH_TRAIN)
+        test.to_csv(PATH_TEST)
         return train, test
 
     def display_train(self):

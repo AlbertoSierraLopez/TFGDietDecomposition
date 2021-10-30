@@ -1,6 +1,7 @@
 import os
 import pickle
 
+from constants import PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
 from gensim.models import Word2Vec
 # from glove import Glove
 # from scipy.spatial.distance import cosine
@@ -15,20 +16,20 @@ class LanguageProcesser:
         self.word2vec_model = None
         self.glove_model = None
 
-        if os.path.exists("../models/elmo.pickle"):
-            pickle_in = open("/models/elmo.pickle", "rb")
+        if os.path.exists(PATH_ELMO_MODEL):
+            pickle_in = open(PATH_ELMO_MODEL, "rb")
             self.elmo_model = pickle.load(pickle_in)
         elif elmo:
             self.elmo_model = self.trainer.elmo_model(recipes)
 
-        if os.path.exists("../models/word2vec.model"):
-            self.word2vec_model = Word2Vec.load("../models/word2vec.model")
+        if os.path.exists(PATH_WORD2VEC_MODEL):
+            self.word2vec_model = Word2Vec.load(PATH_WORD2VEC_MODEL)
         elif word2vec:
             self.word2vec_model = self.trainer.word2vec_model(recipes)
 
         '''
-        if os.path.exists("../models/glove.model"):
-            self.glove_model = Glove.load("../models/glove.model")
+        if os.path.exists(PATH_GLOVE_MODEL):
+            self.glove_model = Glove.load(PATH_GLOVE_MODEL)
         elif glove:
             self.glove_model = self.trainer.glove_model(recipes)
         '''

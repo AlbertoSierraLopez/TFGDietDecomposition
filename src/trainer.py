@@ -1,5 +1,6 @@
 import pickle
 
+from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -11,7 +12,7 @@ class Trainer:
 
     @staticmethod
     def elmo_model(recipes):
-        elmo = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
+        elmo = hub.Module(ELMO_MODULE, trainable=True)
         session = tf.compat.v1.Session()
         session.run(tf.compat.v1.global_variables_initializer())
         session.run(tf.compat.v1.tables_initializer())
@@ -27,7 +28,7 @@ class Trainer:
         for vector in vectors:
             vector.shape = (np.shape(vector)[1], 1024)
 
-        pickle_out = open("../models/elmo.pickle", "wb")
+        pickle_out = open(PATH_ELMO_MODEL, "wb")
         pickle.dump(vectors, pickle_out)
         pickle_out.close()
 
@@ -46,7 +47,7 @@ class Trainer:
         model.build_vocab(recipes, progress_per=10000)
         model.train(recipes, total_examples=model.corpus_count, epochs=10, report_delay=1)
 
-        model.save("../models/word2vec.model")
+        model.save(PATH_WORD2VEC_MODEL)
 
         return model
 
@@ -60,7 +61,7 @@ class Trainer:
         glove.fit(corpus.matrix, epochs=64, no_threads=4, verbose=True)
         glove.add_dictionary(corpus.dictionary)
 
-        glove.save("../models/glove.model")
+        glove.save(PATH_GLOVE_MODEL)
 
         return glove
     '''
