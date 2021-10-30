@@ -1,7 +1,7 @@
-import os
 import numpy as np
-
 from time import time
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from constants import PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
@@ -10,6 +10,7 @@ from language_processer import LanguageProcesser
 from ingredient_manager import IngredientManager
 from statistics import Statistics
 from tokenizer import Tokenizer
+
 
 #                        1  2  3  4  5  6  7  8  9 10 11
 requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
@@ -76,7 +77,7 @@ else:
         print("\tReceta:", clean_recipe, sep="\n\t")
 
         print(">Detectando ingredientes en la receta...")
-        ingredient_manager.load_recipe(clean_recipe, tokenizer.nltk_tokenize(input_recipe))
+        ingredient_manager.load_recipe(clean_recipe, tokenizer.spacy_tokenize_pro_str(input_recipe))
         print("\tIngredientes detectados:", ingredient_manager.ingredients)
         print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
         print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')

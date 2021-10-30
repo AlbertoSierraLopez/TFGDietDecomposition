@@ -39,16 +39,11 @@ class DataLoader:
     def display_test(self):
         display(self.test)
 
-    @staticmethod
-    def sentencizer(string):
-        # Hace falta quitar los símbolos [ ] y ' ' del principio y luego dividir por ', ' o por ", "
-        return re.split('[\"\'], [\"\']', string[2:-2])
-
     def get_column(self, column):
         df_column = self.train[column.lower()].dropna()
 
         if column.lower() in ['tags', 'steps', 'ingredients']:
-            df_column = df_column.apply(self.sentencizer)
+            df_column = df_column.apply(sentencizer)
 
         return df_column
 
@@ -70,8 +65,13 @@ class DataLoader:
         return Counter(element_list)
 
     def test_recipes_generator(self):
-        test_recipes = [self.sentencizer(steps) for steps in self.test['steps']]
+        test_recipes = [sentencizer(steps) for steps in self.test['steps']]
         for recipe in test_recipes:
             clean_recipe = ', '.join(recipe)
             clean_recipe = clean_recipe[0].upper() + clean_recipe[1:] + '.\n'
             yield recipe, clean_recipe
+
+
+def sentencizer(string):
+    # Hace falta quitar los símbolos [ ] y ' ' del principio y luego dividir por ', ' o por ", "
+    return re.split('[\"\'], [\"\']', string[2:-2])

@@ -60,6 +60,17 @@ class Tokenizer:
                     tokens.append(token)
         return tokens
 
+    # Más costoso. Devuelve el str
+    def spacy_tokenize_pro_str(self, sentences):
+        tokens = []
+        for doc in list(self.spacy.pipe(sentences)):
+            for token in doc:
+                # Se filtran signos de puntuación, números y palabras vacías
+                if not token.is_punct and not token.is_digit and not token.is_stop:
+                    # Se guarda el str
+                    tokens.append(token.text)
+        return tokens
+
     def get_tokenized_recipes(self, recipes):
         if os.path.exists(PATH_TOKENS):
             print("\tCargando tokens guardados...")

@@ -1,6 +1,6 @@
 import pickle
 
-from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
+from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL     # , PATH_GLOVE_MODEL
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
