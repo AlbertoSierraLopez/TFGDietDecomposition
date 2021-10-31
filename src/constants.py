@@ -19,7 +19,7 @@ SPACY_TOKENIZER = "C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/si
 ELMO_MODULE = "https://tfhub.dev/google/elmo/2"
 API_KEY = "dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio"
 
-TEST_SIZE = 50
+TEST_SIZE = 55
 DEBUG = True
 REQUIREMENT_LIST = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                              'Dieta baja en carbohidratos', 'Dieta baja en sodio', 'Intolerancia a la lactosa',

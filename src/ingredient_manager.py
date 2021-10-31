@@ -97,7 +97,7 @@ class IngredientManager:
                 return False
 
         if 'Intolerancia a la lactosa' in self.requirements and ingredients is not None:
-            if 'milk' in ingredients:
+            if 'milk' in ingredients or 'cream' in ingredients or 'butter' in ingredients:
                 return False
 
         if 'Alergia los frutos secos' in self.requirements and category is not None:

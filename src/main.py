@@ -92,7 +92,7 @@ else:
         with open(PATH_OUTPUT + "in_recipes.txt", 'w+') as f:
             f.write(str(counter) + '.\n' + clean_recipe + '\n')
         with open(PATH_OUTPUT + "out_recipes.txt", 'w+') as f:
-            f.write(str(counter) + '.\n' + new_recipe)
+            f.write(str(counter) + '.\n' + new_recipe + '\n')
         print("\tListo.")
 
         print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
