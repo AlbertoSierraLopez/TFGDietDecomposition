@@ -208,9 +208,9 @@ class IngredientManager:
 
     def find_replacement(self, ingredient):
         # Comprueba que exista la palabra en el modelo NLP:
-        if ingredient in self.wvmodel.wv:
+        if ingredient in self.wvmodel:
             # Comprueba los 25 ingredientes más cercanos:
-            for (alternative, similarity) in self.wvmodel.wv.most_similar(ingredient, topn=50):
+            for (alternative, similarity) in self.wvmodel.most_similar(ingredient, topn=50):
                 # Comprobar que es un ingrediente y que es válido
                 if (alternative in self.ing_vocab) and (self.passes_requirements(alternative)):
                     return alternative

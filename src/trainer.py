@@ -1,6 +1,6 @@
 import pickle
 
-from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL     # , PATH_GLOVE_MODEL
+from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -35,7 +35,7 @@ class Trainer:
         return np.concatenate(vectors, axis=0)
 
     @staticmethod
-    def word2vec_model(recipes, sg=0):
+    def word2vec_model(recipes, sg):
         model = Word2Vec(min_count=20,
                          window=8,
                          sample=6e-5,
@@ -51,17 +51,15 @@ class Trainer:
 
         return model
 
-    '''
-    @staticmethod
-    def glove_model(recipes):
-        corpus = Corpus()
-        corpus.fit(recipes, window=8)
-        glove = Glove(no_components=1024, learning_rate=0.01)
-
-        glove.fit(corpus.matrix, epochs=64, no_threads=4, verbose=True)
-        glove.add_dictionary(corpus.dictionary)
-
-        glove.save(PATH_GLOVE_MODEL)
-
-        return glove
-    '''
+    # @staticmethod
+    # def glove_model(recipes):
+    #     corpus = Corpus()
+    #     corpus.fit(recipes, window=8)
+    #     glove = Glove(no_components=1024, learning_rate=0.01)
+    #
+    #     glove.fit(corpus.matrix, epochs=64, no_threads=4, verbose=True)
+    #     glove.add_dictionary(corpus.dictionary)
+    #
+    #     glove.save(PATH_GLOVE_MODEL)
+    #
+    #     return glove

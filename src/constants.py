@@ -12,6 +12,7 @@ PATH_KG_ING = "../models/kg_ingredients.pickle"
 PATH_KG_TAG = "../models/kg_tags.pickle"
 PATH_ELMO_MODEL = "../models/elmo.pickle"
 PATH_WORD2VEC_MODEL = "../models/word2vec.model"
+PATH_WORD2VEC_PRETRAINED_MODEL = "../models/word2vec_pretrained.model"
 PATH_GLOVE_MODEL = "../models/glove.model"
 
 TORCH_TOKENIZER = "basic_english"

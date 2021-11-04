@@ -44,7 +44,8 @@ KG_tag = knowledge_manager.KG_tag
 # print("\tAlgunos ingredientes relacionados con 'low-protein'", list(KG_tag['low-protein'])[:10])
 
 print(">Entrenando modelo...")
-nlp = LanguageProcesser(tokenized_recipes, word2vec=True)
+nlp = LanguageProcesser(tokenized_recipes, word2vec=True, sg=0, pretrained=False)
+# print("\tPalabras más próximas a 'leche':", nlp.closest_words_word2vec(word='milk'))
 # print("\tPalabras más próximas a 'huevos':", nlp.closest_words_word2vec(word='eggs'))
 # print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='salt'))
 # print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
