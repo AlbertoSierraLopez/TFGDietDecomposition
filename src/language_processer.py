@@ -2,8 +2,8 @@ import os
 import pickle
 import gensim.downloader as api
 
-from constants import PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
-from gensim.models import Word2Vec
+from constants import PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL, PATH_WORD2VEC_PRETRAINED_MODEL
+from gensim.models import Word2Vec, KeyedVectors
 # from glove import Glove
 from scipy.spatial.distance import cosine
 from trainer import Trainer
@@ -24,7 +24,11 @@ class LanguageProcesser:
             self.elmo_model = self.trainer.elmo_model(recipes)
 
         if pretrained:
-            self.word2vec_model = api.load("glove-twitter-100")
+            if os.path.exists(PATH_WORD2VEC_PRETRAINED_MODEL):
+                self.word2vec_model = KeyedVectors.load(PATH_WORD2VEC_PRETRAINED_MODEL)
+            elif word2vec:
+                self.word2vec_model = api.load("glove-twitter-100")
+                self.word2vec_model.save(PATH_WORD2VEC_PRETRAINED_MODEL)
         else:
             if os.path.exists(PATH_WORD2VEC_MODEL):
                 self.word2vec_model = Word2Vec.load(PATH_WORD2VEC_MODEL).wv
