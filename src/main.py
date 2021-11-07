@@ -51,7 +51,7 @@ nlp = LanguageProcesser(tokenized_recipes, word2vec=True, sg=0, pretrained=True)
 # print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
 # print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
 
-print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
+print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
 
 
@@ -73,6 +73,8 @@ start_time = time()
 # Procesar recetas test una a una:
 counter = 1
 key_continue = 'Y'
+file_in = open(PATH_OUTPUT + "in_recipes.txt", 'w+')
+file_out = open(PATH_OUTPUT + "out_recipes.txt", 'w+')
 
 while (key_continue == 'Y') or (key_continue == 'S'):
     # MODULO 2
@@ -93,10 +95,8 @@ while (key_continue == 'Y') or (key_continue == 'S'):
     print("\tReceta válida:", new_recipe, end="\n", sep="\n\t")
 
     print(">Guardando receta...")
-    with open(PATH_OUTPUT + "in_recipes.txt", 'w+') as f:
-        f.write(str(counter) + '.\n' + clean_recipe + '\n')
-    with open(PATH_OUTPUT + "out_recipes.txt", 'w+') as f:
-        f.write(str(counter) + '.\n' + new_recipe + '\n')
+    file_in.write(str(counter) + '. ' + clean_recipe + '\n')
+    file_out.write(str(counter) + '. ' + new_recipe + '\n')
     print("\tListo.")
 
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
@@ -105,6 +105,8 @@ while (key_continue == 'Y') or (key_continue == 'S'):
     start_time = time()
     counter += 1
 
+file_in.close()
+file_out.close()
 print(">El archivo de recetas se encuentra en:")
 print("\t", os.path.abspath(PATH_OUTPUT))
 
