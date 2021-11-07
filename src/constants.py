@@ -21,7 +21,7 @@ ELMO_MODULE = "https://tfhub.dev/google/elmo/2"
 API_KEY = "dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio"
 
 TEST_SIZE = 55
-DEBUG = True
+DEBUG = False
 REQUIREMENT_LIST = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                              'Dieta baja en carbohidratos', 'Dieta baja en sodio', 'Intolerancia a la lactosa',
                              'Alergia los frutos secos', 'Alergia al marisco', 'Intolerancia al gluten', 'Celiaquía'])

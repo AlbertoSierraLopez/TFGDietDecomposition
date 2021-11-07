@@ -64,6 +64,18 @@ class DataLoader:
 
         return Counter(element_list)
 
+    def get_test_recipes(self):
+        recipes_column = [sentencizer(steps) for steps in self.test['steps']]
+
+        test_recipes = []
+
+        for recipe_steps in recipes_column:
+            clean_recipe = ', '.join(recipe_steps)
+            clean_recipe = clean_recipe[0].upper() + clean_recipe[1:] + '.\n'
+            test_recipes.append((recipe_steps, clean_recipe))
+
+        return test_recipes
+
     def test_recipes_generator(self):
         test_recipes = [sentencizer(steps) for steps in self.test['steps']]
         for recipe in test_recipes:

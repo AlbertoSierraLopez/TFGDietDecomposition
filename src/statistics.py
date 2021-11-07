@@ -6,10 +6,10 @@ from data_loader import sentencizer
 
 
 class Statistics:
-    def __init__(self, test, test_generator, ingredient_manager):
+    def __init__(self, test, test_tuples, ingredient_manager):
         self.test = test
         self.test_ingredients = test['ingredients'].dropna().apply(sentencizer)
-        self.test_generator = test_generator
+        self.test_tuples = test_tuples
         self.ingredient_manager = ingredient_manager
 
         self.tokenizer = Tokenizer()
@@ -18,9 +18,10 @@ class Statistics:
     def compute_statistics(self):
         hit_sum = 0
         miss_sum = 0
-        print('\t\t', 'Recetas procesadas:')
+        if DEBUG:
+            print('\t\t', 'Recetas procesadas:')
 
-        for i, (input_recipe, clean_recipe) in enumerate(self.test_generator):
+        for i, (input_recipe, clean_recipe) in enumerate(self.test_tuples):
             self.ingredient_manager.load_recipe(clean_recipe, self.tokenizer.spacy_tokenize_pro_str(input_recipe))
             detected_ingredients = self.ingredient_manager.ingredients
             real_ingredients = self.test_ingredients.iloc[i]
