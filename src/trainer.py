@@ -12,39 +12,45 @@ from gensim.models import Word2Vec
 class Trainer:
     def __init__(self, ing_vocab):
         self.model_vocab = [ingredient for ingredient in ing_vocab if len(ingredient.split()) == 1]
-    '''
+
     def elmo_model(self):
-        print("\tEntrenando modelo ELMo...")
+        print("\tNo se puede entrenar ELMo en PyCharm...")
+        return None
+    #     print("\tEntrenando modelo ELMo...")
+    #
+    #     options_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/" \
+    #                    "elmo_2x4096_512_2048cnn_2xhighway_options.json"
+    #     weight_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/" \
+    #                   "elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
+    #     elmo = ElmoTokenEmbedder(options_file, weight_file)
+    #
+    #     embeddings = elmo(batch_to_ids(self.model_vocab))
+    #
+    #     elmo_model = dict()
+    #
+    #     for i in range(len(self.model_vocab)):
+    #         elmo_model[self.model_vocab[i]] = torch.mean(embeddings[i].detach(), 0)
+    #
+    #     torch.save(elmo_model, PATH_ELMO_MODEL)
+    #     return elmo_model
 
-        options_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json"
-        weight_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
-        elmo = ElmoTokenEmbedder(options_file, weight_file)
-
-        embeddings = elmo(batch_to_ids(self.model_vocab))
-
-        elmo_model = dict()
-
-        for i in range(len(self.model_vocab)):
-            elmo_model[self.model_vocab[i]] = torch.mean(embeddings[i].detach(), 0)
-
-        torch.save(elmo_model, PATH_ELMO_MODEL)
-        return elmo_model
-    
     def bert_model(self):
-        print("\tEntrenando modelo Bert...")
+        print("\tNo se puede entrenar Bert en PyCharm...")
+        return None
+    #     print("\tEntrenando modelo Bert...")
+    #
+    #     bert_embeddings = Bert.BertEmbeddings()
+    #
+    #     embeddings = bert_embeddings(self.model_vocab)
+    #
+    #     bert_model = dict()
+    #
+    #     for i in range(len(self.model_vocab)):
+    #         bert_model[self.model_vocab[i]] = list(embeddings[i]['embeddings_map'].values())[0]
+    #
+    #     torch.save(bert_model, PATH_BERT_MODEL)
+    #     return bert_model
 
-        bert_embeddings = Bert.BertEmbeddings()
-
-        embeddings = bert_embeddings(self.model_vocab)
-
-        bert_model = dict()
-
-        for i in range(len(self.model_vocab)):
-            bert_model[self.model_vocab[i]] = list(embeddings[i]['embeddings_map'].values())[0]
-
-        torch.save(bert_model, PATH_BERT_MODEL)
-        return bert_model
-    '''
     @staticmethod
     def word2vec_model(recipes, sg):
         print("\tEntrenando modelo Word2Vec...")

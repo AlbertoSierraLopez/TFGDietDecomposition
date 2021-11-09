@@ -1,11 +1,16 @@
 import os
 import torch
-import gensim.downloader as api
 
-from constants import PATH_ELMO_MODEL, PATH_BERT_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL, PATH_WORD2VEC_PRETRAINED_MODEL
+import gensim.downloader as api
 from gensim.models import Word2Vec, KeyedVectors
+from sortedcollections import ValueSortedDict
+from scipy.spatial import distance
+
+from constants import PATH_ELMO_MODEL, PATH_BERT_MODEL, PATH_WORD2VEC_MODEL,\
+    PATH_GLOVE_MODEL, PATH_WORD2VEC_PRETRAINED_MODEL
 # from glove import Glove
 from trainer import Trainer
+
 
 
 class LanguageProcesser:
@@ -16,7 +21,7 @@ class LanguageProcesser:
         self.bert_model = None
         self.word2vec_model = None
         self.glove_model = None
-        '''
+
         if elmo:
             if os.path.exists(PATH_ELMO_MODEL):
                 self.elmo_model = torch.load(PATH_ELMO_MODEL)
@@ -28,7 +33,7 @@ class LanguageProcesser:
                 self.bert_model = torch.load(PATH_BERT_MODEL)
             else:
                 self.bert_model = self.trainer.bert_model()
-        '''
+
         if word2vec:
             if pretrained:
                 if os.path.exists(PATH_WORD2VEC_PRETRAINED_MODEL):
@@ -48,9 +53,36 @@ class LanguageProcesser:
         #     else:
         #         self.glove_model = self.trainer.glove_model(recipes)
 
+    # Funciones para testing
     def closest_words_word2vec(self, word, n=10):
         return self.word2vec_model.most_similar(word, topn=n)
 
-    def get_embedding_word2vec(self, word):
-        if self.word2vec_model is not None:
-            return self.word2vec_model[word]
+    def closest_words_elmo(self, word, n=10):
+        if word not in self.elmo_model:
+            print("Error: word", word, "out of vocabulary.")
+            return []
+
+        embedding = self.elmo_model[word]
+
+        sorted_dict = ValueSortedDict()
+
+        for (key, value) in self.elmo_model.items():
+            cos_distance = distance.cosine(embedding, value)
+            sorted_dict.__setitem__(key, cos_distance)
+
+        return sorted_dict.items()[1:n + 1]  # Se quita el primero porque es el target (cos_distance = 0.0)
+
+    def closest_words_bert(self, word, n=10):
+        if word not in self.bert_model:
+            print("Error: word", word, "out of vocabulary.")
+            return []
+
+        embedding = self.bert_model[word]
+
+        sorted_dict = ValueSortedDict()
+
+        for (key, value) in self.bert_model.items():
+            cos_distance = distance.cosine(embedding, value)
+            sorted_dict.__setitem__(key, cos_distance)
+
+        return sorted_dict.items()[1:n + 1]  # Se quita el primero porque es el target (cos_distance = 0.0)

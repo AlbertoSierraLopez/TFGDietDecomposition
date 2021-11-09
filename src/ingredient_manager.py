@@ -221,10 +221,16 @@ class IngredientManager:
 
     def most_similar(self, target, topn=25):
         if self.model_type in ['elmo', 'bert']:
+            if target not in self.nlp_model:
+                print("Error: word", target, "out of vocabulary.")
+                return []
+
+            embedding = self.nlp_model[target]
+
             sorted_dict = ValueSortedDict()
 
             for (key, value) in self.nlp_model.items():
-                cos_distance = distance.cosine(target, value)
+                cos_distance = distance.cosine(embedding, value)
                 sorted_dict.__setitem__(key, cos_distance)
 
             return sorted_dict.items()[1:topn+1]    # Se quita el primero porque es el target (cos_distance = 0.0)
