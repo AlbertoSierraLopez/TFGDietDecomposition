@@ -14,6 +14,7 @@ class Tokenizer:
     def __init__(self):
         # nltk.download('punkt')
         self.torch = get_tokenizer(TORCH_TOKENIZER)
+
         self.spacy = spacy.load(SPACY_TOKENIZER)
 
         self.ing_vocab = self.get_ing_vocab()

@@ -40,16 +40,9 @@ print(">Elaborando grafo de conocimiento...")
 knowledge_manager = KnowledgeManager(improved_ingredients, tags.tolist())
 KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
-# print("\tIngredientes con los que se más veces se relaciona la 'manzana':", knowledge_manager.top_edges('apple'))
-# print("\tAlgunos ingredientes relacionados con 'low-protein'", list(KG_tag['low-protein'])[:10])
 
 print(">Entrenando modelo...")
-nlp = LanguageProcesser(tokenized_recipes, word2vec=True, sg=0, pretrained=True)
-# print("\tPalabras más próximas a 'leche':", nlp.closest_words_word2vec(word='milk'))
-# print("\tPalabras más próximas a 'huevos':", nlp.closest_words_word2vec(word='eggs'))
-# print("\tPalabras más próximas a 'sal':", nlp.closest_words_word2vec(word='salt'))
-# print("\tPalabras más próximas a 'azúcar':", nlp.closest_words_word2vec(word='sugar'))
-# print("\tPalabras más próximas a 'jamón':", nlp.closest_words_word2vec(word='ham'))
+nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=0, pretrained=True)
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
@@ -57,7 +50,7 @@ start_time = time()
 
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
-ingredient_manager = IngredientManager(requirements, ing_vocab, wvmodel=nlp.word2vec_model,
+ingredient_manager = IngredientManager(requirements, ing_vocab, nlp_model=nlp.word2vec_model, model_type='word2vec',
                                        kg_ing=KG_ing, kg_tag=KG_tag)
 
 # Sacar estadísticas:

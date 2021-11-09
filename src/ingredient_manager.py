@@ -6,10 +6,12 @@ import atexit
 import pandas as pd
 
 from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY
+from sortedcollections import ValueSortedDict
+from scipy.spatial import distance
 
 
 class IngredientManager:
-    def __init__(self, requirements, ing_vocab, wvmodel, kg_ing, kg_tag):
+    def __init__(self, requirements, ing_vocab, nlp_model, model_type, kg_ing, kg_tag):
         self.recipe = None
         self.tokenized_recipe = None
         self.ingredients = None
@@ -17,7 +19,8 @@ class IngredientManager:
         self.replacements = None
 
         self.requirements = REQUIREMENT_LIST[requirements]
-        self.wvmodel = wvmodel
+        self.nlp_model = nlp_model
+        self.model_type = model_type
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
@@ -208,13 +211,35 @@ class IngredientManager:
 
     def find_replacement(self, ingredient):
         # Comprueba que exista la palabra en el modelo NLP:
-        if ingredient in self.wvmodel:
+        if ingredient in self.nlp_model:
             # Comprueba los 25 ingredientes más cercanos:
-            for (alternative, similarity) in self.wvmodel.most_similar(ingredient, topn=50):
+            for (alternative, similarity) in self.most_similar(ingredient, topn=25):
                 # Comprobar que es un ingrediente y que es válido
                 if (alternative in self.ing_vocab) and (self.passes_requirements(alternative)):
                     return alternative
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
+
+    def most_similar(self, target, topn=25):
+        if self.model_type in ['elmo', 'bert']:
+            sorted_dict = ValueSortedDict()
+
+            for (key, value) in self.nlp_model.items():
+                cos_distance = distance.cosine(target, value)
+                sorted_dict.__setitem__(key, cos_distance)
+
+            return sorted_dict.items()[1:topn+1]    # Se quita el primero porque es el target (cos_distance = 0.0)
+
+        elif self.model_type in ['word2vec']:
+            return self.nlp_model.most_similar(target, topn=25)
+
+        elif self.model_type in ['glove']:
+            distances = [(distance.cosine(self.nlp_model.word_vectors[self.nlp_model.dictionary[target]],
+                                          self.nlp_model.word_vectors[self.nlp_model.dictionary[X]]), X)
+                         for X in self.nlp_model.dictionary.keys()]
+
+            sorted_distances = sorted(distances)
+
+            return sorted_distances[1:topn+1]    # Se quita el primero porque es el target (cos_distance = 0.0)
 
     def exit_handler(self):
         print("\tSalvando caché...")

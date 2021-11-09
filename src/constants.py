@@ -10,14 +10,14 @@ PATH_CACHE = "../models/usda_cache.json"
 PATH_IMP_ING = "../models/improved_ingredients.pickle"
 PATH_KG_ING = "../models/kg_ingredients.pickle"
 PATH_KG_TAG = "../models/kg_tags.pickle"
-PATH_ELMO_MODEL = "../models/elmo.pickle"
+PATH_ELMO_MODEL = "../models/elmo_model.pt"
+PATH_BERT_MODEL = "../models/bert_model.pt"
 PATH_WORD2VEC_MODEL = "../models/word2vec.model"
 PATH_WORD2VEC_PRETRAINED_MODEL = "../models/word2vec_pretrained.kv"
 PATH_GLOVE_MODEL = "../models/glove.model"
 
 TORCH_TOKENIZER = "basic_english"
 SPACY_TOKENIZER = "C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/site-packages/en_core_web_sm/en_core_web_sm-3.1.0"
-ELMO_MODULE = "https://tfhub.dev/google/elmo/2"
 API_KEY = "dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio"
 
 TEST_SIZE = 55

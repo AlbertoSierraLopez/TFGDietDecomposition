@@ -1,41 +1,54 @@
-import pickle
+import torch
 
-from constants import ELMO_MODULE, PATH_ELMO_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
+from constants import PATH_ELMO_MODEL, PATH_BERT_MODEL, PATH_WORD2VEC_MODEL, PATH_GLOVE_MODEL
 import numpy as np
-import tensorflow as tf
-import tensorflow_hub as hub
+# from allennlp.modules.elmo import batch_to_ids
+# from allennlp.modules.token_embedders.elmo_token_embedder import ElmoTokenEmbedder
+# import BertEmbeddings as Bert
 from gensim.models import Word2Vec
 # from glove import Corpus, Glove
 
 
 class Trainer:
+    def __init__(self, ing_vocab):
+        self.model_vocab = [ingredient for ingredient in ing_vocab if len(ingredient.split()) == 1]
+    '''
+    def elmo_model(self):
+        print("\tEntrenando modelo ELMo...")
 
-    @staticmethod
-    def elmo_model(recipes):
-        elmo = hub.Module(ELMO_MODULE, trainable=True)
-        session = tf.compat.v1.Session()
-        session.run(tf.compat.v1.global_variables_initializer())
-        session.run(tf.compat.v1.tables_initializer())
+        options_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json"
+        weight_file = "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
+        elmo = ElmoTokenEmbedder(options_file, weight_file)
 
-        vectors = []
-        for recipe in recipes:
-            embeddings = elmo(inputs={"tokens": [recipe], "sequence_len": [len(recipe)]},
-                              signature="tokens",
-                              as_dict=True)["elmo"]
+        embeddings = elmo(batch_to_ids(self.model_vocab))
 
-            vectors.append(session.run(embeddings))
+        elmo_model = dict()
 
-        for vector in vectors:
-            vector.shape = (np.shape(vector)[1], 1024)
+        for i in range(len(self.model_vocab)):
+            elmo_model[self.model_vocab[i]] = torch.mean(embeddings[i].detach(), 0)
 
-        pickle_out = open(PATH_ELMO_MODEL, "wb")
-        pickle.dump(vectors, pickle_out)
-        pickle_out.close()
+        torch.save(elmo_model, PATH_ELMO_MODEL)
+        return elmo_model
+    
+    def bert_model(self):
+        print("\tEntrenando modelo Bert...")
 
-        return np.concatenate(vectors, axis=0)
+        bert_embeddings = Bert.BertEmbeddings()
 
+        embeddings = bert_embeddings(self.model_vocab)
+
+        bert_model = dict()
+
+        for i in range(len(self.model_vocab)):
+            bert_model[self.model_vocab[i]] = list(embeddings[i]['embeddings_map'].values())[0]
+
+        torch.save(bert_model, PATH_BERT_MODEL)
+        return bert_model
+    '''
     @staticmethod
     def word2vec_model(recipes, sg):
+        print("\tEntrenando modelo Word2Vec...")
+
         model = Word2Vec(min_count=20,
                          window=8,
                          sample=6e-5,
