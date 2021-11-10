@@ -77,7 +77,9 @@ ingredient_manager = IngredientManager(requirements, ing_vocab, nlp_model=nlp.wo
 print(">Calculando estadísticas...")
 statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
 print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
-print("\tPrecisión:", statistics.compute_statistics(), sep="\t")
+precision, recall = statistics.compute_statistics()
+print("\tPrecisión:", precision)
+print("\tExhaustividad:", recall)
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
@@ -85,7 +87,7 @@ start_time = time()
 
 # Procesar recetas test una a una:
 counter = 1
-key_continue = 'Y'
+key_continue = input("\n¿Desea procesar recetas una a una? (Y/N)\n").upper()
 file_in = open(PATH_OUTPUT + "in_recipes.txt", 'w+')
 file_out = open(PATH_OUTPUT + "out_recipes.txt", 'w+')
 

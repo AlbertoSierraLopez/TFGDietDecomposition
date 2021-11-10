@@ -18,8 +18,9 @@ class Statistics:
 
     # Estadísticas sobre detección de ingredientes
     def compute_statistics(self):
-        hit_sum = 0
-        miss_sum = 0
+        tp_sum = 0
+        fp_sum = 0
+        fn_sum = 0
         if DEBUG:
             print('\t\t', 'Recetas procesadas:')
 
@@ -28,34 +29,46 @@ class Statistics:
             detected_ingredients = self.ingredient_manager.ingredients
             real_ingredients = self.test_ingredients.iloc[i]
 
-            hits, misses = self.hit_miss_by_coincidence(detected_ingredients, real_ingredients)
+            true_positives, false_positives, false_negatives = self.precision_by_coincidence(detected_ingredients,
+                                                                                             real_ingredients)
 
-            hit_sum += hits
-            miss_sum += misses
+            tp_sum += true_positives
+            fp_sum += false_positives
+            fn_sum += false_negatives
+
             if DEBUG:
                 print('\t\t', i+1, '/', TEST_SIZE)
 
-        return round(hit_sum / (hit_sum + miss_sum), 4)    # Accuracy
+        if DEBUG:
+            print("\tTrue Positives:",  tp_sum)
+            print("\tFalse Positives:", fp_sum)
+            print("\tFalse Negatives:", fn_sum)
+
+        precision = round(tp_sum / (tp_sum + fp_sum), 4)
+        recall = round(tp_sum / (tp_sum + fn_sum), 4)
+        return precision, recall
 
     # Compara el número de ingredientes detectados con el número de ingredientes reales
     @staticmethod
-    def hit_miss_by_number(detected, real):
+    def precision_by_number(detected, real):
         hits = len(detected)
         misses = abs(len(detected) - len(real))
         return hits, misses
 
     # Compara los ingredientes detectados con los ingredientes reales
-    def hit_miss_by_coincidence(self, detected_ingredients, real_ingredients):
-        hits = 0
-        misses = 0
+    def precision_by_coincidence(self, detected_ingredients, real_ingredients):
+        true_positives = 0
+        false_positives = 0
 
         for real_ingredient in real_ingredients:
             if self.coincide(real_ingredient, detected_ingredients):
-                hits += 1
+                true_positives += 1
             else:
-                misses += 1
+                false_positives += 1
 
-        return hits, misses
+        false_negatives = len(self.test_ingredients) - true_positives
+
+        return true_positives, false_positives, false_negatives
 
     def coincide(self, real_ingredient, detected_ingredients):
         for detected_ingredient in detected_ingredients:
