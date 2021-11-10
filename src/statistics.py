@@ -14,6 +14,8 @@ class Statistics:
 
         self.tokenizer = Tokenizer()
 
+        self.debug_file = open("../output/coincide_debug.txt", 'w+')
+
     # Estadísticas sobre detección de ingredientes
     def compute_statistics(self):
         hit_sum = 0
@@ -55,10 +57,17 @@ class Statistics:
 
         return hits, misses
 
-    @staticmethod
-    def coincide(real_ingredient, detected_ingredients):
+    def coincide(self, real_ingredient, detected_ingredients):
         for detected_ingredient in detected_ingredients:
-            if fuzz.partial_ratio(real_ingredient, detected_ingredient) > 85:
+            lev_ratio = fuzz.partial_ratio(real_ingredient, detected_ingredient)
+
+            if DEBUG:
+                self.debug_file.write(real_ingredient + ' / ' + detected_ingredient + ' -> ' + str(lev_ratio) + '\n')
+
+            if lev_ratio >= 75:
                 return True
 
         return False
+
+    def exit_handler(self):
+        self.debug_file.close()
