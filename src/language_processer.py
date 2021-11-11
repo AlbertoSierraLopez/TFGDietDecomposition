@@ -12,7 +12,6 @@ from constants import PATH_ELMO_MODEL, PATH_BERT_MODEL, PATH_WORD2VEC_MODEL,\
 from trainer import Trainer
 
 
-
 class LanguageProcesser:
     def __init__(self, recipes, ing_vocab, elmo=False, bert=False, word2vec=False, glove=False, sg=0, pretrained=False):
         self.trainer = Trainer(ing_vocab)

@@ -1,7 +1,6 @@
 import numpy as np
 from time import time
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from constants import DEBUG, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
@@ -11,6 +10,13 @@ from ingredient_manager import IngredientManager
 from statistics import Statistics
 from tokenizer import Tokenizer
 
+# Preparar carpetas del sistema
+if not os.path.exists('../models'):
+    print(">Directorio 'models' creado")
+    os.mkdir('../models')
+if not os.path.exists('../output'):
+    print(">Directorio 'output' creado")
+    os.mkdir('../output')
 
 #                        1  2  3  4  5  6  7  8  9 10 11
 requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
