@@ -44,9 +44,10 @@ class Statistics:
             print("\tFalse Positives:", fp_sum)
             print("\tFalse Negatives:", fn_sum)
 
-        precision = round(tp_sum / (tp_sum + fp_sum), 4)
-        recall = round(tp_sum / (tp_sum + fn_sum), 4)
-        return precision, recall
+        precision = round(tp_sum / (tp_sum + fp_sum), 5)
+        recall = round(tp_sum / (tp_sum + fn_sum), 5)
+        f1 = round(tp_sum / (tp_sum + (fp_sum + fn_sum) / 2), 5)
+        return precision, recall, f1
 
     # Compara el número de ingredientes detectados con el número de ingredientes reales
     @staticmethod

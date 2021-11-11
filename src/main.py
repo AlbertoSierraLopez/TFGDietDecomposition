@@ -3,7 +3,7 @@ from time import time
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-from constants import PATH_DATASET, PATH_OUTPUT, TEST_SIZE
+from constants import DEBUG, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -43,25 +43,25 @@ KG_tag = knowledge_manager.KG_tag
 
 print(">Entrenando modelo...")
 nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=0, pretrained=True)
-
-print("\tWord2Vec")
-print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_word2vec(word='milk', n=5))
-print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_word2vec(word='egg', n=5))
-print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_word2vec(word='salt', n=5))
-print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_word2vec(word='sugar', n=5))
-print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_word2vec(word='ham', n=5))
-print("\tELMo")
-print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_elmo(word='milk', n=5))
-print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_elmo(word='egg', n=5))
-print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_elmo(word='salt', n=5))
-print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_elmo(word='sugar', n=5))
-print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_elmo(word='ham', n=5))
-print("\tBert")
-print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_bert(word='milk', n=5))
-print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_bert(word='egg', n=5))
-print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_bert(word='salt', n=5))
-print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_bert(word='sugar', n=5))
-print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_bert(word='ham', n=5))
+if DEBUG:
+    print("\tWord2Vec")
+    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_word2vec(word='milk', n=5))
+    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_word2vec(word='egg', n=5))
+    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_word2vec(word='salt', n=5))
+    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_word2vec(word='sugar', n=5))
+    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_word2vec(word='ham', n=5))
+    print("\tELMo")
+    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_elmo(word='milk', n=5))
+    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_elmo(word='egg', n=5))
+    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_elmo(word='salt', n=5))
+    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_elmo(word='sugar', n=5))
+    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_elmo(word='ham', n=5))
+    print("\tBert")
+    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_bert(word='milk', n=5))
+    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_bert(word='egg', n=5))
+    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_bert(word='salt', n=5))
+    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_bert(word='sugar', n=5))
+    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_bert(word='ham', n=5))
 
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
@@ -77,9 +77,10 @@ ingredient_manager = IngredientManager(requirements, ing_vocab, nlp_model=nlp.wo
 print(">Calculando estadísticas...")
 statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
 print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
-precision, recall = statistics.compute_statistics()
+precision, recall, f1 = statistics.compute_statistics()
 print("\tPrecisión:", precision)
 print("\tExhaustividad:", recall)
+print("\tF1:", f1)
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
