@@ -1,13 +1,11 @@
 import numpy as np
 
 PATH_DATASET = "../datasets/RAW_recipes.csv"
-PATH_ING_VOCAB = "../datasets/ingredients.json"
 PATH_TOKENS = "../models/tokenized_recipes.pickle"
 PATH_OUTPUT = "../output/"
 PATH_TRAIN = "../datasets/train_recipes.csv"
 PATH_TEST = "../datasets/test_recipes.csv"
 PATH_CACHE = "../models/usda_cache.json"
-PATH_IMP_ING = "../models/improved_ingredients.pickle"
 PATH_KG_ING = "../models/kg_ingredients.pickle"
 PATH_KG_TAG = "../models/kg_tags.pickle"
 PATH_ELMO_MODEL = "../models/elmo_model.pt"

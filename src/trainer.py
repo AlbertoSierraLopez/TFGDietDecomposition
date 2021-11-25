@@ -11,7 +11,7 @@ from gensim.models import Word2Vec
 
 class Trainer:
     def __init__(self, ing_vocab):
-        self.model_vocab = [ingredient for ingredient in ing_vocab if len(ingredient.split()) == 1]
+        self.ing_vocab = ing_vocab
 
     def elmo_model(self):
         print("\tNo se puede entrenar ELMo en PyCharm...")

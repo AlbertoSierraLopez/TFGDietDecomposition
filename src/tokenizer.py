@@ -1,6 +1,6 @@
 from collections import Counter
 
-from constants import PATH_TOKENS, PATH_IMP_ING, PATH_ING_VOCAB, TORCH_TOKENIZER, SPACY_TOKENIZER
+from constants import PATH_TOKENS, TORCH_TOKENIZER, SPACY_TOKENIZER
 import nltk
 import spacy
 import json
