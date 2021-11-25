@@ -17,8 +17,6 @@ class Tokenizer:
 
         self.spacy = spacy.load(SPACY_TOKENIZER)
 
-        self.ing_vocab = self.get_ing_vocab()
-
     @staticmethod
     def nltk_tokenize(sentences):
         tokens = []
@@ -100,36 +98,9 @@ class Tokenizer:
         return vocab, word2ind, ind2word
 
     @staticmethod
-    def get_ing_vocab():
-        with open(PATH_ING_VOCAB, encoding="utf8") as json_file:
-            off_json = json.load(json_file)     # OFF = OpenFoodFacts
+    def get_ing_vocab(ingredients):
+        ing_vocab = []
+        for recipe_ingredients in ingredients:
+            ing_vocab += recipe_ingredients
 
-        off = pd.json_normalize(off_json['tags'])
-
-        # Hay que hacer un pelín de limpieza en los datos, minúsculas y quitar guiones y números
-        return sorted([ingredient.lower().replace('-', ' ') for ingredient in off['name'] if len(ingredient) > 0 and
-                       ingredient[0] not in ['', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']])
-
-    def get_improved_ingredients(self, recipe_ingredients):
-        if os.path.exists(PATH_IMP_ING):
-            print("\tCargando ingredientes mejorados...")
-            pickle_in = open(PATH_IMP_ING, "rb")
-            improved_ingredients = pickle.load(pickle_in)
-            pickle_in.close()
-        else:
-            print("\tMejorando ingredientes nuevos...")
-            improved_ingredients = [self.improve_ingredients(recipe) for recipe in recipe_ingredients]
-            pickle_out = open(PATH_IMP_ING, "wb")
-            pickle.dump(PATH_IMP_ING, pickle_out)
-            pickle_out.close()
-
-        return improved_ingredients
-
-    def improve_ingredients(self, ingredients):
-        improved_ingredients = set()
-
-        for token in self.nltk_tokenize(ingredients):
-            if token in self.ing_vocab:
-                improved_ingredients.add(token)
-
-        return sorted(improved_ingredients)
+        return sorted(set(ing_vocab))

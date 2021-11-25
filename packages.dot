@@ -2,18 +2,31 @@ digraph "packages" {
 rankdir=BT
 charset="utf-8"
 "src" [color="black", label="src", shape="box", style="solid"];
+"src.constants" [color="black", label="src.constants", shape="box", style="solid"];
 "src.data_loader" [color="black", label="src.data_loader", shape="box", style="solid"];
 "src.dimensionality_reduction" [color="black", label="src.dimensionality_reduction", shape="box", style="solid"];
 "src.ingredient_manager" [color="black", label="src.ingredient_manager", shape="box", style="solid"];
 "src.knowledge_manager" [color="black", label="src.knowledge_manager", shape="box", style="solid"];
 "src.language_processer" [color="black", label="src.language_processer", shape="box", style="solid"];
 "src.main" [color="black", label="src.main", shape="box", style="solid"];
+"src.statistics" [color="black", label="src.statistics", shape="box", style="solid"];
 "src.tokenizer" [color="black", label="src.tokenizer", shape="box", style="solid"];
 "src.trainer" [color="black", label="src.trainer", shape="box", style="solid"];
+"src.data_loader" -> "src.constants" [arrowhead="open", arrowtail="none"];
+"src.ingredient_manager" -> "src.constants" [arrowhead="open", arrowtail="none"];
+"src.knowledge_manager" -> "src.constants" [arrowhead="open", arrowtail="none"];
+"src.language_processer" -> "src.constants" [arrowhead="open", arrowtail="none"];
 "src.language_processer" -> "src.trainer" [arrowhead="open", arrowtail="none"];
+"src.main" -> "src.constants" [arrowhead="open", arrowtail="none"];
 "src.main" -> "src.data_loader" [arrowhead="open", arrowtail="none"];
 "src.main" -> "src.ingredient_manager" [arrowhead="open", arrowtail="none"];
 "src.main" -> "src.knowledge_manager" [arrowhead="open", arrowtail="none"];
 "src.main" -> "src.language_processer" [arrowhead="open", arrowtail="none"];
+"src.main" -> "src.statistics" [arrowhead="open", arrowtail="none"];
 "src.main" -> "src.tokenizer" [arrowhead="open", arrowtail="none"];
+"src.statistics" -> "src.constants" [arrowhead="open", arrowtail="none"];
+"src.statistics" -> "src.data_loader" [arrowhead="open", arrowtail="none"];
+"src.statistics" -> "src.tokenizer" [arrowhead="open", arrowtail="none"];
+"src.tokenizer" -> "src.constants" [arrowhead="open", arrowtail="none"];
+"src.trainer" -> "src.constants" [arrowhead="open", arrowtail="none"];
 }

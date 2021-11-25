@@ -11,6 +11,9 @@ from statistics import Statistics
 from tokenizer import Tokenizer
 
 # Preparar carpetas del sistema
+if not os.path.exists('../datasets'):
+    print(">Directorio 'datasets' creado")
+    os.mkdir('../datasets')
 if not os.path.exists('../models'):
     print(">Directorio 'models' creado")
     os.mkdir('../models')
@@ -34,21 +37,19 @@ ingredients = data_loader.get_column('ingredients')
 print(">Tokenizando recetas...")
 tokenizer = Tokenizer()
 tokenized_recipes = tokenizer.get_tokenized_recipes(recipes)
-print(">Mejorando ingredientes...")
-improved_ingredients = tokenizer.get_improved_ingredients(ingredients)
 
 # No se utiliza ahora mismo:
 print(">Extrayendo vocabulario...")
 vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
-ing_vocab = tokenizer.ing_vocab
+ing_vocab = tokenizer.get_ing_vocab(ingredients)
 
-print(">Elaborando grafo de conocimiento...")
-knowledge_manager = KnowledgeManager(improved_ingredients, tags.tolist())
+print(">Elaborando grafos de conocimiento...")
+knowledge_manager = KnowledgeManager(ingredients, tags.tolist())
 KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
 
 print(">Entrenando modelo...")
-nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=0, pretrained=True)
+nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=1, pretrained=True)
 if DEBUG:
     print("\tWord2Vec")
     print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_word2vec(word='milk', n=5))

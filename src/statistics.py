@@ -1,3 +1,5 @@
+import atexit
+
 from fuzzywuzzy import fuzz
 
 from constants import TEST_SIZE, DEBUG
@@ -15,6 +17,8 @@ class Statistics:
         self.tokenizer = Tokenizer()
 
         self.debug_file = open("../output/coincide_debug.txt", 'w+')
+
+        atexit.register(self.exit_handler)
 
     # Estadísticas sobre detección de ingredientes
     def compute_statistics(self):
