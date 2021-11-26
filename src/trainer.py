@@ -12,6 +12,7 @@ from gensim.models import Word2Vec
 class Trainer:
     def __init__(self, ing_vocab):
         self.ing_vocab = ing_vocab
+        self.ing_vocab_batches = [ing_vocab[x:x+1000] for x in range(0, len(ing_vocab), 1000)]
 
     def elmo_model(self):
         print("\tNo se puede entrenar ELMo en PyCharm...")
@@ -24,12 +25,16 @@ class Trainer:
     #                   "elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5"
     #     elmo = ElmoTokenEmbedder(options_file, weight_file)
     #
-    #     embeddings = elmo(batch_to_ids(self.model_vocab))
+    #     embeddings = []
+    #     for batch in self.ing_vocab_batches:
+    #         embeddings += elmo(batch_to_ids(batch))
+    #         print('#', end='')
+    #     print()
     #
     #     elmo_model = dict()
     #
-    #     for i in range(len(self.model_vocab)):
-    #         elmo_model[self.model_vocab[i]] = torch.mean(embeddings[i].detach(), 0)
+    #     for i in range(len(self.ing_vocab)):
+    #         elmo_model[self.ing_vocab[i]] = torch.mean(embeddings[i].detach(), 0)
     #
     #     torch.save(elmo_model, PATH_ELMO_MODEL)
     #     return elmo_model
@@ -41,12 +46,12 @@ class Trainer:
     #
     #     bert_embeddings = Bert.BertEmbeddings()
     #
-    #     embeddings = bert_embeddings(self.model_vocab)
+    #     embeddings = bert_embeddings(self.ing_vocab)
     #
     #     bert_model = dict()
     #
-    #     for i in range(len(self.model_vocab)):
-    #         bert_model[self.model_vocab[i]] = list(embeddings[i]['embeddings_map'].values())[0]
+    #     for i in range(len(self.ing_vocab)):
+    #         bert_model[self.ing_vocab[i]] = list(embeddings[i]['embeddings_map'].values())[0]
     #
     #     torch.save(bert_model, PATH_BERT_MODEL)
     #     return bert_model
