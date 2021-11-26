@@ -48,6 +48,7 @@ class IngredientManager:
     def is_ingredient(self, token):
         return token in self.ing_vocab
 
+    # Necesita refinarse bastante
     def is_ingredient_v2(self, token):
         for ingredient in self.ing_vocab:
             lev_ratio = fuzz.partial_ratio(token, ingredient)
