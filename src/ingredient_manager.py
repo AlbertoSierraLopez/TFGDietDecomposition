@@ -6,6 +6,7 @@ import atexit
 import pandas as pd
 
 from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY
+from fuzzywuzzy import fuzz
 from sortedcollections import ValueSortedDict
 from scipy.spatial import distance
 
@@ -38,12 +39,22 @@ class IngredientManager:
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
 
-        self.ingredients = sorted(set([token for token in tokenized_recipe if token in self.ing_vocab]))
+        self.ingredients = sorted(set([token for token in tokenized_recipe if self.is_ingredient(token)]))
         self.unwanted = self.unwanted_ingredients()
 
         self.replacements = self.get_replacements()
 
 # MODULO 2
+    def is_ingredient(self, token):
+        return token in self.ing_vocab
+
+    def is_ingredient_v2(self, token):
+        for ingredient in self.ing_vocab:
+            lev_ratio = fuzz.partial_ratio(token, ingredient)
+            if lev_ratio > 80:
+                return True
+        return False
+
     def unwanted_ingredients(self):
         unwanted_ingredients = []
 

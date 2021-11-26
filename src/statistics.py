@@ -66,7 +66,7 @@ class Statistics:
         false_positives = 0
 
         for real_ingredient in real_ingredients:
-            if self.coincide(real_ingredient, detected_ingredients):
+            if self.match(real_ingredient, detected_ingredients):
                 true_positives += 1
             else:
                 false_positives += 1
@@ -75,14 +75,14 @@ class Statistics:
 
         return true_positives, false_positives, false_negatives
 
-    def coincide(self, real_ingredient, detected_ingredients):
+    def match(self, real_ingredient, detected_ingredients):
         for detected_ingredient in detected_ingredients:
             lev_ratio = fuzz.partial_ratio(real_ingredient, detected_ingredient)
 
             if DEBUG:
                 self.debug_file.write(real_ingredient + ' / ' + detected_ingredient + ' -> ' + str(lev_ratio) + '\n')
 
-            if lev_ratio >= 75:
+            if lev_ratio >= 80:
                 return True
 
         return False
