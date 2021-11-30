@@ -137,10 +137,10 @@ class IngredientManager:
         if food in self.usda_cache:
             response = self.usda_cache[food]
         else:
-            response = requests.get("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food +
-                                    "&pageSize=10&api_key=" + API_KEY).json()
-            self.usda_cache[food] = response
-        return response
+            payload = {'query': food, 'dataType': 'Survey (FNDDS)', 'requireAllWords': True}
+            response = requests.get('https://api.nal.usda.gov/fdc/v1/foods/search?api_key=+' + API_KEY, params=payload)
+            self.usda_cache[food] = response.json()
+        return response.json()
 
     # Devuelve la primera fila de la query como dataframe
     def get_info(self, food):
