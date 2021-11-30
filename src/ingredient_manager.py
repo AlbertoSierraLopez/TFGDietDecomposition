@@ -39,20 +39,27 @@ class IngredientManager:
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
 
-        self.ingredients = sorted(set([token for token in tokenized_recipe if self.is_ingredient(token)]))
+        self.ingredients = self.detect_ingredients()
         self.unwanted = self.unwanted_ingredients()
 
         self.replacements = self.get_replacements()
 
 # MODULO 2
-    def is_ingredient(self, token):
+    def detect_ingredients(self):
+        return sorted(set([token for token in self.tokenized_recipe if self.is_ingredient_v1(token)]))
+
+#   Detectores de ingredientes:
+    # 1. Pertenece al vocabulario
+    def is_ingredient_v1(self, token):
         return token in self.ing_vocab
 
-    # Necesita refinarse bastante
+    # 2. Usando la distancia de Levenshtein con el vocabulario
     def is_ingredient_v2(self, token):
         for ingredient in self.ing_vocab:
-            lev_ratio = fuzz.partial_ratio(token, ingredient)
-            if lev_ratio > 80:
+            lev_patial_ratio = fuzz.partial_ratio(token, ingredient)
+            lev_ratio = fuzz.ratio(token, ingredient)
+            # Comprobar que el termino del vocabulario contiene el token, y si es compuesto, no es muy diferente
+            if lev_ratio > 80 and lev_patial_ratio == 100:
                 return True
         return False
 
