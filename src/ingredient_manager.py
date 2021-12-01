@@ -3,16 +3,17 @@ import os
 import requests
 import nltk
 import atexit
+import spacy
 import pandas as pd
 
-from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY
+from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY, SPACY_TOKENIZER
 from fuzzywuzzy import fuzz
 from sortedcollections import ValueSortedDict
 from scipy.spatial import distance
 
 
 class IngredientManager:
-    def __init__(self, requirements, ing_vocab, nlp_model, model_type, kg_ing, kg_tag):
+    def __init__(self, requirements, ing_vocab, nlp_model, model_type, kg_ing, kg_tag, chunks=False):
         self.recipe = None
         self.tokenized_recipe = None
         self.ingredients = None
@@ -25,6 +26,8 @@ class IngredientManager:
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
+        self.chunks = chunks    # Si se usan chunks cambia la detección de ingredientes y la búsqueda de similares
+        self.spacy = spacy.load(SPACY_TOKENIZER)
 
         # proxy cache
         if os.path.exists(PATH_CACHE):
@@ -39,14 +42,30 @@ class IngredientManager:
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
 
-        self.ingredients = self.detect_ingredients()
+        if not self.chunks:
+            self.ingredients = self.detect_ingredients()
+        else:
+            self.ingredients = self.detect_ingredients_chunks()
+
         self.unwanted = self.unwanted_ingredients()
 
         self.replacements = self.get_replacements()
 
 # MODULO 2
+    # 1. Tokenizar receta
     def detect_ingredients(self):
         return sorted(set([token for token in self.tokenized_recipe if self.is_ingredient_v1(token)]))
+
+    # 2. Sacar chunks de receta
+    def detect_ingredients_chunks(self):
+        detected_ingredients = []
+        doc = self.spacy(self.recipe)
+
+        for chunk in doc.noun_chunks:
+            if self.is_ingredient_chunk(chunk.text):
+                detected_ingredients.append(chunk.text)
+
+        return sorted(set(detected_ingredients))
 
 #   Detectores de ingredientes:
     # 1. Pertenece al vocabulario
@@ -63,6 +82,16 @@ class IngredientManager:
                 return True
         return False
 
+#   Detector de ingredientes en chunks:
+    def is_ingredient_chunk(self, chunk):
+        for ingredient in self.ing_vocab:
+            lev_ratio = fuzz.ratio(chunk, ingredient)
+            if lev_ratio > 80:
+                # print(chunk, "-", ingredient, "->", lev_ratio)
+                return True
+        return False
+
+# Evaluación de ingredientes:
     def unwanted_ingredients(self):
         unwanted_ingredients = []
 
@@ -142,16 +171,21 @@ class IngredientManager:
 
     def query(self, food):
         if food in self.usda_cache:
-            response = self.usda_cache[food]
+            return self.usda_cache[food]
         else:
-            payload = {'query': food, 'dataType': 'Survey (FNDDS)', 'requireAllWords': True}
-            response = requests.get('https://api.nal.usda.gov/fdc/v1/foods/search?api_key=+' + API_KEY, params=payload)
-            self.usda_cache[food] = response.json()
-        return response.json()
+            payload = {'query': food, 'requireAllWords': True}  # 'dataType': 'Survey (FNDDS)'
+            response = requests.get('https://api.nal.usda.gov/fdc/v1/foods/search?api_key=' + API_KEY, params=payload)
+            if response.status_code != 200 or response.json()['totalHits'] == 0:
+                return None
+            else:
+                self.usda_cache[food] = response.json()
+                return response.json()
 
     # Devuelve la primera fila de la query como dataframe
     def get_info(self, food):
         response = self.query(food)
+        if response is None:
+            return None
 
         food_df = pd.json_normalize(response['foods'])
         if len(food_df) > 0:
@@ -208,18 +242,6 @@ class IngredientManager:
         return total_nutrients
 
 # MODULO 3
-    def replace_unwanted(self):
-        if self.recipe is None:
-            raise Exception("No recipe is loaded.")
-
-        new_recipe = []
-        for token in nltk.word_tokenize(self.recipe):
-            if token in self.unwanted:
-                token = self.replacements[token]
-            new_recipe.append(token)
-
-        return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(new_recipe)
-
     def get_replacements(self):
         replacements = dict()
 
@@ -229,13 +251,29 @@ class IngredientManager:
         return replacements
 
     def find_replacement(self, ingredient):
-        # Comprueba que exista la palabra en el modelo NLP:
-        if ingredient in self.nlp_model:
-            # Comprueba los 25 ingredientes más cercanos:
-            for (alternative, similarity) in self.most_similar(ingredient, topn=25):
-                # Comprobar que es un ingrediente y que es válido
-                if (alternative in self.ing_vocab) and (self.passes_requirements(alternative)):
-                    return alternative
+        # Los ingredientes son tokens:
+        if not self.chunks:
+            # Comprueba que exista la palabra en el modelo NLP:
+            if ingredient in self.nlp_model:
+                # Comprueba los 25 ingredientes más cercanos:
+                for (alternative, similarity) in self.most_similar(ingredient, topn=25):
+                    # Comprobar que es un ingrediente y que es válido
+                    if self.is_ingredient_v1(alternative) and self.passes_requirements(alternative):
+                        return alternative
+
+        # Los ingredientes son varias palabras (es necesario Word2Vec):
+        elif self.model_type in ['word2vec']:
+            ingredient_words = [word.replace(',', '') for word in ingredient.replace('-', ' ').split()]
+            for word in ingredient_words:
+                # Comprobar que el ingrediente está formado por palabras que existen en el modelo:
+                if word not in self.nlp_model:
+                    return '<None>'
+
+                for (alternative, similarity) in self.nlp_model.most_similar(positive=ingredient_words, topn=25):
+                    # alternative sí que va a ser un token
+                    if self.is_ingredient_v1(alternative) and self.passes_requirements(alternative):
+                        return alternative
+
         return '<None>'     # Si no encuentra nada, lo mejor es eliminar el ingrediente de la receta y no sustituirlo
 
     def most_similar(self, target, topn=25):
@@ -265,6 +303,25 @@ class IngredientManager:
             sorted_distances = sorted(distances)
 
             return sorted_distances[1:topn+1]    # Se quita el primero porque es el target (cos_distance = 0.0)
+
+    def replace_unwanted(self):
+        if self.recipe is None:
+            raise Exception("No recipe is loaded.")
+
+        if not self.chunks:
+            new_recipe = []
+            for token in nltk.word_tokenize(self.recipe):
+                if token in self.unwanted:
+                    token = self.replacements[token]
+                new_recipe.append(token)
+
+            return nltk.tokenize.treebank.TreebankWordDetokenizer().detokenize(new_recipe)
+
+        else:
+            new_recipe = self.recipe
+            for (key, value) in self.replacements.items():
+                new_recipe.replace(key, value)
+            return new_recipe.replace(' ,', ',')
 
     def exit_handler(self):
         print("\tSalvando caché...")

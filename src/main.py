@@ -78,18 +78,18 @@ start_time = time()
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
 ingredient_manager = IngredientManager(requirements, ing_vocab, nlp_model=nlp.word2vec_model, model_type='word2vec',
-                                       kg_ing=KG_ing, kg_tag=KG_tag)
+                                       kg_ing=KG_ing, kg_tag=KG_tag, chunks=False)
 
 # Sacar estadísticas:
-print(">Calculando estadísticas...")
-statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
-print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
-precision, recall, f1 = statistics.compute_statistics()
-print("\tPrecisión:", precision)
-print("\tExhaustividad:", recall)
-print("\tF1:", f1)
-
-print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
+if DEBUG:
+    print(">Calculando estadísticas...")
+    statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
+    print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
+    precision, recall, f1 = statistics.compute_statistics()
+    print("\tPrecisión:", precision)
+    print("\tExhaustividad:", recall)
+    print("\tF1:", f1)
+    print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
 
 
@@ -109,7 +109,8 @@ while (key_continue == 'Y') or (key_continue == 'S'):
     ingredient_manager.load_recipe(clean_recipe, tokenizer.spacy_tokenize_pro_str(input_recipe))
     print("\tIngredientes detectados:", ingredient_manager.ingredients)
     print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
-    print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
+    if DEBUG:
+        print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
 
     # MODULO 3
     print(">Buscando sustituciones...")
