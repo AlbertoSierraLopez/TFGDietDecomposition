@@ -77,7 +77,7 @@ start_time = time()
 
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
-ingredient_manager = IngredientManager(requirements, ing_vocab, nlp_model=nlp.word2vec_model, model_type='word2vec',
+ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model=nlp.word2vec_model, model_type='word2vec',
                                        kg_ing=KG_ing, kg_tag=KG_tag, chunks=False)
 
 # Sacar estadísticas:

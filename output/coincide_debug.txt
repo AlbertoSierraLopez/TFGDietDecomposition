@@ -1,0 +1,3561 @@
+winter squash / butter -> 50
+winter squash / honey -> 40
+winter squash / oil -> 33
+winter squash / olive -> 40
+winter squash / piloncillo -> 20
+winter squash / salt -> 50
+winter squash / seasoning -> 33
+winter squash / seeds -> 40
+winter squash / spice -> 20
+winter squash / squash -> 100
+mexican seasoning / butter -> 17
+mexican seasoning / honey -> 40
+mexican seasoning / oil -> 67
+mexican seasoning / olive -> 40
+mexican seasoning / piloncillo -> 30
+mexican seasoning / salt -> 50
+mexican seasoning / seasoning -> 100
+mixed spice / butter -> 17
+mixed spice / honey -> 20
+mixed spice / oil -> 33
+mixed spice / olive -> 40
+mixed spice / piloncillo -> 30
+mixed spice / salt -> 25
+mixed spice / seasoning -> 33
+mixed spice / seeds -> 60
+mixed spice / spice -> 100
+honey / butter -> 20
+honey / honey -> 100
+butter / butter -> 100
+olive oil / butter -> 17
+olive oil / honey -> 20
+olive oil / oil -> 100
+salt / butter -> 25
+salt / honey -> 0
+salt / oil -> 33
+salt / olive -> 25
+salt / piloncillo -> 25
+salt / salt -> 100
+prepared pizza crust / cheese -> 33
+prepared pizza crust / egg -> 33
+prepared pizza crust / eggs -> 25
+prepared pizza crust / milk -> 25
+prepared pizza crust / pizza -> 100
+sausage patty / cheese -> 17
+sausage patty / egg -> 33
+sausage patty / eggs -> 25
+sausage patty / milk -> 0
+sausage patty / pizza -> 40
+sausage patty / sausage -> 100
+eggs / cheese -> 50
+eggs / egg -> 100
+milk / cheese -> 0
+milk / egg -> 0
+milk / eggs -> 0
+milk / milk -> 100
+salt and pepper / cheese -> 33
+salt and pepper / egg -> 33
+salt and pepper / eggs -> 25
+salt and pepper / milk -> 25
+salt and pepper / pizza -> 20
+salt and pepper / sausage -> 43
+salt and pepper / taste -> 40
+cheese / cheese -> 100
+ground beef / beans -> 44
+ground beef / beef -> 100
+yellow onions / beans -> 40
+yellow onions / beef -> 25
+yellow onions / cheese -> 17
+yellow onions / chili -> 20
+yellow onions / ingredients -> 36
+yellow onions / kidney -> 33
+yellow onions / lettuce -> 14
+yellow onions / onions -> 100
+diced tomatoes / beans -> 40
+diced tomatoes / beef -> 25
+diced tomatoes / cheese -> 33
+diced tomatoes / chili -> 20
+diced tomatoes / ingredients -> 36
+diced tomatoes / kidney -> 33
+diced tomatoes / lettuce -> 29
+diced tomatoes / onions -> 33
+diced tomatoes / sautee -> 50
+tomato paste / beans -> 40
+tomato paste / beef -> 25
+tomato paste / cheese -> 33
+tomato paste / chili -> 0
+tomato paste / ingredients -> 18
+tomato paste / kidney -> 17
+tomato paste / lettuce -> 29
+tomato paste / onions -> 33
+tomato paste / sautee -> 50
+tomato soup / beans -> 40
+tomato soup / beef -> 0
+tomato soup / cheese -> 17
+tomato soup / chili -> 0
+tomato soup / ingredients -> 18
+tomato soup / kidney -> 0
+tomato soup / lettuce -> 29
+tomato soup / onions -> 33
+tomato soup / sautee -> 33
+rotel tomatoes / beans -> 40
+rotel tomatoes / beef -> 25
+rotel tomatoes / cheese -> 33
+rotel tomatoes / chili -> 20
+rotel tomatoes / ingredients -> 27
+rotel tomatoes / kidney -> 17
+rotel tomatoes / lettuce -> 43
+rotel tomatoes / onions -> 33
+rotel tomatoes / sautee -> 50
+kidney beans / beans -> 100
+water / beans -> 20
+water / beef -> 25
+water / cheese -> 20
+water / chili -> 0
+water / ingredients -> 20
+water / kidney -> 20
+water / lettuce -> 40
+water / onions -> 0
+water / sautee -> 60
+chili powder / beans -> 20
+chili powder / beef -> 25
+chili powder / cheese -> 33
+chili powder / chili -> 100
+ground cumin / beans -> 20
+ground cumin / beef -> 0
+ground cumin / cheese -> 17
+ground cumin / chili -> 40
+ground cumin / ingredients -> 36
+ground cumin / kidney -> 33
+ground cumin / lettuce -> 14
+ground cumin / onions -> 33
+ground cumin / sautee -> 17
+salt / beans -> 25
+salt / beef -> 0
+salt / cheese -> 25
+salt / chili -> 25
+salt / ingredients -> 25
+salt / kidney -> 0
+salt / lettuce -> 50
+salt / onions -> 25
+salt / sautee -> 75
+lettuce / beans -> 20
+lettuce / beef -> 25
+lettuce / cheese -> 33
+lettuce / chili -> 20
+lettuce / ingredients -> 29
+lettuce / kidney -> 17
+lettuce / lettuce -> 100
+cheddar cheese / beans -> 40
+cheddar cheese / beef -> 50
+cheddar cheese / cheese -> 100
+spreadable cheese with garlic and herbs / ingredients -> 36
+spreadable cheese with garlic and herbs / peppers -> 43
+spreadable cheese with garlic and herbs / potatoes -> 25
+new potatoes / ingredients -> 27
+new potatoes / peppers -> 29
+new potatoes / potatoes -> 100
+shallots / ingredients -> 25
+shallots / peppers -> 14
+shallots / potatoes -> 38
+parsley / ingredients -> 29
+parsley / peppers -> 43
+parsley / potatoes -> 43
+tarragon / ingredients -> 25
+tarragon / peppers -> 14
+tarragon / potatoes -> 38
+olive oil / ingredients -> 33
+olive oil / peppers -> 14
+olive oil / potatoes -> 12
+red wine vinegar / ingredients -> 45
+red wine vinegar / peppers -> 29
+red wine vinegar / potatoes -> 12
+salt / ingredients -> 25
+salt / peppers -> 25
+salt / potatoes -> 50
+pepper / ingredients -> 33
+pepper / peppers -> 100
+red bell pepper / ingredients -> 27
+red bell pepper / peppers -> 92
+yellow bell pepper / ingredients -> 18
+yellow bell pepper / peppers -> 92
+tomato juice / ingredients -> 18
+tomato juice / jar -> 33
+tomato juice / jars -> 25
+tomato juice / ketchup -> 29
+apple cider vinegar / ingredients -> 36
+apple cider vinegar / jar -> 67
+apple cider vinegar / jars -> 50
+apple cider vinegar / ketchup -> 29
+sugar / ingredients -> 40
+sugar / jar -> 67
+sugar / jars -> 57
+sugar / ketchup -> 20
+salt / ingredients -> 25
+salt / jar -> 33
+salt / jars -> 25
+salt / ketchup -> 0
+pepper / ingredients -> 33
+pepper / jar -> 33
+pepper / jars -> 25
+pepper / ketchup -> 33
+clove oil / ingredients -> 22
+clove oil / jar -> 0
+clove oil / jars -> 0
+clove oil / ketchup -> 14
+cinnamon oil / ingredients -> 27
+cinnamon oil / jar -> 33
+cinnamon oil / jars -> 25
+cinnamon oil / ketchup -> 0
+dry mustard / ingredients -> 18
+dry mustard / jar -> 67
+dry mustard / jars -> 50
+dry mustard / ketchup -> 14
+milk / cinnamon -> 25
+milk / ingredients -> 25
+vanilla ice cream / cinnamon -> 38
+vanilla ice cream / ingredients -> 27
+frozen apple juice concentrate / cinnamon -> 38
+frozen apple juice concentrate / ingredients -> 36
+apple / cinnamon -> 20
+apple / ingredients -> 20
+fennel seeds / fennel -> 100
+green olives / fennel -> 50
+green olives / ingredients -> 45
+green olives / seeds -> 40
+green olives / toast -> 20
+ripe olives / fennel -> 33
+ripe olives / ingredients -> 45
+ripe olives / seeds -> 40
+ripe olives / toast -> 20
+garlic / fennel -> 17
+garlic / ingredients -> 50
+garlic / seeds -> 0
+garlic / toast -> 20
+peppercorn / fennel -> 33
+peppercorn / ingredients -> 30
+peppercorn / seeds -> 40
+peppercorn / toast -> 20
+orange rind / fennel -> 33
+orange rind / ingredients -> 45
+orange rind / seeds -> 20
+orange rind / toast -> 40
+orange juice / fennel -> 33
+orange juice / ingredients -> 48
+orange juice / seeds -> 20
+orange juice / toast -> 40
+red chile / fennel -> 17
+red chile / ingredients -> 59
+red chile / seeds -> 40
+red chile / toast -> 0
+extra virgin olive oil / fennel -> 33
+extra virgin olive oil / ingredients -> 36
+extra virgin olive oil / seeds -> 20
+extra virgin olive oil / toast -> 40
+pork spareribs / chili -> 20
+pork spareribs / cilantro -> 25
+pork spareribs / garlic -> 50
+pork spareribs / ginger -> 33
+pork spareribs / ingredients -> 36
+pork spareribs / pepper -> 50
+pork spareribs / ribs -> 100
+soy sauce / chili -> 20
+soy sauce / cilantro -> 12
+soy sauce / garlic -> 33
+soy sauce / ginger -> 17
+soy sauce / ingredients -> 11
+soy sauce / pepper -> 17
+soy sauce / ribs -> 25
+soy sauce / salt -> 50
+soy sauce / sauce -> 100
+fresh garlic / chili -> 40
+fresh garlic / cilantro -> 25
+fresh garlic / garlic -> 100
+fresh ginger / chili -> 40
+fresh ginger / cilantro -> 38
+fresh ginger / garlic -> 33
+fresh ginger / ginger -> 100
+chili powder / chili -> 100
+fresh coarse ground black pepper / chili -> 20
+fresh coarse ground black pepper / cilantro -> 38
+fresh coarse ground black pepper / garlic -> 33
+fresh coarse ground black pepper / ginger -> 33
+fresh coarse ground black pepper / ingredients -> 27
+fresh coarse ground black pepper / pepper -> 100
+salt / chili -> 25
+salt / cilantro -> 50
+salt / garlic -> 50
+salt / ginger -> 0
+salt / ingredients -> 25
+salt / pepper -> 0
+salt / ribs -> 25
+salt / salt -> 100
+fresh cilantro leaves / chili -> 60
+fresh cilantro leaves / cilantro -> 100
+tomato sauce / chili -> 20
+tomato sauce / cilantro -> 38
+tomato sauce / garlic -> 33
+tomato sauce / ginger -> 17
+tomato sauce / ingredients -> 18
+tomato sauce / pepper -> 17
+tomato sauce / ribs -> 25
+tomato sauce / salt -> 50
+tomato sauce / sauce -> 100
+brown sugar / chili -> 0
+brown sugar / cilantro -> 25
+brown sugar / garlic -> 50
+brown sugar / ginger -> 33
+brown sugar / ingredients -> 27
+brown sugar / pepper -> 17
+brown sugar / ribs -> 25
+brown sugar / salt -> 50
+brown sugar / sauce -> 40
+brown sugar / soy -> 33
+brown sugar / wrap -> 25
+yellow onion / chili -> 20
+yellow onion / cilantro -> 25
+yellow onion / garlic -> 17
+yellow onion / ginger -> 33
+yellow onion / ingredients -> 27
+yellow onion / pepper -> 17
+yellow onion / ribs -> 25
+yellow onion / salt -> 25
+yellow onion / sauce -> 0
+yellow onion / soy -> 33
+yellow onion / wrap -> 25
+white vinegar / chili -> 40
+white vinegar / cilantro -> 38
+white vinegar / garlic -> 50
+white vinegar / ginger -> 67
+white vinegar / ingredients -> 36
+white vinegar / pepper -> 33
+white vinegar / ribs -> 25
+white vinegar / salt -> 25
+white vinegar / sauce -> 20
+white vinegar / soy -> 0
+white vinegar / wrap -> 25
+honey / chili -> 20
+honey / cilantro -> 20
+honey / garlic -> 0
+honey / ginger -> 40
+honey / ingredients -> 20
+honey / pepper -> 20
+honey / ribs -> 0
+honey / salt -> 0
+honey / sauce -> 20
+honey / soy -> 33
+honey / wrap -> 0
+a.1. original sauce / chili -> 40
+a.1. original sauce / cilantro -> 25
+a.1. original sauce / garlic -> 50
+a.1. original sauce / ginger -> 50
+a.1. original sauce / ingredients -> 45
+a.1. original sauce / pepper -> 17
+a.1. original sauce / ribs -> 50
+a.1. original sauce / salt -> 50
+a.1. original sauce / sauce -> 100
+liquid smoke / chili -> 20
+liquid smoke / cilantro -> 25
+liquid smoke / garlic -> 33
+liquid smoke / ginger -> 17
+liquid smoke / ingredients -> 27
+liquid smoke / pepper -> 17
+liquid smoke / ribs -> 50
+liquid smoke / salt -> 25
+liquid smoke / sauce -> 40
+liquid smoke / soy -> 67
+liquid smoke / wrap -> 0
+cracked black pepper / chili -> 20
+cracked black pepper / cilantro -> 25
+cracked black pepper / garlic -> 33
+cracked black pepper / ginger -> 33
+cracked black pepper / ingredients -> 27
+cracked black pepper / pepper -> 100
+cumin / chili -> 40
+cumin / cilantro -> 60
+cumin / garlic -> 20
+cumin / ginger -> 40
+cumin / ingredients -> 40
+cumin / pepper -> 0
+cumin / ribs -> 25
+cumin / salt -> 0
+cumin / sauce -> 20
+cumin / soy -> 0
+cumin / wrap -> 0
+dry mustard / chili -> 0
+dry mustard / cilantro -> 25
+dry mustard / garlic -> 33
+dry mustard / ginger -> 17
+dry mustard / ingredients -> 18
+dry mustard / pepper -> 17
+dry mustard / ribs -> 25
+dry mustard / salt -> 50
+dry mustard / sauce -> 40
+dry mustard / soy -> 33
+dry mustard / wrap -> 25
+cinnamon sticks / chili -> 40
+cinnamon sticks / cilantro -> 50
+cinnamon sticks / garlic -> 33
+cinnamon sticks / ginger -> 33
+cinnamon sticks / ingredients -> 36
+cinnamon sticks / pepper -> 0
+cinnamon sticks / ribs -> 50
+cinnamon sticks / salt -> 50
+cinnamon sticks / sauce -> 40
+cinnamon sticks / soy -> 33
+cinnamon sticks / wrap -> 25
+orange, juice of / chili -> 20
+orange, juice of / cilantro -> 25
+orange, juice of / garlic -> 33
+orange, juice of / ginger -> 50
+orange, juice of / ingredients -> 45
+orange, juice of / pepper -> 17
+orange, juice of / ribs -> 25
+orange, juice of / salt -> 25
+orange, juice of / sauce -> 60
+orange, juice of / soy -> 33
+orange, juice of / wrap -> 50
+mirin / chili -> 44
+mirin / cilantro -> 40
+mirin / garlic -> 40
+mirin / ginger -> 40
+mirin / ingredients -> 40
+mirin / pepper -> 20
+mirin / ribs -> 50
+mirin / salt -> 0
+mirin / sauce -> 0
+mirin / soy -> 0
+mirin / wrap -> 25
+water / chili -> 0
+water / cilantro -> 60
+water / garlic -> 40
+water / ginger -> 40
+water / ingredients -> 20
+water / pepper -> 40
+water / ribs -> 25
+water / salt -> 50
+water / sauce -> 40
+water / soy -> 0
+water / wrap -> 50
+chocolate sandwich style cookies / bananas -> 29
+chocolate sandwich style cookies / cake -> 50
+chocolate sandwich style cookies / chocolate -> 100
+chocolate syrup / bananas -> 29
+chocolate syrup / cake -> 50
+chocolate syrup / chocolate -> 100
+vanilla ice cream / bananas -> 43
+vanilla ice cream / cake -> 50
+vanilla ice cream / chocolate -> 33
+vanilla ice cream / cookies -> 29
+vanilla ice cream / cream -> 100
+bananas / bananas -> 100
+strawberry ice cream / bananas -> 14
+strawberry ice cream / cake -> 50
+strawberry ice cream / chocolate -> 35
+strawberry ice cream / cookies -> 29
+strawberry ice cream / cream -> 100
+whipped cream / bananas -> 14
+whipped cream / cake -> 50
+whipped cream / chocolate -> 24
+whipped cream / cookies -> 29
+whipped cream / cream -> 100
+sugar / banana -> 20
+sugar / bananas -> 20
+sugar / batter -> 40
+sugar / butter -> 40
+sugar / cream -> 20
+sugar / eggs -> 25
+sugar / ingredients -> 40
+sugar / juice -> 20
+sugar / lemon -> 0
+sugar / loaf -> 25
+sugar / orange -> 20
+sugar / rind -> 25
+sugar / sugar -> 100
+unsalted butter / banana -> 17
+unsalted butter / bananas -> 14
+unsalted butter / batter -> 83
+bananas / banana -> 100
+eggs / banana -> 0
+eggs / bananas -> 25
+eggs / batter -> 25
+eggs / butter -> 25
+eggs / cream -> 25
+eggs / eggs -> 100
+fresh lemon juice / banana -> 17
+fresh lemon juice / bananas -> 14
+fresh lemon juice / batter -> 17
+fresh lemon juice / butter -> 33
+fresh lemon juice / cream -> 40
+fresh lemon juice / eggs -> 50
+fresh lemon juice / ingredients -> 36
+fresh lemon juice / juice -> 100
+orange rind / banana -> 33
+orange rind / bananas -> 29
+orange rind / batter -> 50
+orange rind / butter -> 33
+orange rind / cream -> 40
+orange rind / eggs -> 25
+orange rind / ingredients -> 45
+orange rind / juice -> 20
+orange rind / lemon -> 40
+orange rind / loaf -> 50
+orange rind / orange -> 100
+cake flour / banana -> 17
+cake flour / bananas -> 14
+cake flour / batter -> 33
+cake flour / butter -> 33
+cake flour / cream -> 40
+cake flour / eggs -> 25
+cake flour / ingredients -> 10
+cake flour / juice -> 20
+cake flour / lemon -> 40
+cake flour / loaf -> 50
+cake flour / orange -> 33
+cake flour / rind -> 25
+cake flour / sugar -> 40
+baking soda / banana -> 50
+baking soda / bananas -> 43
+baking soda / batter -> 33
+baking soda / butter -> 17
+baking soda / cream -> 20
+baking soda / eggs -> 50
+baking soda / ingredients -> 36
+baking soda / juice -> 20
+baking soda / lemon -> 20
+baking soda / loaf -> 50
+baking soda / orange -> 50
+baking soda / rind -> 50
+baking soda / sugar -> 40
+salt / banana -> 25
+salt / bananas -> 25
+salt / batter -> 50
+salt / butter -> 25
+salt / cream -> 25
+salt / eggs -> 25
+salt / ingredients -> 25
+salt / juice -> 0
+salt / lemon -> 0
+salt / loaf -> 25
+salt / orange -> 25
+salt / rind -> 0
+salt / sugar -> 50
+whole berry cranberry sauce / cream -> 60
+whole berry cranberry sauce / horseradish -> 36
+whole berry cranberry sauce / mash -> 25
+whole berry cranberry sauce / sauce -> 100
+sour cream / cream -> 100
+prepared horseradish / cream -> 60
+prepared horseradish / horseradish -> 100
+vanilla wafers / butter -> 33
+vanilla wafers / cream -> 20
+vanilla wafers / egg -> 33
+vanilla wafers / eggs -> 50
+vanilla wafers / margarine -> 33
+vanilla wafers / nuts -> 25
+vanilla wafers / strawberries -> 42
+vanilla wafers / sugar -> 40
+vanilla wafers / vanilla -> 100
+butter / butter -> 100
+powdered sugar / butter -> 33
+powdered sugar / cream -> 40
+powdered sugar / egg -> 33
+powdered sugar / eggs -> 25
+powdered sugar / margarine -> 44
+powdered sugar / nuts -> 25
+powdered sugar / strawberries -> 42
+powdered sugar / sugar -> 100
+eggs / butter -> 25
+eggs / cream -> 25
+eggs / egg -> 100
+whipping cream / butter -> 17
+whipping cream / cream -> 100
+strawberry / butter -> 50
+strawberry / cream -> 40
+strawberry / egg -> 33
+strawberry / eggs -> 25
+strawberry / margarine -> 33
+strawberry / nuts -> 0
+strawberry / strawberries -> 90
+walnuts / butter -> 33
+walnuts / cream -> 0
+walnuts / egg -> 0
+walnuts / eggs -> 25
+walnuts / margarine -> 29
+walnuts / nuts -> 100
+great northern bean / beans -> 80
+chicken bouillon cubes / beans -> 60
+chicken bouillon cubes / bouillon -> 100
+dark brown sugar / beans -> 40
+dark brown sugar / bouillon -> 38
+dark brown sugar / bread -> 40
+dark brown sugar / challah -> 14
+dark brown sugar / ingredients -> 27
+dark brown sugar / sauce -> 40
+dark brown sugar / steak -> 40
+molasses / beans -> 40
+molasses / bouillon -> 25
+molasses / bread -> 20
+molasses / challah -> 29
+molasses / ingredients -> 25
+molasses / sauce -> 40
+molasses / steak -> 40
+cornstarch / beans -> 40
+cornstarch / bouillon -> 25
+cornstarch / bread -> 20
+cornstarch / challah -> 29
+cornstarch / ingredients -> 30
+cornstarch / sauce -> 60
+cornstarch / steak -> 60
+onion / beans -> 20
+onion / bouillon -> 60
+onion / bread -> 0
+onion / challah -> 0
+onion / ingredients -> 40
+onion / sauce -> 0
+onion / steak -> 0
+garlic powder / beans -> 20
+garlic powder / bouillon -> 25
+garlic powder / bread -> 20
+garlic powder / challah -> 14
+garlic powder / ingredients -> 27
+garlic powder / sauce -> 20
+garlic powder / steak -> 20
+mustard powder / beans -> 20
+mustard powder / bouillon -> 12
+mustard powder / bread -> 40
+mustard powder / challah -> 14
+mustard powder / ingredients -> 27
+mustard powder / sauce -> 40
+mustard powder / steak -> 60
+chili powder / beans -> 20
+chili powder / bouillon -> 38
+chili powder / bread -> 20
+chili powder / challah -> 43
+chili powder / ingredients -> 27
+chili powder / sauce -> 20
+chili powder / steak -> 20
+salt / beans -> 25
+salt / bouillon -> 25
+salt / bread -> 25
+salt / challah -> 50
+salt / ingredients -> 25
+salt / sauce -> 50
+salt / steak -> 50
+black pepper / beans -> 40
+black pepper / bouillon -> 25
+black pepper / bread -> 40
+black pepper / challah -> 14
+black pepper / ingredients -> 18
+black pepper / sauce -> 40
+black pepper / steak -> 20
+bacon / beans -> 60
+bacon / bouillon -> 40
+bacon / bread -> 40
+bacon / challah -> 20
+bacon / ingredients -> 20
+bacon / sauce -> 40
+bacon / steak -> 20
+water / beans -> 20
+water / bouillon -> 0
+water / bread -> 20
+water / challah -> 20
+water / ingredients -> 20
+water / sauce -> 40
+water / steak -> 40
+collard greens / greens -> 100
+brown sugar / greens -> 50
+brown sugar / ham -> 33
+brown sugar / hock -> 25
+brown sugar / molasses -> 25
+brown sugar / salt -> 50
+brown sugar / sauce -> 40
+brown sugar / sugar -> 100
+molasses / greens -> 33
+molasses / ham -> 33
+molasses / hock -> 25
+molasses / molasses -> 100
+hot sauce / greens -> 17
+hot sauce / ham -> 33
+hot sauce / hock -> 50
+hot sauce / molasses -> 38
+hot sauce / salt -> 50
+hot sauce / sauce -> 100
+whiskey / greens -> 17
+whiskey / ham -> 33
+whiskey / hock -> 50
+whiskey / molasses -> 29
+whiskey / salt -> 25
+whiskey / sauce -> 40
+whiskey / sugar -> 20
+whiskey / taste -> 40
+whiskey / whiskey -> 100
+ham hock / greens -> 0
+ham hock / ham -> 100
+salt / greens -> 25
+salt / ham -> 33
+salt / hock -> 0
+salt / molasses -> 25
+salt / salt -> 100
+gentian root / capsules -> 12
+gentian root / gelatin -> 71
+gentian root / herbs -> 20
+scullcap herb / capsules -> 50
+scullcap herb / gelatin -> 29
+scullcap herb / herbs -> 89
+burnet root / capsules -> 12
+burnet root / gelatin -> 29
+burnet root / herbs -> 40
+wood bethony / capsules -> 12
+wood bethony / gelatin -> 43
+wood bethony / herbs -> 20
+spearmint / capsules -> 25
+spearmint / gelatin -> 57
+spearmint / herbs -> 40
+lean pork chops / flour -> 20
+lean pork chops / garlic -> 33
+lean pork chops / mustard -> 29
+lean pork chops / oil -> 33
+lean pork chops / pork -> 100
+flour / flour -> 100
+salt / flour -> 25
+salt / garlic -> 50
+salt / mustard -> 50
+salt / oil -> 33
+salt / pork -> 0
+salt / salt -> 100
+dry mustard / flour -> 40
+dry mustard / garlic -> 33
+dry mustard / mustard -> 100
+garlic powder / flour -> 40
+garlic powder / garlic -> 100
+oil / flour -> 33
+oil / garlic -> 33
+oil / mustard -> 0
+oil / oil -> 100
+chicken rice soup / flour -> 40
+chicken rice soup / garlic -> 50
+chicken rice soup / mustard -> 14
+chicken rice soup / oil -> 33
+chicken rice soup / pork -> 25
+chicken rice soup / salt -> 25
+chicken rice soup / soup -> 100
+egg roll wrap / cheese -> 0
+egg roll wrap / chile -> 20
+egg roll wrap / cornstarch -> 30
+egg roll wrap / egg -> 100
+whole green chilies / cheese -> 50
+whole green chilies / chile -> 80
+cheese / cheese -> 100
+cornstarch / cheese -> 33
+cornstarch / chile -> 40
+cornstarch / cornstarch -> 100
+oil / cheese -> 0
+oil / chile -> 67
+oil / cornstarch -> 33
+oil / egg -> 0
+oil / ments -> 0
+oil / oil -> 100
+butterscotch chips / chips -> 100
+chinese noodles / chips -> 60
+chinese noodles / noodles -> 100
+salted peanuts / chips -> 20
+salted peanuts / noodles -> 29
+salted peanuts / paper -> 40
+salted peanuts / peanuts -> 100
+celery / beef -> 50
+celery / broth -> 20
+celery / bun -> 0
+celery / celery -> 100
+onion / beef -> 0
+onion / broth -> 20
+onion / bun -> 33
+onion / celery -> 0
+onion / hamburger -> 0
+onion / meat -> 0
+onion / onion -> 100
+ground pork / beef -> 0
+ground pork / broth -> 40
+ground pork / bun -> 67
+ground pork / celery -> 17
+ground pork / hamburger -> 22
+ground pork / meat -> 0
+ground pork / onion -> 40
+ground pork / sandwich -> 25
+ground pork / sauce -> 20
+ground pork / soy -> 33
+ground pork / taste -> 0
+soy sauce / beef -> 25
+soy sauce / broth -> 0
+soy sauce / bun -> 33
+soy sauce / celery -> 33
+soy sauce / hamburger -> 33
+soy sauce / meat -> 25
+soy sauce / onion -> 20
+soy sauce / sandwich -> 38
+soy sauce / sauce -> 100
+beef broth / beef -> 100
+cooking oil / beef -> 0
+cooking oil / broth -> 20
+cooking oil / bun -> 33
+cooking oil / celery -> 17
+cooking oil / hamburger -> 11
+cooking oil / meat -> 0
+cooking oil / onion -> 60
+cooking oil / sandwich -> 25
+cooking oil / sauce -> 0
+cooking oil / soy -> 33
+cooking oil / taste -> 0
+hamburger buns / beef -> 25
+hamburger buns / broth -> 40
+hamburger buns / bun -> 100
+canola oil / beans -> 20
+canola oil / broth -> 20
+canola oil / cauliflower -> 50
+canola oil / garlic -> 33
+canola oil / liquid -> 33
+canola oil / margarine -> 33
+canola oil / oil -> 100
+onion / beans -> 20
+onion / broth -> 20
+onion / cauliflower -> 40
+onion / garlic -> 20
+onion / liquid -> 20
+onion / margarine -> 40
+onion / oil -> 67
+onion / onion -> 100
+garlic / beans -> 20
+garlic / broth -> 20
+garlic / cauliflower -> 50
+garlic / garlic -> 100
+cauliflower / beans -> 20
+cauliflower / broth -> 20
+cauliflower / cauliflower -> 100
+potatoes / beans -> 40
+potatoes / broth -> 20
+potatoes / cauliflower -> 25
+potatoes / garlic -> 17
+potatoes / liquid -> 0
+potatoes / margarine -> 25
+potatoes / oil -> 33
+potatoes / onion -> 40
+potatoes / potatoes -> 100
+vegetable bouillon cubes / beans -> 60
+vegetable bouillon cubes / broth -> 40
+vegetable bouillon cubes / cauliflower -> 36
+vegetable bouillon cubes / garlic -> 50
+vegetable bouillon cubes / liquid -> 33
+vegetable bouillon cubes / margarine -> 22
+vegetable bouillon cubes / oil -> 67
+vegetable bouillon cubes / onion -> 60
+vegetable bouillon cubes / potatoes -> 38
+vegetable bouillon cubes / puree -> 40
+vegetable bouillon cubes / seasonings -> 30
+vegetable bouillon cubes / soup -> 50
+vegetable bouillon cubes / vegetables -> 90
+water / beans -> 20
+water / broth -> 20
+water / cauliflower -> 60
+water / garlic -> 40
+water / liquid -> 0
+water / margarine -> 40
+water / oil -> 0
+water / onion -> 0
+water / potatoes -> 60
+water / puree -> 20
+water / seasonings -> 20
+water / soup -> 0
+water / vegetables -> 40
+water / veggies -> 20
+salt free herb and spice seasoning mix / beans -> 60
+salt free herb and spice seasoning mix / broth -> 20
+salt free herb and spice seasoning mix / cauliflower -> 36
+salt free herb and spice seasoning mix / garlic -> 33
+salt free herb and spice seasoning mix / liquid -> 17
+salt free herb and spice seasoning mix / margarine -> 33
+salt free herb and spice seasoning mix / oil -> 67
+salt free herb and spice seasoning mix / onion -> 40
+salt free herb and spice seasoning mix / potatoes -> 38
+salt free herb and spice seasoning mix / puree -> 60
+salt free herb and spice seasoning mix / seasonings -> 90
+ground coriander / beans -> 40
+ground coriander / broth -> 40
+ground coriander / cauliflower -> 36
+ground coriander / garlic -> 33
+ground coriander / liquid -> 33
+ground coriander / margarine -> 44
+ground coriander / oil -> 33
+ground coriander / onion -> 60
+ground coriander / potatoes -> 38
+ground coriander / puree -> 20
+ground coriander / seasonings -> 30
+ground coriander / soup -> 50
+ground coriander / vegetables -> 20
+ground coriander / veggies -> 29
+great northern bean / beans -> 80
+salt and pepper / beans -> 40
+salt and pepper / broth -> 20
+salt and pepper / cauliflower -> 27
+salt and pepper / garlic -> 33
+salt and pepper / liquid -> 33
+salt and pepper / margarine -> 33
+salt and pepper / oil -> 33
+salt and pepper / onion -> 20
+salt and pepper / potatoes -> 25
+salt and pepper / puree -> 60
+salt and pepper / seasonings -> 30
+salt and pepper / soup -> 25
+salt and pepper / vegetables -> 20
+salt and pepper / veggies -> 29
+broccoli floret / beans -> 20
+broccoli floret / broth -> 60
+broccoli floret / cauliflower -> 64
+broccoli floret / garlic -> 33
+broccoli floret / liquid -> 33
+broccoli floret / margarine -> 22
+broccoli floret / oil -> 33
+broccoli floret / onion -> 40
+broccoli floret / potatoes -> 25
+broccoli floret / puree -> 40
+broccoli floret / seasonings -> 20
+broccoli floret / soup -> 25
+broccoli floret / vegetables -> 20
+broccoli floret / veggies -> 14
+escarole / beans -> 20
+escarole / broth -> 40
+escarole / cauliflower -> 25
+escarole / garlic -> 50
+escarole / liquid -> 17
+escarole / margarine -> 38
+escarole / oil -> 67
+escarole / onion -> 20
+escarole / potatoes -> 38
+escarole / puree -> 40
+escarole / seasonings -> 38
+escarole / soup -> 25
+escarole / vegetables -> 50
+escarole / veggies -> 14
+green peas / beans -> 60
+green peas / broth -> 20
+green peas / cauliflower -> 10
+green peas / garlic -> 33
+green peas / liquid -> 0
+green peas / margarine -> 44
+green peas / oil -> 0
+green peas / onion -> 20
+green peas / potatoes -> 38
+green peas / puree -> 60
+green peas / seasonings -> 30
+green peas / soup -> 25
+green peas / vegetables -> 40
+green peas / veggies -> 43
+red bell pepper / beans -> 40
+red bell pepper / broth -> 20
+red bell pepper / cauliflower -> 36
+red bell pepper / garlic -> 17
+red bell pepper / liquid -> 17
+red bell pepper / margarine -> 11
+red bell pepper / oil -> 33
+red bell pepper / onion -> 0
+red bell pepper / potatoes -> 25
+red bell pepper / puree -> 60
+red bell pepper / seasonings -> 10
+red bell pepper / soup -> 25
+red bell pepper / vegetables -> 30
+red bell pepper / veggies -> 29
+fresh herb / beans -> 40
+fresh herb / broth -> 40
+fresh herb / cauliflower -> 32
+fresh herb / garlic -> 17
+fresh herb / liquid -> 0
+fresh herb / margarine -> 22
+fresh herb / oil -> 0
+fresh herb / onion -> 0
+fresh herb / potatoes -> 25
+fresh herb / puree -> 40
+fresh herb / seasonings -> 20
+fresh herb / soup -> 25
+fresh herb / vegetables -> 32
+fresh herb / veggies -> 29
+water / butter -> 60
+water / cheese -> 20
+water / liquid -> 0
+water / nutmeg -> 40
+water / pepper -> 40
+water / potatoes -> 60
+water / puree -> 20
+water / salt -> 50
+water / slices -> 20
+water / soup -> 0
+water / spinach -> 20
+salt / butter -> 25
+salt / cheese -> 25
+salt / liquid -> 0
+salt / nutmeg -> 25
+salt / pepper -> 0
+salt / potatoes -> 50
+salt / puree -> 0
+salt / salt -> 100
+boiling potatoes / butter -> 50
+boiling potatoes / cheese -> 33
+boiling potatoes / liquid -> 33
+boiling potatoes / nutmeg -> 33
+boiling potatoes / pepper -> 17
+boiling potatoes / potatoes -> 100
+fresh spinach leaves / butter -> 17
+fresh spinach leaves / cheese -> 50
+fresh spinach leaves / liquid -> 17
+fresh spinach leaves / nutmeg -> 17
+fresh spinach leaves / pepper -> 33
+fresh spinach leaves / potatoes -> 38
+fresh spinach leaves / puree -> 40
+fresh spinach leaves / salt -> 25
+fresh spinach leaves / slices -> 50
+fresh spinach leaves / soup -> 50
+fresh spinach leaves / spinach -> 100
+unsalted butter / butter -> 100
+coarse salt / butter -> 17
+coarse salt / cheese -> 50
+coarse salt / liquid -> 17
+coarse salt / nutmeg -> 17
+coarse salt / pepper -> 17
+coarse salt / potatoes -> 50
+coarse salt / puree -> 40
+coarse salt / salt -> 100
+fresh ground black pepper / butter -> 33
+fresh ground black pepper / cheese -> 33
+fresh ground black pepper / liquid -> 33
+fresh ground black pepper / nutmeg -> 17
+fresh ground black pepper / pepper -> 100
+nutmeg / butter -> 50
+nutmeg / cheese -> 17
+nutmeg / liquid -> 17
+nutmeg / nutmeg -> 100
+onion / apple -> 0
+onion / broth -> 20
+onion / celery -> 0
+onion / juice -> 20
+onion / oats -> 25
+onion / oil -> 67
+onion / onions -> 100
+scallion / apple -> 40
+scallion / broth -> 20
+scallion / celery -> 33
+scallion / juice -> 20
+scallion / oats -> 25
+scallion / oil -> 33
+scallion / onions -> 55
+scallion / parsley -> 29
+scallion / pepper -> 0
+scallion / puree -> 0
+scallion / qt -> 0
+scallion / salt -> 75
+scallion / scallions -> 100
+apple juice / apple -> 100
+olive oil / apple -> 40
+olive oil / broth -> 20
+olive oil / celery -> 33
+olive oil / juice -> 40
+olive oil / oats -> 25
+olive oil / oil -> 100
+spinach / apple -> 20
+spinach / broth -> 20
+spinach / celery -> 17
+spinach / juice -> 40
+spinach / oats -> 25
+spinach / oil -> 33
+spinach / onions -> 33
+spinach / parsley -> 29
+spinach / pepper -> 17
+spinach / puree -> 20
+spinach / qt -> 0
+spinach / salt -> 25
+spinach / scallions -> 29
+spinach / soup -> 50
+spinach / spinach -> 100
+fresh parsley / apple -> 60
+fresh parsley / broth -> 40
+fresh parsley / celery -> 50
+fresh parsley / juice -> 20
+fresh parsley / oats -> 50
+fresh parsley / oil -> 33
+fresh parsley / onions -> 17
+fresh parsley / parsley -> 100
+celery / apple -> 40
+celery / broth -> 20
+celery / celery -> 100
+broth / apple -> 0
+broth / broth -> 100
+rolled oats / apple -> 40
+rolled oats / broth -> 40
+rolled oats / celery -> 33
+rolled oats / juice -> 20
+rolled oats / oats -> 100
+salt / apple -> 25
+salt / broth -> 25
+salt / celery -> 25
+salt / juice -> 0
+salt / oats -> 50
+salt / oil -> 33
+salt / onions -> 25
+salt / parsley -> 50
+salt / pepper -> 0
+salt / puree -> 0
+salt / qt -> 50
+salt / salt -> 100
+dried thyme / apple -> 20
+dried thyme / broth -> 40
+dried thyme / celery -> 33
+dried thyme / juice -> 40
+dried thyme / oats -> 25
+dried thyme / oil -> 33
+dried thyme / onions -> 17
+dried thyme / parsley -> 29
+dried thyme / pepper -> 17
+dried thyme / puree -> 40
+dried thyme / qt -> 50
+dried thyme / salt -> 25
+dried thyme / scallions -> 11
+dried thyme / soup -> 0
+dried thyme / spinach -> 29
+dried thyme / thyme -> 100
+white pepper / apple -> 60
+white pepper / broth -> 20
+white pepper / celery -> 50
+white pepper / juice -> 40
+white pepper / oats -> 25
+white pepper / oil -> 33
+white pepper / onions -> 17
+white pepper / parsley -> 29
+white pepper / pepper -> 100
+boneless skinless chicken breast halves / chicken -> 100
+condensed cream of chicken soup / chicken -> 100
+egg / chicken -> 33
+egg / cornstarch -> 0
+egg / egg -> 100
+seasoning salt / chicken -> 29
+seasoning salt / cornstarch -> 40
+seasoning salt / egg -> 33
+seasoning salt / flour -> 20
+seasoning salt / fryer -> 0
+seasoning salt / garlic -> 50
+seasoning salt / oil -> 67
+seasoning salt / paper -> 20
+seasoning salt / paprika -> 29
+seasoning salt / pepper -> 17
+seasoning salt / salt -> 100
+all-purpose flour / chicken -> 14
+all-purpose flour / cornstarch -> 30
+all-purpose flour / egg -> 33
+all-purpose flour / flour -> 100
+cornstarch / chicken -> 29
+cornstarch / cornstarch -> 100
+garlic powder / chicken -> 29
+garlic powder / cornstarch -> 30
+garlic powder / egg -> 33
+garlic powder / flour -> 40
+garlic powder / fryer -> 40
+garlic powder / garlic -> 100
+paprika / chicken -> 29
+paprika / cornstarch -> 29
+paprika / egg -> 0
+paprika / flour -> 20
+paprika / fryer -> 20
+paprika / garlic -> 50
+paprika / oil -> 33
+paprika / paper -> 80
+salt and pepper / chicken -> 14
+salt and pepper / cornstarch -> 20
+salt and pepper / egg -> 33
+salt and pepper / flour -> 20
+salt and pepper / fryer -> 40
+salt and pepper / garlic -> 33
+salt and pepper / oil -> 33
+salt and pepper / paper -> 80
+oil / chicken -> 33
+oil / cornstarch -> 33
+oil / egg -> 0
+oil / flour -> 33
+oil / fryer -> 0
+oil / garlic -> 33
+oil / oil -> 100
+all-purpose flour / batter -> 17
+all-purpose flour / bread -> 20
+all-purpose flour / butter -> 33
+all-purpose flour / cinnamon -> 12
+all-purpose flour / egg -> 33
+all-purpose flour / flour -> 100
+granulated sugar / batter -> 50
+granulated sugar / bread -> 40
+granulated sugar / butter -> 50
+granulated sugar / cinnamon -> 25
+granulated sugar / egg -> 33
+granulated sugar / flour -> 40
+granulated sugar / fryer -> 20
+granulated sugar / milk -> 25
+granulated sugar / oil -> 33
+granulated sugar / powdered -> 25
+granulated sugar / salt -> 50
+granulated sugar / sandwiches -> 30
+granulated sugar / slices -> 33
+granulated sugar / sugar -> 100
+baking powder / batter -> 33
+baking powder / bread -> 40
+baking powder / butter -> 33
+baking powder / cinnamon -> 38
+baking powder / egg -> 33
+baking powder / flour -> 40
+baking powder / fryer -> 40
+baking powder / milk -> 25
+baking powder / oil -> 33
+baking powder / powdered -> 86
+salt / batter -> 50
+salt / bread -> 25
+salt / butter -> 25
+salt / cinnamon -> 25
+salt / egg -> 0
+salt / flour -> 25
+salt / fryer -> 0
+salt / milk -> 25
+salt / oil -> 33
+salt / powdered -> 0
+salt / salt -> 100
+vanilla extract / batter -> 50
+vanilla extract / bread -> 40
+vanilla extract / butter -> 33
+vanilla extract / cinnamon -> 25
+vanilla extract / egg -> 33
+vanilla extract / flour -> 20
+vanilla extract / fryer -> 40
+vanilla extract / milk -> 50
+vanilla extract / oil -> 67
+vanilla extract / powdered -> 25
+vanilla extract / salt -> 50
+vanilla extract / sandwiches -> 40
+vanilla extract / slices -> 33
+vanilla extract / sugar -> 20
+vanilla extract / vanilla -> 100
+egg / batter -> 33
+egg / bread -> 33
+egg / butter -> 33
+egg / cinnamon -> 0
+egg / egg -> 100
+milk / batter -> 0
+milk / bread -> 0
+milk / butter -> 0
+milk / cinnamon -> 25
+milk / egg -> 0
+milk / flour -> 25
+milk / fryer -> 0
+milk / milk -> 100
+vegetable oil / batter -> 33
+vegetable oil / bread -> 40
+vegetable oil / butter -> 33
+vegetable oil / cinnamon -> 25
+vegetable oil / egg -> 67
+vegetable oil / flour -> 40
+vegetable oil / fryer -> 20
+vegetable oil / milk -> 50
+vegetable oil / oil -> 100
+bread / batter -> 40
+bread / bread -> 100
+brown sugar / batter -> 33
+brown sugar / bread -> 40
+brown sugar / butter -> 33
+brown sugar / cinnamon -> 25
+brown sugar / egg -> 33
+brown sugar / flour -> 40
+brown sugar / fryer -> 20
+brown sugar / milk -> 0
+brown sugar / oil -> 33
+brown sugar / powdered -> 25
+brown sugar / salt -> 50
+brown sugar / sandwiches -> 20
+brown sugar / slices -> 17
+brown sugar / sugar -> 100
+ground cinnamon / batter -> 17
+ground cinnamon / bread -> 20
+ground cinnamon / butter -> 17
+ground cinnamon / cinnamon -> 100
+butter / batter -> 83
+powdered sugar / batter -> 33
+powdered sugar / bread -> 60
+powdered sugar / butter -> 33
+powdered sugar / cinnamon -> 12
+powdered sugar / egg -> 33
+powdered sugar / flour -> 40
+powdered sugar / fryer -> 40
+powdered sugar / milk -> 0
+powdered sugar / oil -> 33
+powdered sugar / powdered -> 100
+butter / butter -> 100
+lemon, juice of / butter -> 33
+lemon, juice of / egg -> 33
+lemon, juice of / juice -> 100
+salt / butter -> 25
+salt / egg -> 0
+salt / juice -> 0
+salt / lemon -> 0
+salt / pepper -> 0
+salt / salt -> 100
+white pepper / butter -> 33
+white pepper / egg -> 33
+white pepper / juice -> 40
+white pepper / lemon -> 20
+white pepper / pepper -> 100
+egg yolks / butter -> 0
+egg yolks / egg -> 100
+ground black pepper / butter -> 33
+ground black pepper / ghee -> 50
+ground black pepper / spice -> 40
+ground black pepper / spices -> 33
+ground black pepper / vegetables -> 20
+ground ginger / butter -> 33
+ground ginger / ghee -> 50
+ground ginger / spice -> 40
+ground ginger / spices -> 33
+ground ginger / vegetables -> 20
+ground coriander / butter -> 33
+ground coriander / ghee -> 25
+ground coriander / spice -> 40
+ground coriander / spices -> 33
+ground coriander / vegetables -> 20
+ground cumin / butter -> 17
+ground cumin / ghee -> 25
+ground cumin / spice -> 20
+ground cumin / spices -> 17
+ground cumin / vegetables -> 0
+ground turmeric / butter -> 50
+ground turmeric / ghee -> 25
+ground turmeric / spice -> 40
+ground turmeric / spices -> 33
+ground turmeric / vegetables -> 20
+black cumin / butter -> 17
+black cumin / ghee -> 0
+black cumin / spice -> 20
+black cumin / spices -> 17
+black cumin / vegetables -> 10
+vegetarian ground beef / bread -> 40
+vegetarian ground beef / garlic -> 67
+vegetarian ground beef / ingredients -> 45
+vegetarian ground beef / oil -> 33
+vegetarian ground beef / onion -> 40
+vegetarian ground beef / peppers -> 43
+vegetarian ground beef / rice -> 50
+vegetarian ground beef / spices -> 17
+vegetarian ground beef / taste -> 40
+vegetarian ground beef / toast -> 40
+vegetarian ground beef / tvp -> 33
+vegetarian ground beef / vegetables -> 60
+garlic / bread -> 20
+garlic / garlic -> 100
+onion / bread -> 0
+onion / garlic -> 20
+onion / ingredients -> 40
+onion / oil -> 67
+onion / onion -> 100
+jalapenos / bread -> 20
+jalapenos / garlic -> 33
+jalapenos / ingredients -> 33
+jalapenos / oil -> 33
+jalapenos / onion -> 40
+jalapenos / peppers -> 43
+jalapenos / rice -> 25
+jalapenos / spices -> 50
+jalapenos / taste -> 40
+jalapenos / toast -> 40
+jalapenos / tvp -> 33
+jalapenos / vegetables -> 44
+green pepper / bread -> 40
+green pepper / garlic -> 33
+green pepper / ingredients -> 45
+green pepper / oil -> 0
+green pepper / onion -> 20
+green pepper / peppers -> 92
+celery / bread -> 20
+celery / garlic -> 17
+celery / ingredients -> 33
+celery / oil -> 33
+celery / onion -> 0
+celery / peppers -> 50
+celery / rice -> 50
+celery / spices -> 33
+celery / taste -> 20
+celery / toast -> 0
+celery / tvp -> 0
+celery / vegetables -> 33
+kidney beans / bread -> 60
+kidney beans / garlic -> 17
+kidney beans / ingredients -> 55
+kidney beans / oil -> 33
+kidney beans / onion -> 20
+kidney beans / peppers -> 29
+kidney beans / rice -> 50
+kidney beans / spices -> 33
+kidney beans / taste -> 40
+kidney beans / toast -> 40
+kidney beans / tvp -> 0
+kidney beans / vegetables -> 40
+diced tomatoes / bread -> 40
+diced tomatoes / garlic -> 17
+diced tomatoes / ingredients -> 36
+diced tomatoes / oil -> 33
+diced tomatoes / onion -> 40
+diced tomatoes / peppers -> 29
+diced tomatoes / rice -> 75
+diced tomatoes / spices -> 50
+diced tomatoes / taste -> 60
+diced tomatoes / toast -> 80
+chili powder / bread -> 20
+chili powder / garlic -> 33
+chili powder / ingredients -> 27
+chili powder / oil -> 67
+chili powder / onion -> 40
+chili powder / peppers -> 46
+chili powder / rice -> 25
+chili powder / spices -> 33
+chili powder / taste -> 20
+chili powder / toast -> 20
+chili powder / tvp -> 33
+chili powder / vegetables -> 20
+black pepper / bread -> 40
+black pepper / garlic -> 33
+black pepper / ingredients -> 18
+black pepper / oil -> 0
+black pepper / onion -> 0
+black pepper / peppers -> 92
+salt / bread -> 25
+salt / garlic -> 50
+salt / ingredients -> 25
+salt / oil -> 33
+salt / onion -> 0
+salt / peppers -> 25
+salt / rice -> 0
+salt / spices -> 25
+salt / taste -> 50
+salt / toast -> 50
+salt / tvp -> 33
+salt / vegetables -> 50
+red pepper flakes / bread -> 20
+red pepper flakes / garlic -> 33
+red pepper flakes / ingredients -> 27
+red pepper flakes / oil -> 33
+red pepper flakes / onion -> 0
+red pepper flakes / peppers -> 86
+beef stew meat / beans -> 40
+beef stew meat / cabbage -> 14
+beef stew meat / cheese -> 50
+beef stew meat / ingredients -> 29
+beef stew meat / macaroni -> 25
+beef stew meat / meat -> 100
+water / beans -> 20
+water / cabbage -> 40
+water / cheese -> 20
+water / ingredients -> 20
+water / macaroni -> 40
+water / meat -> 50
+water / parmesan -> 40
+water / vegetables -> 40
+water / zucchini -> 0
+tomatoes / beans -> 40
+tomatoes / cabbage -> 29
+tomatoes / cheese -> 33
+tomatoes / ingredients -> 25
+tomatoes / macaroni -> 38
+tomatoes / meat -> 75
+tomatoes / parmesan -> 38
+tomatoes / vegetables -> 50
+tomatoes / zucchini -> 0
+beef bouillon cube / beans -> 40
+beef bouillon cube / cabbage -> 43
+beef bouillon cube / cheese -> 33
+beef bouillon cube / ingredients -> 27
+beef bouillon cube / macaroni -> 25
+beef bouillon cube / meat -> 25
+beef bouillon cube / parmesan -> 12
+beef bouillon cube / vegetables -> 40
+beef bouillon cube / zucchini -> 38
+onion / beans -> 20
+onion / cabbage -> 0
+onion / cheese -> 0
+onion / ingredients -> 40
+onion / macaroni -> 60
+onion / meat -> 0
+onion / parmesan -> 20
+onion / vegetables -> 0
+onion / zucchini -> 40
+dried parsley / beans -> 40
+dried parsley / cabbage -> 29
+dried parsley / cheese -> 33
+dried parsley / ingredients -> 36
+dried parsley / macaroni -> 25
+dried parsley / meat -> 25
+dried parsley / parmesan -> 53
+dried parsley / vegetables -> 40
+dried parsley / zucchini -> 0
+salt / beans -> 25
+salt / cabbage -> 25
+salt / cheese -> 25
+salt / ingredients -> 25
+salt / macaroni -> 25
+salt / meat -> 50
+salt / parmesan -> 50
+salt / vegetables -> 50
+salt / zucchini -> 0
+ground thyme / beans -> 20
+ground thyme / cabbage -> 14
+ground thyme / cheese -> 33
+ground thyme / ingredients -> 36
+ground thyme / macaroni -> 12
+ground thyme / meat -> 50
+ground thyme / parmesan -> 25
+ground thyme / vegetables -> 21
+ground thyme / zucchini -> 25
+ground pepper / beans -> 20
+ground pepper / cabbage -> 14
+ground pepper / cheese -> 33
+ground pepper / ingredients -> 36
+ground pepper / macaroni -> 12
+ground pepper / meat -> 25
+ground pepper / parmesan -> 25
+ground pepper / vegetables -> 20
+ground pepper / zucchini -> 25
+zucchini / beans -> 20
+zucchini / cabbage -> 14
+zucchini / cheese -> 33
+zucchini / ingredients -> 25
+zucchini / macaroni -> 38
+zucchini / meat -> 0
+zucchini / parmesan -> 12
+zucchini / vegetables -> 0
+zucchini / zucchini -> 100
+cabbage / beans -> 40
+cabbage / cabbage -> 100
+garbanzo beans / beans -> 100
+elbow macaroni / beans -> 40
+elbow macaroni / cabbage -> 29
+elbow macaroni / cheese -> 17
+elbow macaroni / ingredients -> 18
+elbow macaroni / macaroni -> 100
+parmesan cheese / beans -> 60
+parmesan cheese / cabbage -> 29
+parmesan cheese / cheese -> 100
+red potatoes / herbs -> 40
+red potatoes / ice -> 33
+red potatoes / margarine -> 22
+red potatoes / paper -> 40
+red potatoes / potatoes -> 100
+margarine / herbs -> 20
+margarine / ice -> 67
+margarine / margarine -> 100
+rosemary / herbs -> 40
+rosemary / ice -> 33
+rosemary / margarine -> 38
+rosemary / paper -> 40
+rosemary / potatoes -> 25
+rosemary / stick -> 20
+unsalted butter / applewood -> 44
+unsalted butter / basil -> 40
+unsalted butter / beans -> 40
+unsalted butter / broccoli -> 25
+unsalted butter / butter -> 100
+carrot / applewood -> 17
+carrot / basil -> 20
+carrot / beans -> 20
+carrot / broccoli -> 33
+carrot / butter -> 17
+carrot / carrots -> 100
+onion / applewood -> 40
+onion / basil -> 20
+onion / beans -> 20
+onion / broccoli -> 40
+onion / butter -> 0
+onion / carrots -> 20
+onion / celery -> 0
+onion / chicken -> 40
+onion / chips -> 20
+onion / cream -> 0
+onion / onion -> 100
+celery / applewood -> 33
+celery / basil -> 20
+celery / beans -> 20
+celery / broccoli -> 33
+celery / butter -> 36
+celery / carrots -> 33
+celery / celery -> 100
+broccoli stem / applewood -> 22
+broccoli stem / basil -> 20
+broccoli stem / beans -> 20
+broccoli stem / broccoli -> 100
+dried thyme / applewood -> 22
+dried thyme / basil -> 0
+dried thyme / beans -> 20
+dried thyme / broccoli -> 25
+dried thyme / butter -> 33
+dried thyme / carrots -> 29
+dried thyme / celery -> 33
+dried thyme / chicken -> 29
+dried thyme / chips -> 20
+dried thyme / cream -> 40
+dried thyme / onion -> 20
+dried thyme / oregano -> 29
+dried thyme / sauce -> 20
+dried thyme / smoked -> 33
+dried thyme / stock -> 20
+dried thyme / tabasco -> 14
+dried thyme / taste -> 40
+dried thyme / thyme -> 100
+dried oregano / applewood -> 22
+dried oregano / basil -> 20
+dried oregano / beans -> 60
+dried oregano / broccoli -> 25
+dried oregano / butter -> 17
+dried oregano / carrots -> 29
+dried oregano / celery -> 33
+dried oregano / chicken -> 29
+dried oregano / chips -> 20
+dried oregano / cream -> 60
+dried oregano / onion -> 40
+dried oregano / oregano -> 100
+dried sweet basil leaves / applewood -> 33
+dried sweet basil leaves / basil -> 100
+dry white wine / applewood -> 22
+dry white wine / basil -> 20
+dry white wine / beans -> 20
+dry white wine / broccoli -> 25
+dry white wine / butter -> 33
+dry white wine / carrots -> 14
+dry white wine / celery -> 33
+dry white wine / chicken -> 43
+dry white wine / chips -> 40
+dry white wine / cream -> 20
+dry white wine / onion -> 40
+dry white wine / oregano -> 29
+dry white wine / sauce -> 20
+dry white wine / smoked -> 17
+dry white wine / stock -> 20
+dry white wine / tabasco -> 14
+dry white wine / taste -> 40
+dry white wine / thyme -> 40
+dry white wine / wine -> 100
+chicken stock / applewood -> 22
+chicken stock / basil -> 20
+chicken stock / beans -> 60
+chicken stock / broccoli -> 25
+chicken stock / butter -> 17
+chicken stock / carrots -> 14
+chicken stock / celery -> 33
+chicken stock / chicken -> 100
+worcestershire sauce / applewood -> 22
+worcestershire sauce / basil -> 40
+worcestershire sauce / beans -> 40
+worcestershire sauce / broccoli -> 25
+worcestershire sauce / butter -> 50
+worcestershire sauce / carrots -> 43
+worcestershire sauce / celery -> 67
+worcestershire sauce / chicken -> 43
+worcestershire sauce / chips -> 40
+worcestershire sauce / cream -> 40
+worcestershire sauce / onion -> 20
+worcestershire sauce / oregano -> 43
+worcestershire sauce / sauce -> 100
+tabasco sauce / applewood -> 22
+tabasco sauce / basil -> 60
+tabasco sauce / beans -> 60
+tabasco sauce / broccoli -> 38
+tabasco sauce / butter -> 33
+tabasco sauce / carrots -> 43
+tabasco sauce / celery -> 33
+tabasco sauce / chicken -> 29
+tabasco sauce / chips -> 40
+tabasco sauce / cream -> 40
+tabasco sauce / onion -> 20
+tabasco sauce / oregano -> 29
+tabasco sauce / sauce -> 100
+smoked chicken / applewood -> 22
+smoked chicken / basil -> 20
+smoked chicken / beans -> 40
+smoked chicken / broccoli -> 25
+smoked chicken / butter -> 17
+smoked chicken / carrots -> 14
+smoked chicken / celery -> 33
+smoked chicken / chicken -> 100
+black beans / applewood -> 22
+black beans / basil -> 60
+black beans / beans -> 100
+broccoli floret / applewood -> 22
+broccoli floret / basil -> 40
+broccoli floret / beans -> 20
+broccoli floret / broccoli -> 100
+heavy cream / applewood -> 22
+heavy cream / basil -> 20
+heavy cream / beans -> 40
+heavy cream / broccoli -> 12
+heavy cream / butter -> 17
+heavy cream / carrots -> 29
+heavy cream / celery -> 33
+heavy cream / chicken -> 29
+heavy cream / chips -> 20
+heavy cream / cream -> 100
+salt & fresh ground pepper / applewood -> 33
+salt & fresh ground pepper / basil -> 40
+salt & fresh ground pepper / beans -> 40
+salt & fresh ground pepper / broccoli -> 25
+salt & fresh ground pepper / butter -> 33
+salt & fresh ground pepper / carrots -> 29
+salt & fresh ground pepper / celery -> 50
+salt & fresh ground pepper / chicken -> 14
+salt & fresh ground pepper / chips -> 20
+salt & fresh ground pepper / cream -> 40
+salt & fresh ground pepper / onion -> 40
+salt & fresh ground pepper / oregano -> 43
+salt & fresh ground pepper / sauce -> 40
+salt & fresh ground pepper / smoked -> 33
+salt & fresh ground pepper / stock -> 40
+salt & fresh ground pepper / tabasco -> 29
+salt & fresh ground pepper / taste -> 40
+salt & fresh ground pepper / thyme -> 20
+salt & fresh ground pepper / wine -> 25
+cornstarch / applewood -> 11
+cornstarch / basil -> 20
+cornstarch / beans -> 40
+cornstarch / broccoli -> 25
+cornstarch / butter -> 33
+cornstarch / carrots -> 43
+cornstarch / celery -> 33
+cornstarch / chicken -> 29
+cornstarch / chips -> 40
+cornstarch / cream -> 40
+cornstarch / onion -> 40
+cornstarch / oregano -> 43
+cornstarch / sauce -> 60
+cornstarch / smoked -> 17
+cornstarch / stock -> 60
+cornstarch / tabasco -> 43
+cornstarch / taste -> 40
+cornstarch / thyme -> 40
+cornstarch / wine -> 25
+butter / batter -> 83
+sugar / batter -> 40
+sugar / brownies -> 20
+sugar / butter -> 40
+sugar / eggs -> 25
+sugar / ingredients -> 40
+sugar / patties -> 20
+sugar / peppermint -> 20
+sugar / sugar -> 100
+vanilla / batter -> 17
+vanilla / brownies -> 31
+vanilla / butter -> 0
+vanilla / eggs -> 0
+vanilla / ingredients -> 14
+vanilla / patties -> 29
+vanilla / peppermint -> 14
+vanilla / sugar -> 20
+vanilla / vanilla -> 100
+eggs / batter -> 25
+eggs / brownies -> 50
+eggs / butter -> 25
+eggs / eggs -> 100
+all-purpose flour / batter -> 17
+all-purpose flour / brownies -> 38
+all-purpose flour / butter -> 33
+all-purpose flour / eggs -> 25
+all-purpose flour / ingredients -> 18
+all-purpose flour / patties -> 29
+all-purpose flour / peppermint -> 30
+all-purpose flour / sugar -> 40
+all-purpose flour / vanilla -> 14
+baking cocoa / batter -> 33
+baking cocoa / brownies -> 25
+baking cocoa / butter -> 17
+baking cocoa / eggs -> 25
+baking cocoa / ingredients -> 30
+baking cocoa / patties -> 29
+baking cocoa / peppermint -> 20
+baking cocoa / sugar -> 20
+baking cocoa / vanilla -> 29
+baking powder / batter -> 33
+baking powder / brownies -> 38
+baking powder / butter -> 33
+baking powder / eggs -> 25
+baking powder / ingredients -> 48
+baking powder / patties -> 29
+baking powder / peppermint -> 30
+baking powder / sugar -> 20
+baking powder / vanilla -> 29
+salt / batter -> 50
+salt / brownies -> 25
+salt / butter -> 25
+salt / eggs -> 25
+salt / ingredients -> 25
+salt / patties -> 50
+salt / peppermint -> 25
+salt / sugar -> 50
+salt / vanilla -> 25
+miniature peppermint patties / batter -> 67
+miniature peppermint patties / brownies -> 38
+miniature peppermint patties / butter -> 50
+miniature peppermint patties / eggs -> 50
+miniature peppermint patties / ingredients -> 45
+miniature peppermint patties / patties -> 100
+ground beef / avocado -> 29
+ground beef / beef -> 100
+onion / avocado -> 40
+onion / beef -> 0
+onion / cheese -> 0
+onion / chips -> 20
+onion / corn -> 50
+onion / cornmeal -> 40
+onion / cucumber -> 0
+onion / lettuce -> 0
+onion / olives -> 40
+onion / onion -> 100
+tomato sauce / avocado -> 43
+tomato sauce / beef -> 25
+tomato sauce / cheese -> 33
+tomato sauce / chips -> 20
+tomato sauce / corn -> 25
+tomato sauce / cornmeal -> 38
+tomato sauce / cucumber -> 38
+tomato sauce / lettuce -> 43
+tomato sauce / olives -> 33
+tomato sauce / onion -> 40
+tomato sauce / pepper -> 17
+tomato sauce / salt -> 50
+tomato sauce / sauce -> 100
+taco sauce / avocado -> 43
+taco sauce / beef -> 25
+taco sauce / cheese -> 33
+taco sauce / chips -> 40
+taco sauce / corn -> 50
+taco sauce / cornmeal -> 38
+taco sauce / cucumber -> 50
+taco sauce / lettuce -> 43
+taco sauce / olives -> 33
+taco sauce / onion -> 20
+taco sauce / pepper -> 17
+taco sauce / salt -> 50
+taco sauce / sauce -> 100
+salt / avocado -> 25
+salt / beef -> 0
+salt / cheese -> 25
+salt / chips -> 25
+salt / corn -> 0
+salt / cornmeal -> 57
+salt / cucumber -> 0
+salt / lettuce -> 50
+salt / olives -> 25
+salt / onion -> 0
+salt / pepper -> 0
+salt / salt -> 100
+pepper / avocado -> 0
+pepper / beef -> 25
+pepper / cheese -> 36
+pepper / chips -> 20
+pepper / corn -> 25
+pepper / cornmeal -> 17
+pepper / cucumber -> 33
+pepper / lettuce -> 33
+pepper / olives -> 17
+pepper / onion -> 0
+pepper / pepper -> 100
+tabasco sauce / avocado -> 43
+tabasco sauce / beef -> 25
+tabasco sauce / cheese -> 33
+tabasco sauce / chips -> 40
+tabasco sauce / corn -> 50
+tabasco sauce / cornmeal -> 38
+tabasco sauce / cucumber -> 50
+tabasco sauce / lettuce -> 43
+tabasco sauce / olives -> 33
+tabasco sauce / onion -> 20
+tabasco sauce / pepper -> 17
+tabasco sauce / salt -> 50
+tabasco sauce / sauce -> 100
+hot chili pepper / avocado -> 29
+hot chili pepper / beef -> 25
+hot chili pepper / cheese -> 33
+hot chili pepper / chips -> 60
+hot chili pepper / corn -> 25
+hot chili pepper / cornmeal -> 25
+hot chili pepper / cucumber -> 25
+hot chili pepper / lettuce -> 29
+hot chili pepper / olives -> 50
+hot chili pepper / onion -> 20
+hot chili pepper / pepper -> 100
+cornmeal / avocado -> 29
+cornmeal / beef -> 25
+cornmeal / cheese -> 33
+cornmeal / chips -> 20
+cornmeal / corn -> 100
+whole kernel corn / avocado -> 29
+whole kernel corn / beef -> 25
+whole kernel corn / cheese -> 33
+whole kernel corn / chips -> 20
+whole kernel corn / corn -> 100
+sliced ripe olives / avocado -> 29
+sliced ripe olives / beef -> 25
+sliced ripe olives / cheese -> 33
+sliced ripe olives / chips -> 40
+sliced ripe olives / corn -> 25
+sliced ripe olives / cornmeal -> 38
+sliced ripe olives / cucumber -> 38
+sliced ripe olives / lettuce -> 43
+sliced ripe olives / olives -> 100
+cheddar cheese / avocado -> 29
+cheddar cheese / beef -> 50
+cheddar cheese / cheese -> 100
+butter / bread -> 40
+butter / broiler -> 33
+butter / butter -> 100
+dry ranch dressing mix / bread -> 40
+dry ranch dressing mix / broiler -> 29
+dry ranch dressing mix / butter -> 17
+dry ranch dressing mix / cream -> 40
+dry ranch dressing mix / dressing -> 100
+french bread / bread -> 100
+ground venison / bread -> 20
+ground venison / bun -> 67
+ground venison / cookie -> 17
+ground venison / hamburger -> 22
+ground venison / ingredients -> 45
+ground venison / liquid -> 33
+ground venison / paper -> 20
+ground venison / patties -> 29
+ground venison / venison -> 100
+egg substitute / bread -> 20
+egg substitute / bun -> 33
+egg substitute / cookie -> 33
+egg substitute / hamburger -> 33
+egg substitute / ingredients -> 27
+egg substitute / liquid -> 33
+egg substitute / paper -> 20
+egg substitute / patties -> 43
+egg substitute / venison -> 14
+egg substitute / wrap -> 0
+non-fat powdered milk / bread -> 60
+non-fat powdered milk / bun -> 33
+non-fat powdered milk / cookie -> 33
+non-fat powdered milk / hamburger -> 33
+non-fat powdered milk / ingredients -> 36
+non-fat powdered milk / liquid -> 17
+non-fat powdered milk / paper -> 40
+non-fat powdered milk / patties -> 29
+non-fat powdered milk / venison -> 43
+non-fat powdered milk / wrap -> 50
+water / bread -> 20
+water / bun -> 0
+water / cookie -> 20
+water / hamburger -> 40
+water / ingredients -> 20
+water / liquid -> 0
+water / paper -> 60
+water / patties -> 40
+water / venison -> 0
+water / wrap -> 50
+fresh breadcrumb / bread -> 100
+onion / bread -> 0
+onion / bun -> 33
+onion / cookie -> 40
+onion / hamburger -> 0
+onion / ingredients -> 40
+onion / liquid -> 20
+onion / paper -> 0
+onion / patties -> 20
+onion / venison -> 80
+salt / bread -> 25
+salt / bun -> 0
+salt / cookie -> 0
+salt / hamburger -> 25
+salt / ingredients -> 25
+salt / liquid -> 0
+salt / paper -> 25
+salt / patties -> 50
+salt / venison -> 25
+salt / wrap -> 25
+black pepper / bread -> 40
+black pepper / bun -> 33
+black pepper / cookie -> 50
+black pepper / hamburger -> 22
+black pepper / ingredients -> 18
+black pepper / liquid -> 17
+black pepper / paper -> 80
+dry mustard / bread -> 40
+dry mustard / bun -> 33
+dry mustard / cookie -> 0
+dry mustard / hamburger -> 33
+dry mustard / ingredients -> 18
+dry mustard / liquid -> 33
+dry mustard / paper -> 40
+dry mustard / patties -> 14
+dry mustard / venison -> 14
+dry mustard / wrap -> 25
+worcestershire sauce / bread -> 40
+worcestershire sauce / bun -> 33
+worcestershire sauce / cookie -> 33
+worcestershire sauce / hamburger -> 33
+worcestershire sauce / ingredients -> 36
+worcestershire sauce / liquid -> 17
+worcestershire sauce / paper -> 40
+worcestershire sauce / patties -> 43
+worcestershire sauce / venison -> 29
+worcestershire sauce / wrap -> 50
+milk / ingredients -> 25
+milk / popsicle -> 50
+frozen juice concentrate / ingredients -> 36
+frozen juice concentrate / popsicle -> 38
+plain yogurt / ingredients -> 50
+plain yogurt / popsicle -> 25
+low sodium chicken broth / basil -> 40
+low sodium chicken broth / garlic -> 33
+low sodium chicken broth / ingredients -> 36
+low sodium chicken broth / oregano -> 43
+low sodium chicken broth / sauce -> 40
+low sodium chicken broth / substitute -> 30
+low sodium chicken broth / tomato -> 33
+low sodium chicken broth / tomatoes -> 25
+low sodium chicken broth / vegetables -> 20
+low sodium chicken broth / zucchini -> 50
+diced tomatoes / basil -> 40
+diced tomatoes / garlic -> 17
+diced tomatoes / ingredients -> 36
+diced tomatoes / oregano -> 43
+diced tomatoes / sauce -> 40
+diced tomatoes / substitute -> 30
+diced tomatoes / tomato -> 100
+zucchini / basil -> 20
+zucchini / garlic -> 17
+zucchini / ingredients -> 25
+zucchini / oregano -> 14
+zucchini / sauce -> 40
+zucchini / substitute -> 25
+zucchini / tomato -> 0
+zucchini / tomatoes -> 0
+zucchini / vegetables -> 0
+zucchini / zucchini -> 100
+corn / basil -> 0
+corn / garlic -> 25
+corn / ingredients -> 25
+corn / oregano -> 50
+corn / sauce -> 25
+corn / substitute -> 0
+corn / tomato -> 25
+corn / tomatoes -> 25
+corn / vegetables -> 0
+corn / zucchini -> 50
+potatoes / basil -> 40
+potatoes / garlic -> 17
+potatoes / ingredients -> 25
+potatoes / oregano -> 43
+potatoes / sauce -> 40
+potatoes / substitute -> 38
+potatoes / tomato -> 67
+potatoes / tomatoes -> 75
+potatoes / vegetables -> 50
+potatoes / zucchini -> 0
+wax beans / basil -> 60
+wax beans / garlic -> 17
+wax beans / ingredients -> 33
+wax beans / oregano -> 43
+wax beans / sauce -> 40
+wax beans / substitute -> 22
+wax beans / tomato -> 17
+wax beans / tomatoes -> 38
+wax beans / vegetables -> 44
+wax beans / zucchini -> 12
+green beans / basil -> 60
+green beans / garlic -> 33
+green beans / ingredients -> 60
+green beans / oregano -> 43
+green beans / sauce -> 20
+green beans / substitute -> 20
+green beans / tomato -> 17
+green beans / tomatoes -> 25
+green beans / vegetables -> 50
+green beans / zucchini -> 12
+carrots / basil -> 20
+carrots / garlic -> 33
+carrots / ingredients -> 29
+carrots / oregano -> 29
+carrots / sauce -> 20
+carrots / substitute -> 14
+carrots / tomato -> 33
+carrots / tomatoes -> 43
+carrots / vegetables -> 29
+carrots / zucchini -> 14
+frozen chopped spinach / croutons -> 38
+frozen chopped spinach / ingredients -> 36
+frozen chopped spinach / liquid -> 17
+frozen chopped spinach / spinach -> 100
+egg / croutons -> 0
+egg / ingredients -> 33
+egg / liquid -> 0
+egg / spinach -> 0
+salt / croutons -> 25
+salt / ingredients -> 25
+salt / liquid -> 0
+salt / spinach -> 25
+black pepper / croutons -> 12
+black pepper / ingredients -> 18
+black pepper / liquid -> 17
+black pepper / spinach -> 14
+onion / croutons -> 60
+onion / ingredients -> 40
+onion / liquid -> 20
+onion / spinach -> 40
+sharp cheddar cheese / croutons -> 25
+sharp cheddar cheese / ingredients -> 36
+sharp cheddar cheese / liquid -> 17
+sharp cheddar cheese / spinach -> 43
+condensed cream of mushroom soup / croutons -> 50
+condensed cream of mushroom soup / ingredients -> 45
+condensed cream of mushroom soup / liquid -> 17
+condensed cream of mushroom soup / spinach -> 29
+crouton / croutons -> 100
+red potatoes / ingredients -> 36
+red potatoes / mayonnaise -> 30
+red potatoes / onion -> 40
+red potatoes / potato -> 100
+green onion / ingredients -> 50
+green onion / mayonnaise -> 30
+green onion / onion -> 100
+diced pimentos / ingredients -> 64
+diced pimentos / mayonnaise -> 30
+diced pimentos / onion -> 40
+diced pimentos / potato -> 33
+diced pimentos / potatoes -> 50
+fat-free mayonnaise / ingredients -> 36
+fat-free mayonnaise / mayonnaise -> 100
+plain low-fat yogurt / ingredients -> 27
+plain low-fat yogurt / mayonnaise -> 30
+plain low-fat yogurt / onion -> 40
+plain low-fat yogurt / potato -> 50
+plain low-fat yogurt / potatoes -> 38
+low-fat sour cream / ingredients -> 19
+low-fat sour cream / mayonnaise -> 20
+low-fat sour cream / onion -> 20
+low-fat sour cream / potato -> 50
+low-fat sour cream / potatoes -> 38
+sugar / ingredients -> 40
+sugar / mayonnaise -> 20
+sugar / onion -> 0
+sugar / potato -> 20
+sugar / potatoes -> 20
+prepared mustard / ingredients -> 36
+prepared mustard / mayonnaise -> 20
+prepared mustard / onion -> 0
+prepared mustard / potato -> 33
+prepared mustard / potatoes -> 38
+white wine vinegar / ingredients -> 45
+white wine vinegar / mayonnaise -> 30
+white wine vinegar / onion -> 40
+white wine vinegar / potato -> 17
+white wine vinegar / potatoes -> 25
+salt / ingredients -> 25
+salt / mayonnaise -> 25
+salt / onion -> 0
+salt / potato -> 50
+salt / potatoes -> 50
+pepper / ingredients -> 33
+pepper / mayonnaise -> 17
+pepper / onion -> 0
+pepper / potato -> 17
+pepper / potatoes -> 17
+celery seed / ingredients -> 27
+celery seed / mayonnaise -> 30
+celery seed / onion -> 0
+celery seed / potato -> 0
+celery seed / potatoes -> 25
+garlic / ingredients -> 50
+garlic / mayonnaise -> 33
+garlic / onion -> 20
+garlic / potato -> 17
+garlic / potatoes -> 17
+frozen chopped spinach / ingredients -> 36
+eggs / ingredients -> 50
+garlic powder / ingredients -> 27
+soft breadcrumbs / ingredients -> 36
+oregano / ingredients -> 43
+margarine / ingredients -> 44
+sage / ingredients -> 50
+onion / ingredients -> 40
+ground beef / cornbread -> 44
+ground beef / meat -> 25
+ground beef / oil -> 33
+ground beef / onion -> 40
+ground beef / pepper -> 33
+ground beef / salt -> 0
+ground beef / soup -> 50
+ground beef / taste -> 20
+ground beef / veggies -> 29
+onion / cornbread -> 40
+onion / meat -> 0
+onion / oil -> 67
+onion / onion -> 100
+frozen vegetables / cornbread -> 33
+frozen vegetables / meat -> 50
+frozen vegetables / oil -> 33
+frozen vegetables / onion -> 40
+frozen vegetables / pepper -> 33
+frozen vegetables / salt -> 50
+frozen vegetables / soup -> 25
+frozen vegetables / taste -> 60
+frozen vegetables / veggies -> 57
+cream of mushroom soup / cornbread -> 44
+cream of mushroom soup / meat -> 50
+cream of mushroom soup / oil -> 33
+cream of mushroom soup / onion -> 40
+cream of mushroom soup / pepper -> 17
+cream of mushroom soup / salt -> 25
+cream of mushroom soup / soup -> 100
+condensed cream of mushroom & garlic soup / cornbread -> 56
+condensed cream of mushroom & garlic soup / meat -> 50
+condensed cream of mushroom & garlic soup / oil -> 33
+condensed cream of mushroom & garlic soup / onion -> 60
+condensed cream of mushroom & garlic soup / pepper -> 33
+condensed cream of mushroom & garlic soup / salt -> 50
+condensed cream of mushroom & garlic soup / soup -> 100
+salt & pepper / cornbread -> 11
+salt & pepper / meat -> 25
+salt & pepper / oil -> 33
+salt & pepper / onion -> 0
+salt & pepper / pepper -> 100
+cooking oil / cornbread -> 33
+cooking oil / meat -> 0
+cooking oil / oil -> 100
+cornbread mix / cornbread -> 100
+angel hair pasta / garlic -> 33
+angel hair pasta / honey -> 20
+angel hair pasta / oil -> 33
+angel hair pasta / onions -> 33
+angel hair pasta / pasta -> 100
+toasted sesame oil / garlic -> 17
+toasted sesame oil / honey -> 20
+toasted sesame oil / oil -> 100
+soy sauce / garlic -> 33
+soy sauce / honey -> 40
+soy sauce / oil -> 33
+soy sauce / onions -> 33
+soy sauce / pasta -> 40
+soy sauce / sauce -> 100
+honey / garlic -> 0
+honey / honey -> 100
+garlic / garlic -> 100
+green onions / garlic -> 33
+green onions / honey -> 40
+green onions / oil -> 67
+green onions / onions -> 100
+toasted sesame seeds / garlic -> 17
+toasted sesame seeds / honey -> 20
+toasted sesame seeds / oil -> 33
+toasted sesame seeds / onions -> 33
+toasted sesame seeds / pasta -> 60
+toasted sesame seeds / sauce -> 60
+toasted sesame seeds / seeds -> 100
+stir fry vegetables / garlic -> 50
+stir fry vegetables / honey -> 20
+stir fry vegetables / oil -> 33
+stir fry vegetables / onions -> 17
+stir fry vegetables / pasta -> 40
+stir fry vegetables / sauce -> 40
+stir fry vegetables / seeds -> 40
+stir fry vegetables / sesame -> 50
+stir fry vegetables / soy -> 33
+stir fry vegetables / tupperware -> 40
+stir fry vegetables / veggies -> 57
+all-purpose flour / batter -> 17
+all-purpose flour / butter -> 33
+all-purpose flour / buttermilk -> 30
+all-purpose flour / cinnamon -> 12
+all-purpose flour / cloves -> 33
+all-purpose flour / cocoa -> 20
+all-purpose flour / egg -> 33
+all-purpose flour / eggs -> 25
+all-purpose flour / flour -> 100
+buckwheat flour / batter -> 33
+buckwheat flour / butter -> 33
+buckwheat flour / buttermilk -> 30
+buckwheat flour / cinnamon -> 25
+buckwheat flour / cloves -> 36
+buckwheat flour / cocoa -> 20
+buckwheat flour / egg -> 33
+buckwheat flour / eggs -> 25
+buckwheat flour / flour -> 100
+unsweetened cocoa / batter -> 33
+unsweetened cocoa / butter -> 33
+unsweetened cocoa / buttermilk -> 20
+unsweetened cocoa / cinnamon -> 25
+unsweetened cocoa / cloves -> 33
+unsweetened cocoa / cocoa -> 100
+baking powder / batter -> 33
+baking powder / butter -> 33
+baking powder / buttermilk -> 20
+baking powder / cinnamon -> 38
+baking powder / cloves -> 33
+baking powder / cocoa -> 20
+baking powder / egg -> 33
+baking powder / eggs -> 25
+baking powder / flour -> 40
+baking powder / honey -> 40
+baking powder / ingredients -> 48
+baking powder / juice -> 20
+baking powder / mashed -> 17
+baking powder / muffin -> 33
+baking powder / oil -> 33
+baking powder / orange -> 50
+baking powder / pecans -> 33
+baking powder / salt -> 25
+baking powder / soda -> 50
+baking powder / stick -> 20
+baking powder / sugar -> 20
+baking powder / yams -> 25
+baking soda / batter -> 33
+baking soda / butter -> 17
+baking soda / buttermilk -> 20
+baking soda / cinnamon -> 38
+baking soda / cloves -> 17
+baking soda / cocoa -> 40
+baking soda / egg -> 33
+baking soda / eggs -> 50
+baking soda / flour -> 20
+baking soda / honey -> 20
+baking soda / ingredients -> 36
+baking soda / juice -> 20
+baking soda / mashed -> 33
+baking soda / muffin -> 33
+baking soda / oil -> 33
+baking soda / orange -> 50
+baking soda / pecans -> 33
+baking soda / salt -> 50
+baking soda / soda -> 100
+salt / batter -> 50
+salt / butter -> 25
+salt / buttermilk -> 25
+salt / cinnamon -> 25
+salt / cloves -> 25
+salt / cocoa -> 25
+salt / egg -> 0
+salt / eggs -> 25
+salt / flour -> 25
+salt / honey -> 0
+salt / ingredients -> 25
+salt / juice -> 0
+salt / mashed -> 25
+salt / muffin -> 0
+salt / oil -> 33
+salt / orange -> 25
+salt / pecans -> 25
+salt / salt -> 100
+ground cinnamon / batter -> 17
+ground cinnamon / butter -> 17
+ground cinnamon / buttermilk -> 20
+ground cinnamon / cinnamon -> 100
+ground cloves / batter -> 17
+ground cloves / butter -> 17
+ground cloves / buttermilk -> 20
+ground cloves / cinnamon -> 25
+ground cloves / cloves -> 100
+honey / batter -> 20
+honey / butter -> 20
+honey / buttermilk -> 20
+honey / cinnamon -> 40
+honey / cloves -> 40
+honey / cocoa -> 20
+honey / egg -> 33
+honey / eggs -> 25
+honey / flour -> 20
+honey / honey -> 100
+sugar / batter -> 40
+sugar / butter -> 40
+sugar / buttermilk -> 40
+sugar / cinnamon -> 20
+sugar / cloves -> 20
+sugar / cocoa -> 20
+sugar / egg -> 33
+sugar / eggs -> 25
+sugar / flour -> 40
+sugar / honey -> 0
+sugar / ingredients -> 40
+sugar / juice -> 20
+sugar / mashed -> 20
+sugar / muffin -> 20
+sugar / oil -> 0
+sugar / orange -> 20
+sugar / pecans -> 20
+sugar / salt -> 50
+sugar / soda -> 50
+sugar / stick -> 20
+sugar / sugar -> 100
+eggs / batter -> 25
+eggs / butter -> 25
+eggs / buttermilk -> 25
+eggs / cinnamon -> 0
+eggs / cloves -> 50
+eggs / cocoa -> 0
+eggs / egg -> 100
+yam / batter -> 33
+yam / butter -> 0
+yam / buttermilk -> 33
+yam / cinnamon -> 67
+yam / cloves -> 0
+yam / cocoa -> 33
+yam / egg -> 0
+yam / eggs -> 0
+yam / flour -> 0
+yam / honey -> 33
+yam / ingredients -> 0
+yam / juice -> 0
+yam / mashed -> 33
+yam / muffin -> 0
+yam / oil -> 0
+yam / orange -> 33
+yam / pecans -> 33
+yam / salt -> 33
+yam / soda -> 33
+yam / stick -> 0
+yam / sugar -> 33
+yam / yams -> 100
+low-fat buttermilk / batter -> 83
+orange rind / batter -> 50
+orange rind / butter -> 33
+orange rind / buttermilk -> 30
+orange rind / cinnamon -> 25
+orange rind / cloves -> 17
+orange rind / cocoa -> 0
+orange rind / egg -> 33
+orange rind / eggs -> 25
+orange rind / flour -> 20
+orange rind / honey -> 40
+orange rind / ingredients -> 45
+orange rind / juice -> 20
+orange rind / mashed -> 33
+orange rind / muffin -> 33
+orange rind / oil -> 33
+orange rind / orange -> 100
+orange juice / batter -> 33
+orange juice / butter -> 33
+orange juice / buttermilk -> 20
+orange juice / cinnamon -> 25
+orange juice / cloves -> 33
+orange juice / cocoa -> 20
+orange juice / egg -> 33
+orange juice / eggs -> 25
+orange juice / flour -> 20
+orange juice / honey -> 40
+orange juice / ingredients -> 48
+orange juice / juice -> 100
+canola oil / batter -> 17
+canola oil / butter -> 0
+canola oil / buttermilk -> 20
+canola oil / cinnamon -> 50
+canola oil / cloves -> 33
+canola oil / cocoa -> 40
+canola oil / egg -> 0
+canola oil / eggs -> 0
+canola oil / flour -> 40
+canola oil / honey -> 20
+canola oil / ingredients -> 20
+canola oil / juice -> 20
+canola oil / mashed -> 17
+canola oil / muffin -> 17
+canola oil / oil -> 100
+brown sugar / batter -> 33
+brown sugar / butter -> 33
+brown sugar / buttermilk -> 20
+brown sugar / cinnamon -> 25
+brown sugar / cloves -> 33
+brown sugar / cocoa -> 20
+brown sugar / egg -> 33
+brown sugar / eggs -> 25
+brown sugar / flour -> 40
+brown sugar / honey -> 40
+brown sugar / ingredients -> 27
+brown sugar / juice -> 20
+brown sugar / mashed -> 17
+brown sugar / muffin -> 17
+brown sugar / oil -> 33
+brown sugar / orange -> 33
+brown sugar / pecans -> 33
+brown sugar / salt -> 50
+brown sugar / soda -> 50
+brown sugar / stick -> 20
+brown sugar / sugar -> 100
+flour / batter -> 20
+flour / butter -> 40
+flour / buttermilk -> 40
+flour / cinnamon -> 20
+flour / cloves -> 40
+flour / cocoa -> 20
+flour / egg -> 0
+flour / eggs -> 0
+flour / flour -> 100
+cinnamon / batter -> 17
+cinnamon / butter -> 0
+cinnamon / buttermilk -> 12
+cinnamon / cinnamon -> 100
+butter / batter -> 83
+pecans / batter -> 17
+pecans / butter -> 17
+pecans / buttermilk -> 17
+pecans / cinnamon -> 33
+pecans / cloves -> 33
+pecans / cocoa -> 40
+pecans / egg -> 33
+pecans / eggs -> 25
+pecans / flour -> 0
+pecans / honey -> 20
+pecans / ingredients -> 50
+pecans / juice -> 20
+pecans / mashed -> 33
+pecans / muffin -> 17
+pecans / oil -> 0
+pecans / orange -> 33
+pecans / pecans -> 100
+all-purpose flour / batter -> 17
+all-purpose flour / buttermilk -> 30
+all-purpose flour / cinnamon -> 12
+all-purpose flour / cloves -> 33
+all-purpose flour / cocoa -> 20
+all-purpose flour / egg -> 33
+all-purpose flour / eggs -> 25
+all-purpose flour / ingredients -> 18
+all-purpose flour / juice -> 20
+all-purpose flour / mashed -> 33
+all-purpose flour / muffin -> 17
+all-purpose flour / oil -> 33
+all-purpose flour / orange -> 33
+all-purpose flour / raisins -> 29
+all-purpose flour / salt -> 25
+all-purpose flour / soda -> 25
+all-purpose flour / sorghum -> 43
+all-purpose flour / stick -> 20
+all-purpose flour / sugar -> 40
+all-purpose flour / tsp -> 33
+all-purpose flour / yams -> 25
+buckwheat flour / batter -> 33
+buckwheat flour / buttermilk -> 30
+buckwheat flour / cinnamon -> 25
+buckwheat flour / cloves -> 36
+buckwheat flour / cocoa -> 20
+buckwheat flour / egg -> 33
+buckwheat flour / eggs -> 25
+buckwheat flour / ingredients -> 18
+buckwheat flour / juice -> 40
+buckwheat flour / mashed -> 33
+buckwheat flour / muffin -> 17
+buckwheat flour / oil -> 33
+buckwheat flour / orange -> 33
+buckwheat flour / raisins -> 14
+buckwheat flour / salt -> 50
+buckwheat flour / soda -> 25
+buckwheat flour / sorghum -> 29
+buckwheat flour / stick -> 20
+buckwheat flour / sugar -> 40
+buckwheat flour / tsp -> 33
+buckwheat flour / yams -> 25
+unsweetened cocoa / batter -> 33
+unsweetened cocoa / buttermilk -> 20
+unsweetened cocoa / cinnamon -> 25
+unsweetened cocoa / cloves -> 33
+unsweetened cocoa / cocoa -> 100
+baking powder / batter -> 33
+baking powder / buttermilk -> 20
+baking powder / cinnamon -> 38
+baking powder / cloves -> 33
+baking powder / cocoa -> 20
+baking powder / egg -> 33
+baking powder / eggs -> 25
+baking powder / ingredients -> 48
+baking powder / juice -> 20
+baking powder / mashed -> 17
+baking powder / muffin -> 33
+baking powder / oil -> 33
+baking powder / orange -> 50
+baking powder / raisins -> 43
+baking powder / salt -> 25
+baking powder / soda -> 50
+baking powder / sorghum -> 29
+baking powder / stick -> 20
+baking powder / sugar -> 20
+baking powder / tsp -> 33
+baking powder / yams -> 25
+baking soda / batter -> 33
+baking soda / buttermilk -> 20
+baking soda / cinnamon -> 38
+baking soda / cloves -> 17
+baking soda / cocoa -> 40
+baking soda / egg -> 33
+baking soda / eggs -> 50
+baking soda / ingredients -> 36
+baking soda / juice -> 20
+baking soda / mashed -> 33
+baking soda / muffin -> 33
+baking soda / oil -> 33
+baking soda / orange -> 50
+baking soda / raisins -> 57
+baking soda / salt -> 50
+baking soda / soda -> 100
+salt / batter -> 50
+salt / buttermilk -> 25
+salt / cinnamon -> 25
+salt / cloves -> 25
+salt / cocoa -> 25
+salt / egg -> 0
+salt / eggs -> 25
+salt / ingredients -> 25
+salt / juice -> 0
+salt / mashed -> 25
+salt / muffin -> 0
+salt / oil -> 33
+salt / orange -> 25
+salt / raisins -> 25
+salt / salt -> 100
+ground cinnamon / batter -> 17
+ground cinnamon / buttermilk -> 20
+ground cinnamon / cinnamon -> 100
+ground cloves / batter -> 17
+ground cloves / buttermilk -> 20
+ground cloves / cinnamon -> 25
+ground cloves / cloves -> 100
+sorghum / batter -> 17
+sorghum / buttermilk -> 29
+sorghum / cinnamon -> 14
+sorghum / cloves -> 17
+sorghum / cocoa -> 20
+sorghum / egg -> 33
+sorghum / eggs -> 25
+sorghum / ingredients -> 14
+sorghum / juice -> 20
+sorghum / mashed -> 17
+sorghum / muffin -> 17
+sorghum / oil -> 33
+sorghum / orange -> 50
+sorghum / raisins -> 14
+sorghum / salt -> 25
+sorghum / soda -> 50
+sorghum / sorghum -> 100
+eggs / batter -> 25
+eggs / buttermilk -> 25
+eggs / cinnamon -> 0
+eggs / cloves -> 50
+eggs / cocoa -> 0
+eggs / egg -> 100
+yam / batter -> 33
+yam / buttermilk -> 33
+yam / cinnamon -> 67
+yam / cloves -> 0
+yam / cocoa -> 33
+yam / egg -> 0
+yam / eggs -> 0
+yam / ingredients -> 0
+yam / juice -> 0
+yam / mashed -> 33
+yam / muffin -> 0
+yam / oil -> 0
+yam / orange -> 33
+yam / raisins -> 33
+yam / salt -> 33
+yam / soda -> 33
+yam / sorghum -> 33
+yam / stick -> 0
+yam / sugar -> 33
+yam / tsp -> 0
+yam / yams -> 100
+low-fat buttermilk / batter -> 83
+orange rind / batter -> 50
+orange rind / buttermilk -> 30
+orange rind / cinnamon -> 25
+orange rind / cloves -> 17
+orange rind / cocoa -> 0
+orange rind / egg -> 33
+orange rind / eggs -> 25
+orange rind / ingredients -> 45
+orange rind / juice -> 20
+orange rind / mashed -> 33
+orange rind / muffin -> 33
+orange rind / oil -> 33
+orange rind / orange -> 100
+orange juice / batter -> 33
+orange juice / buttermilk -> 20
+orange juice / cinnamon -> 25
+orange juice / cloves -> 33
+orange juice / cocoa -> 20
+orange juice / egg -> 33
+orange juice / eggs -> 25
+orange juice / ingredients -> 48
+orange juice / juice -> 100
+canola oil / batter -> 17
+canola oil / buttermilk -> 20
+canola oil / cinnamon -> 50
+canola oil / cloves -> 33
+canola oil / cocoa -> 40
+canola oil / egg -> 0
+canola oil / eggs -> 0
+canola oil / ingredients -> 20
+canola oil / juice -> 20
+canola oil / mashed -> 17
+canola oil / muffin -> 17
+canola oil / oil -> 100
+raisins / batter -> 17
+raisins / buttermilk -> 29
+raisins / cinnamon -> 29
+raisins / cloves -> 17
+raisins / cocoa -> 0
+raisins / egg -> 0
+raisins / eggs -> 25
+raisins / ingredients -> 43
+raisins / juice -> 20
+raisins / mashed -> 33
+raisins / muffin -> 33
+raisins / oil -> 33
+raisins / orange -> 50
+raisins / raisins -> 100
+boiling water / batter -> 67
+boiling water / buttermilk -> 30
+boiling water / cinnamon -> 38
+boiling water / cloves -> 17
+boiling water / cocoa -> 20
+boiling water / egg -> 33
+boiling water / eggs -> 25
+boiling water / ingredients -> 40
+boiling water / juice -> 20
+boiling water / mashed -> 33
+boiling water / muffin -> 33
+boiling water / oil -> 100
+granulated sugar / batter -> 50
+granulated sugar / buttermilk -> 30
+granulated sugar / cinnamon -> 25
+granulated sugar / cloves -> 33
+granulated sugar / cocoa -> 20
+granulated sugar / egg -> 33
+granulated sugar / eggs -> 50
+granulated sugar / ingredients -> 36
+granulated sugar / juice -> 40
+granulated sugar / mashed -> 50
+granulated sugar / muffin -> 17
+granulated sugar / oil -> 33
+granulated sugar / orange -> 50
+granulated sugar / raisins -> 43
+granulated sugar / salt -> 50
+granulated sugar / soda -> 50
+granulated sugar / sorghum -> 29
+granulated sugar / stick -> 20
+granulated sugar / sugar -> 100
+ground beef / beer -> 75
+ground beef / bread -> 40
+ground beef / buns -> 50
+ground beef / cayenne -> 29
+ground beef / cheese -> 33
+ground beef / fat -> 33
+ground beef / garlic -> 33
+ground beef / liquid -> 33
+ground beef / meat -> 25
+ground beef / mustard -> 29
+ground beef / pepper -> 33
+ground beef / potatoes -> 25
+ground beef / rice -> 25
+ground beef / salt -> 0
+ground beef / sandwich -> 25
+ground beef / slices -> 17
+ground beef / sugar -> 20
+ground beef / taste -> 20
+sugar / beer -> 25
+sugar / bread -> 20
+sugar / buns -> 25
+sugar / cayenne -> 0
+sugar / cheese -> 20
+sugar / fat -> 33
+sugar / garlic -> 60
+sugar / liquid -> 20
+sugar / meat -> 25
+sugar / mustard -> 60
+sugar / pepper -> 20
+sugar / potatoes -> 20
+sugar / rice -> 25
+sugar / salt -> 50
+sugar / sandwich -> 40
+sugar / slices -> 20
+sugar / sugar -> 100
+prepared yellow mustard / beer -> 25
+prepared yellow mustard / bread -> 60
+prepared yellow mustard / buns -> 50
+prepared yellow mustard / cayenne -> 29
+prepared yellow mustard / cheese -> 17
+prepared yellow mustard / fat -> 33
+prepared yellow mustard / garlic -> 33
+prepared yellow mustard / liquid -> 33
+prepared yellow mustard / meat -> 50
+prepared yellow mustard / mustard -> 100
+beer / beer -> 100
+cayenne / beer -> 50
+cayenne / bread -> 20
+cayenne / buns -> 25
+cayenne / cayenne -> 100
+garlic / beer -> 25
+garlic / bread -> 20
+garlic / buns -> 0
+garlic / cayenne -> 17
+garlic / cheese -> 17
+garlic / fat -> 33
+garlic / garlic -> 100
+salt & pepper / beer -> 50
+salt & pepper / bread -> 20
+salt & pepper / buns -> 0
+salt & pepper / cayenne -> 29
+salt & pepper / cheese -> 33
+salt & pepper / fat -> 67
+salt & pepper / garlic -> 33
+salt & pepper / liquid -> 17
+salt & pepper / meat -> 25
+salt & pepper / mustard -> 29
+salt & pepper / pepper -> 100
+american cheese / beer -> 50
+american cheese / bread -> 40
+american cheese / buns -> 25
+american cheese / cayenne -> 57
+american cheese / cheese -> 100
+tri-color spiral pasta / cheese -> 17
+tri-color spiral pasta / chestnuts -> 22
+tri-color spiral pasta / chives -> 17
+tri-color spiral pasta / dill -> 50
+tri-color spiral pasta / meat -> 50
+tri-color spiral pasta / oil -> 67
+tri-color spiral pasta / olives -> 50
+tri-color spiral pasta / onions -> 50
+tri-color spiral pasta / pasta -> 100
+dill pickles / cheese -> 55
+dill pickles / chestnuts -> 33
+dill pickles / chives -> 50
+dill pickles / dill -> 100
+ripe olives / cheese -> 33
+ripe olives / chestnuts -> 22
+ripe olives / chives -> 67
+ripe olives / dill -> 25
+ripe olives / meat -> 25
+ripe olives / oil -> 67
+ripe olives / olives -> 100
+green onion / cheese -> 33
+green onion / chestnuts -> 22
+green onion / chives -> 17
+green onion / dill -> 25
+green onion / meat -> 25
+green onion / oil -> 67
+green onion / olives -> 36
+green onion / onions -> 91
+chives / cheese -> 67
+chives / chestnuts -> 67
+chives / chives -> 100
+sweet pepper / cheese -> 50
+sweet pepper / chestnuts -> 22
+sweet pepper / chives -> 17
+sweet pepper / dill -> 0
+sweet pepper / meat -> 50
+sweet pepper / oil -> 0
+sweet pepper / olives -> 17
+sweet pepper / onions -> 0
+sweet pepper / pasta -> 20
+sweet pepper / peppers -> 92
+water chestnut / cheese -> 67
+water chestnut / chestnuts -> 94
+tomatoes / cheese -> 33
+tomatoes / chestnuts -> 38
+tomatoes / chives -> 33
+tomatoes / dill -> 0
+tomatoes / meat -> 75
+tomatoes / oil -> 33
+tomatoes / olives -> 50
+tomatoes / onions -> 33
+tomatoes / pasta -> 40
+tomatoes / peppers -> 29
+tomatoes / pickles -> 29
+tomatoes / spices -> 33
+tomatoes / tomatoes -> 100
+ham / cheese -> 33
+ham / chestnuts -> 33
+ham / chives -> 33
+ham / dill -> 0
+ham / meat -> 33
+ham / oil -> 0
+ham / olives -> 0
+ham / onions -> 0
+ham / pasta -> 33
+ham / peppers -> 0
+ham / pickles -> 0
+ham / spices -> 0
+ham / tomatoes -> 33
+ham / vinegar -> 33
+cheese / cheese -> 100
+olive oil / cheese -> 17
+olive oil / chestnuts -> 11
+olive oil / chives -> 50
+olive oil / dill -> 50
+olive oil / meat -> 25
+olive oil / oil -> 100
+cider vinegar / cheese -> 33
+cider vinegar / chestnuts -> 33
+cider vinegar / chives -> 50
+cider vinegar / dill -> 25
+cider vinegar / meat -> 50
+cider vinegar / oil -> 33
+cider vinegar / olives -> 33
+cider vinegar / onions -> 33
+cider vinegar / pasta -> 20
+cider vinegar / peppers -> 29
+cider vinegar / pickles -> 29
+cider vinegar / spices -> 33
+cider vinegar / tomatoes -> 12
+cider vinegar / vinegar -> 100
+onion powder / cheese -> 17
+onion powder / chestnuts -> 11
+onion powder / chives -> 17
+onion powder / dill -> 25
+onion powder / meat -> 25
+onion powder / oil -> 67
+onion powder / olives -> 33
+onion powder / onions -> 83
+garlic powder / cheese -> 17
+garlic powder / chestnuts -> 22
+garlic powder / chives -> 17
+garlic powder / dill -> 25
+garlic powder / meat -> 25
+garlic powder / oil -> 33
+garlic powder / olives -> 33
+garlic powder / onions -> 17
+garlic powder / pasta -> 20
+garlic powder / peppers -> 46
+garlic powder / pickles -> 29
+garlic powder / spices -> 33
+garlic powder / tomatoes -> 25
+garlic powder / vinegar -> 29
+salt and pepper / cheese -> 33
+salt and pepper / chestnuts -> 22
+salt and pepper / chives -> 17
+salt and pepper / dill -> 25
+salt and pepper / meat -> 25
+salt and pepper / oil -> 33
+salt and pepper / olives -> 17
+salt and pepper / onions -> 17
+salt and pepper / pasta -> 60
+salt and pepper / peppers -> 92
+italian seasoning / cheese -> 33
+italian seasoning / chestnuts -> 33
+italian seasoning / chives -> 33
+italian seasoning / dill -> 25
+italian seasoning / meat -> 50
+italian seasoning / oil -> 67
+italian seasoning / olives -> 33
+italian seasoning / onions -> 67
+italian seasoning / pasta -> 40
+italian seasoning / peppers -> 29
+italian seasoning / pickles -> 29
+italian seasoning / spices -> 50
+italian seasoning / tomatoes -> 38
+italian seasoning / vinegar -> 57
+frozen french fries / ingredients -> 45
+frozen french fries / paper -> 40
+frozen french fries / pepper -> 33
+frozen french fries / salt -> 25
+oil / ingredients -> 33
+oil / paper -> 0
+oil / pepper -> 0
+oil / salt -> 33
+salt & freshly ground black pepper / ingredients -> 27
+salt & freshly ground black pepper / paper -> 80
+parmesan cheese / ingredients -> 36
+parmesan cheese / paper -> 60
+parmesan cheese / pepper -> 33
+parmesan cheese / salt -> 50
+oregano / ingredients -> 43
+oregano / paper -> 20
+oregano / pepper -> 17
+oregano / salt -> 25
+basil / ingredients -> 20
+basil / paper -> 20
+basil / pepper -> 0
+basil / salt -> 50
+flat leaf parsley / ingredients -> 18
+flat leaf parsley / paper -> 60
+flat leaf parsley / pepper -> 33
+flat leaf parsley / salt -> 50
+sandwich bun / bun -> 100
+good seasonings italian salad dressing mix / bun -> 33
+good seasonings italian salad dressing mix / buns -> 50
+good seasonings italian salad dressing mix / butter -> 17
+good seasonings italian salad dressing mix / cheese -> 33
+good seasonings italian salad dressing mix / cookie -> 33
+good seasonings italian salad dressing mix / dressing -> 100
+butter / bun -> 67
+butter / buns -> 50
+butter / butter -> 100
+deli turkey / bun -> 33
+deli turkey / buns -> 25
+deli turkey / butter -> 33
+deli turkey / cheese -> 17
+deli turkey / cookie -> 33
+deli turkey / dressing -> 38
+deli turkey / ham -> 0
+deli turkey / jelly -> 40
+deli turkey / pepperoni -> 22
+deli turkey / rolls -> 20
+deli turkey / sandwich -> 12
+deli turkey / turkey -> 100
+ham / bun -> 0
+ham / buns -> 0
+ham / butter -> 0
+ham / cheese -> 33
+ham / cookie -> 0
+ham / dressing -> 0
+ham / ham -> 100
+pepperoni / bun -> 33
+pepperoni / buns -> 25
+pepperoni / butter -> 33
+pepperoni / cheese -> 17
+pepperoni / cookie -> 36
+pepperoni / dressing -> 25
+pepperoni / ham -> 0
+pepperoni / jelly -> 20
+pepperoni / pepperoni -> 100
+cheddar cheese / bun -> 0
+cheddar cheese / buns -> 25
+cheddar cheese / butter -> 17
+cheddar cheese / cheese -> 100
+swiss cheese / bun -> 0
+swiss cheese / buns -> 25
+swiss cheese / butter -> 17
+swiss cheese / cheese -> 100
+mozzarella cheese / bun -> 0
+mozzarella cheese / buns -> 25
+mozzarella cheese / butter -> 17
+mozzarella cheese / cheese -> 100
+shortening / batter -> 33
+shortening / butter -> 33
+shortening / cake -> 25
+shortening / chocolate -> 44
+shortening / cream -> 40
+shortening / eggs -> 25
+shortening / flour -> 40
+shortening / frosting -> 62
+shortening / icing -> 60
+shortening / ingredients -> 40
+shortening / milk -> 25
+shortening / salt -> 25
+shortening / shortbread -> 60
+shortening / sugar -> 40
+shortening / tog -> 33
+shortening / vanilla -> 31
+icing sugar / batter -> 33
+icing sugar / butter -> 33
+icing sugar / cake -> 25
+icing sugar / chocolate -> 22
+icing sugar / cream -> 20
+icing sugar / eggs -> 50
+icing sugar / flour -> 40
+icing sugar / frosting -> 25
+icing sugar / icing -> 100
+vanilla / batter -> 17
+vanilla / butter -> 0
+vanilla / cake -> 25
+vanilla / chocolate -> 29
+vanilla / cream -> 20
+vanilla / eggs -> 0
+vanilla / flour -> 20
+vanilla / frosting -> 14
+vanilla / icing -> 20
+vanilla / ingredients -> 14
+vanilla / milk -> 50
+vanilla / salt -> 25
+vanilla / shortbread -> 14
+vanilla / sugar -> 20
+vanilla / tog -> 0
+vanilla / vanilla -> 100
+all-purpose flour / batter -> 17
+all-purpose flour / butter -> 33
+all-purpose flour / cake -> 25
+all-purpose flour / chocolate -> 22
+all-purpose flour / cream -> 20
+all-purpose flour / eggs -> 25
+all-purpose flour / flour -> 100
+baking powder / batter -> 33
+baking powder / butter -> 33
+baking powder / cake -> 50
+baking powder / chocolate -> 22
+baking powder / cream -> 20
+baking powder / eggs -> 25
+baking powder / flour -> 40
+baking powder / frosting -> 38
+baking powder / icing -> 60
+baking powder / ingredients -> 48
+baking powder / milk -> 25
+baking powder / salt -> 25
+baking powder / shortbread -> 20
+baking powder / sugar -> 20
+baking powder / tog -> 33
+baking powder / vanilla -> 29
+sugar / batter -> 40
+sugar / butter -> 40
+sugar / cake -> 25
+sugar / chocolate -> 20
+sugar / cream -> 20
+sugar / eggs -> 25
+sugar / flour -> 40
+sugar / frosting -> 40
+sugar / icing -> 20
+sugar / ingredients -> 40
+sugar / milk -> 0
+sugar / salt -> 50
+sugar / shortbread -> 40
+sugar / sugar -> 100
+eggs / batter -> 25
+eggs / butter -> 25
+eggs / cake -> 25
+eggs / chocolate -> 25
+eggs / cream -> 25
+eggs / eggs -> 100
+salt / batter -> 50
+salt / butter -> 25
+salt / cake -> 25
+salt / chocolate -> 50
+salt / cream -> 25
+salt / eggs -> 25
+salt / flour -> 25
+salt / frosting -> 50
+salt / icing -> 0
+salt / ingredients -> 25
+salt / milk -> 25
+salt / salt -> 100
+milk / batter -> 0
+milk / butter -> 0
+milk / cake -> 25
+milk / chocolate -> 25
+milk / cream -> 25
+milk / eggs -> 0
+milk / flour -> 25
+milk / frosting -> 25
+milk / icing -> 25
+milk / ingredients -> 25
+milk / milk -> 100
+butter / batter -> 83
+yellow cake mix / cake -> 100
+vanilla instant pudding mix / cake -> 25
+vanilla instant pudding mix / carrots -> 29
+vanilla instant pudding mix / cinnamon -> 50
+vanilla instant pudding mix / coconut -> 29
+vanilla instant pudding mix / eggs -> 25
+vanilla instant pudding mix / nutmeg -> 33
+vanilla instant pudding mix / oil -> 67
+vanilla instant pudding mix / pecans -> 50
+vanilla instant pudding mix / pineapple -> 44
+vanilla instant pudding mix / pudding -> 100
+nutmeg / cake -> 25
+nutmeg / carrots -> 17
+nutmeg / cinnamon -> 33
+nutmeg / coconut -> 50
+nutmeg / eggs -> 50
+nutmeg / nutmeg -> 100
+cinnamon / cake -> 25
+cinnamon / carrots -> 43
+cinnamon / cinnamon -> 100
+eggs / cake -> 25
+eggs / carrots -> 25
+eggs / cinnamon -> 0
+eggs / coconut -> 0
+eggs / eggs -> 100
+oil / cake -> 0
+oil / carrots -> 33
+oil / cinnamon -> 33
+oil / coconut -> 33
+oil / eggs -> 0
+oil / nutmeg -> 0
+oil / oil -> 100
+water / cake -> 50
+water / carrots -> 40
+water / cinnamon -> 20
+water / coconut -> 20
+water / eggs -> 25
+water / nutmeg -> 40
+water / oil -> 0
+water / pecans -> 20
+water / pineapple -> 40
+water / pudding -> 0
+crushed pineapple / cake -> 25
+crushed pineapple / carrots -> 43
+crushed pineapple / cinnamon -> 38
+crushed pineapple / coconut -> 29
+crushed pineapple / eggs -> 25
+crushed pineapple / nutmeg -> 33
+crushed pineapple / oil -> 33
+crushed pineapple / pecans -> 50
+crushed pineapple / pineapple -> 100
+carrot / cake -> 50
+carrot / carrots -> 100
+pecans / cake -> 50
+pecans / carrots -> 33
+pecans / cinnamon -> 33
+pecans / coconut -> 33
+pecans / eggs -> 25
+pecans / nutmeg -> 17
+pecans / oil -> 0
+pecans / pecans -> 100
+coconut / cake -> 25
+coconut / carrots -> 43
+coconut / cinnamon -> 29
+coconut / coconut -> 100
+whole kernel corn / butter -> 33
+whole kernel corn / cheese -> 33
+whole kernel corn / corn -> 100
+onion / butter -> 0
+onion / cheese -> 0
+onion / corn -> 50
+onion / cornbread -> 40
+onion / cream -> 0
+onion / egg -> 0
+onion / honey -> 44
+onion / jalapenos -> 40
+onion / liquid -> 20
+onion / muffin -> 40
+onion / onion -> 100
+red bell pepper / butter -> 33
+red bell pepper / cheese -> 33
+red bell pepper / corn -> 25
+red bell pepper / cornbread -> 33
+red bell pepper / cream -> 40
+red bell pepper / egg -> 33
+red bell pepper / honey -> 20
+red bell pepper / jalapenos -> 33
+red bell pepper / liquid -> 17
+red bell pepper / muffin -> 0
+red bell pepper / onion -> 0
+red bell pepper / pepper -> 100
+butter / butter -> 100
+jiffy corn muffin mix / butter -> 17
+jiffy corn muffin mix / cheese -> 17
+jiffy corn muffin mix / corn -> 100
+egg / butter -> 33
+egg / cheese -> 33
+egg / corn -> 0
+egg / cornbread -> 33
+egg / cream -> 33
+egg / egg -> 100
+heavy cream / butter -> 17
+heavy cream / cheese -> 33
+heavy cream / corn -> 50
+heavy cream / cornbread -> 44
+heavy cream / cream -> 100
+jalapenos / butter -> 17
+jalapenos / cheese -> 33
+jalapenos / corn -> 25
+jalapenos / cornbread -> 11
+jalapenos / cream -> 20
+jalapenos / egg -> 33
+jalapenos / honey -> 20
+jalapenos / jalapenos -> 100
+sharp cheddar cheese / butter -> 33
+sharp cheddar cheese / cheese -> 100
+honey / butter -> 20
+honey / cheese -> 40
+honey / corn -> 50
+honey / cornbread -> 40
+honey / cream -> 20
+honey / egg -> 33
+honey / honey -> 100
+flour / ingredients -> 0
+flour / starter -> 20
+water / ingredients -> 20
+water / starter -> 80
+dry yeast / ingredients -> 33
+dry yeast / starter -> 29
+milk / ingredients -> 25
+milk / starter -> 0
+sugar / ingredients -> 40
+sugar / starter -> 60
+eggs / ingredients -> 50
+eggs / starter -> 25
+vegetable oil / ingredients -> 27
+vegetable oil / starter -> 43
+baking soda / ingredients -> 36
+baking soda / starter -> 29
+baking powder / ingredients -> 48
+baking powder / starter -> 29
+salt / ingredients -> 25
+salt / starter -> 50
+cinnamon / ingredients -> 25
+cinnamon / starter -> 14
+vanilla / ingredients -> 14
+vanilla / starter -> 14
+crushed pineapple / ingredients -> 45
+crushed pineapple / starter -> 29
+raisins / ingredients -> 43
+raisins / starter -> 14
+nuts / ingredients -> 75
+nuts / starter -> 25
+butter / ingredients -> 17
+butter / starter -> 67
+brown sugar / ingredients -> 27
+brown sugar / starter -> 43
+italian sausage / cheese -> 33
+italian sausage / fat -> 33
+italian sausage / ingredients -> 36
+italian sausage / meat -> 25
+italian sausage / noodles -> 29
+italian sausage / sauce -> 60
+italian sausage / sausage -> 100
+ground beef / cheese -> 33
+ground beef / fat -> 33
+ground beef / ingredients -> 36
+ground beef / meat -> 25
+ground beef / noodles -> 43
+ground beef / sauce -> 20
+ground beef / sausage -> 29
+ground beef / stick -> 0
+garlic / cheese -> 17
+garlic / fat -> 33
+garlic / ingredients -> 50
+garlic / meat -> 0
+garlic / noodles -> 17
+garlic / sauce -> 40
+garlic / sausage -> 17
+garlic / stick -> 44
+dried basil / cheese -> 17
+dried basil / fat -> 33
+dried basil / ingredients -> 38
+dried basil / meat -> 25
+dried basil / noodles -> 29
+dried basil / sauce -> 20
+dried basil / sausage -> 29
+dried basil / stick -> 40
+salt / cheese -> 25
+salt / fat -> 67
+salt / ingredients -> 25
+salt / meat -> 50
+salt / noodles -> 25
+salt / sauce -> 50
+salt / sausage -> 50
+salt / stick -> 50
+whole tomato / cheese -> 33
+whole tomato / fat -> 67
+whole tomato / ingredients -> 18
+whole tomato / meat -> 75
+whole tomato / noodles -> 43
+whole tomato / sauce -> 20
+whole tomato / sausage -> 14
+whole tomato / stick -> 20
+tomato paste / cheese -> 33
+tomato paste / fat -> 67
+tomato paste / ingredients -> 18
+tomato paste / meat -> 75
+tomato paste / noodles -> 29
+tomato paste / sauce -> 40
+tomato paste / sausage -> 43
+tomato paste / stick -> 40
+ricotta cheese / cheese -> 100
+cottage cheese / cheese -> 100
+parmesan cheese / cheese -> 100
+parsley flakes / cheese -> 33
+parsley flakes / fat -> 67
+parsley flakes / ingredients -> 27
+parsley flakes / meat -> 25
+parsley flakes / noodles -> 43
+parsley flakes / sauce -> 40
+parsley flakes / sausage -> 43
+parsley flakes / stick -> 20
+eggs / cheese -> 50
+eggs / fat -> 0
+eggs / ingredients -> 50
+eggs / meat -> 25
+eggs / noodles -> 50
+eggs / sauce -> 25
+eggs / sausage -> 25
+eggs / stick -> 0
+ground black pepper / cheese -> 33
+ground black pepper / fat -> 33
+ground black pepper / ingredients -> 18
+ground black pepper / meat -> 25
+ground black pepper / noodles -> 43
+ground black pepper / sauce -> 40
+ground black pepper / sausage -> 29
+ground black pepper / stick -> 40
+lasagna noodle / cheese -> 17
+lasagna noodle / fat -> 33
+lasagna noodle / ingredients -> 27
+lasagna noodle / meat -> 25
+lasagna noodle / noodles -> 92
+mozzarella cheese / cheese -> 100
+eggs / cheese -> 50
+eggs / chicken -> 25
+eggs / eggs -> 100
+cottage cheese / cheese -> 100
+cheese / cheese -> 100
+frozen chopped spinach / cheese -> 50
+frozen chopped spinach / chicken -> 43
+frozen chopped spinach / eggs -> 50
+frozen chopped spinach / ham -> 33
+frozen chopped spinach / meat -> 25
+frozen chopped spinach / oil -> 33
+frozen chopped spinach / olive -> 40
+frozen chopped spinach / pam -> 33
+frozen chopped spinach / seasonings -> 40
+frozen chopped spinach / spinach -> 100
+beef / cheese -> 50
+beef / chicken -> 25
+beef / eggs -> 25
+beef / ham -> 0
+beef / meat -> 25
+beef / oil -> 0
+beef / olive -> 25
+beef / pam -> 0
+beef / seasonings -> 25
+beef / spinach -> 0
+beef / wheat -> 25
+salt / cheese -> 25
+salt / chicken -> 0
+salt / eggs -> 25
+salt / ham -> 33
+salt / meat -> 50
+salt / oil -> 33
+salt / olive -> 25
+salt / pam -> 33
+salt / seasonings -> 50
+salt / spinach -> 25
+salt / wheat -> 50
+pepper / cheese -> 36
+pepper / chicken -> 17
+pepper / eggs -> 25
+pepper / ham -> 0
+pepper / meat -> 25
+pepper / oil -> 0
+pepper / olive -> 20
+pepper / pam -> 33
+pepper / seasonings -> 17
+pepper / spinach -> 17
+pepper / wheat -> 20
+herbs / cheese -> 60
+herbs / chicken -> 40
+herbs / eggs -> 50
+herbs / ham -> 33
+herbs / meat -> 25
+herbs / oil -> 0
+herbs / olive -> 20
+herbs / pam -> 0
+herbs / seasonings -> 40
+herbs / spinach -> 20
+herbs / wheat -> 44
+spices / cheese -> 50
+spices / chicken -> 50
+spices / eggs -> 50
+spices / ham -> 0
+spices / meat -> 25
+spices / oil -> 33
+spices / olive -> 40
+spices / pam -> 33
+spices / seasonings -> 50
+spices / spinach -> 67
+spices / wheat -> 20
+olive oil flavored cooking spray / cheese -> 17
+olive oil flavored cooking spray / chicken -> 43
+olive oil flavored cooking spray / eggs -> 50
+olive oil flavored cooking spray / ham -> 33
+olive oil flavored cooking spray / meat -> 25
+olive oil flavored cooking spray / oil -> 100
+toasted wheat germ / cheese -> 33
+toasted wheat germ / chicken -> 29
+toasted wheat germ / eggs -> 25
+toasted wheat germ / ham -> 67
+toasted wheat germ / meat -> 75
+toasted wheat germ / oil -> 33
+toasted wheat germ / olive -> 40
+toasted wheat germ / pam -> 33
+toasted wheat germ / seasonings -> 30
+toasted wheat germ / spinach -> 29
+toasted wheat germ / wheat -> 100
+rolls / bundt -> 0
+rolls / butter -> 20
+rolls / cinnamon -> 20
+rolls / cloth -> 20
+rolls / pudding -> 0
+rolls / raisins -> 40
+rolls / rolls -> 100
+brown sugar / bundt -> 40
+brown sugar / butter -> 33
+brown sugar / cinnamon -> 25
+brown sugar / cloth -> 20
+brown sugar / pudding -> 29
+brown sugar / raisins -> 43
+brown sugar / rolls -> 40
+brown sugar / sugar -> 100
+instant vanilla pudding / bundt -> 40
+instant vanilla pudding / butter -> 33
+instant vanilla pudding / cinnamon -> 50
+instant vanilla pudding / cloth -> 20
+instant vanilla pudding / pudding -> 100
+cinnamon / bundt -> 20
+cinnamon / butter -> 0
+cinnamon / cinnamon -> 100
+raisins / bundt -> 20
+raisins / butter -> 0
+raisins / cinnamon -> 29
+raisins / cloth -> 0
+raisins / pudding -> 29
+raisins / raisins -> 100
+butter / bundt -> 60
+butter / butter -> 100
+stewed tomatoes / beef -> 50
+stewed tomatoes / chili -> 0
+stewed tomatoes / eats -> 50
+stewed tomatoes / fat -> 67
+stewed tomatoes / garlic -> 17
+stewed tomatoes / ingredients -> 36
+stewed tomatoes / juice -> 20
+stewed tomatoes / leftover -> 38
+stewed tomatoes / noodles -> 57
+stewed tomatoes / onions -> 33
+stewed tomatoes / paper -> 40
+stewed tomatoes / prego -> 40
+stewed tomatoes / sauce -> 40
+stewed tomatoes / spaghetti -> 33
+stewed tomatoes / sugar -> 20
+stewed tomatoes / taste -> 60
+stewed tomatoes / tomatoes -> 100
+prego spaghetti sauce / beef -> 25
+prego spaghetti sauce / chili -> 20
+prego spaghetti sauce / eats -> 50
+prego spaghetti sauce / fat -> 33
+prego spaghetti sauce / garlic -> 33
+prego spaghetti sauce / ingredients -> 36
+prego spaghetti sauce / juice -> 60
+prego spaghetti sauce / leftover -> 25
+prego spaghetti sauce / noodles -> 29
+prego spaghetti sauce / onions -> 33
+prego spaghetti sauce / paper -> 60
+prego spaghetti sauce / prego -> 100
+garlic / beef -> 0
+garlic / chili -> 40
+garlic / eats -> 25
+garlic / fat -> 33
+garlic / garlic -> 100
+ground beef / beef -> 100
+white onion / beef -> 25
+white onion / chili -> 40
+white onion / eats -> 25
+white onion / fat -> 33
+white onion / garlic -> 17
+white onion / ingredients -> 36
+white onion / juice -> 40
+white onion / leftover -> 25
+white onion / noodles -> 29
+white onion / onions -> 91
+granulated sugar / beef -> 25
+granulated sugar / chili -> 20
+granulated sugar / eats -> 50
+granulated sugar / fat -> 67
+granulated sugar / garlic -> 50
+granulated sugar / ingredients -> 36
+granulated sugar / juice -> 40
+granulated sugar / leftover -> 38
+granulated sugar / noodles -> 43
+granulated sugar / onions -> 17
+granulated sugar / paper -> 40
+granulated sugar / prego -> 20
+granulated sugar / sauce -> 40
+granulated sugar / spaghetti -> 22
+granulated sugar / sugar -> 100

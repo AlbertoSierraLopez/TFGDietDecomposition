@@ -7,13 +7,14 @@ import spacy
 import pandas as pd
 
 from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY, SPACY_TOKENIZER
+from neural_network import NeuralNetwork
 from fuzzywuzzy import fuzz
 from sortedcollections import ValueSortedDict
 from scipy.spatial import distance
 
 
 class IngredientManager:
-    def __init__(self, requirements, ing_vocab, nlp_model, model_type, kg_ing, kg_tag, chunks=False):
+    def __init__(self, requirements, ing_vocab, vocab, nlp_model, model_type, kg_ing, kg_tag, chunks=False):
         self.recipe = None
         self.tokenized_recipe = None
         self.ingredients = None
@@ -21,13 +22,16 @@ class IngredientManager:
         self.replacements = None
 
         self.requirements = REQUIREMENT_LIST[requirements]
+        self.vocab = vocab
         self.nlp_model = nlp_model
         self.model_type = model_type
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
         self.chunks = chunks    # Si se usan chunks cambia la detección de ingredientes y la búsqueda de similares
+
         self.spacy = spacy.load(SPACY_TOKENIZER)
+        self.mlpc = NeuralNetwork(ing_vocab, vocab)
 
         # proxy cache
         if os.path.exists(PATH_CACHE):
@@ -54,7 +58,7 @@ class IngredientManager:
 # MODULO 2
     # 1. Tokenizar receta
     def detect_ingredients(self):
-        return sorted(set([token for token in self.tokenized_recipe if self.is_ingredient_v1(token)]))
+        return sorted(set([token for token in self.tokenized_recipe if self.is_ingredient_v3(token)]))
 
     # 2. Sacar chunks de receta
     def detect_ingredients_chunks(self):
@@ -81,6 +85,10 @@ class IngredientManager:
             if lev_ratio > 80 and lev_patial_ratio == 100:
                 return True
         return False
+
+    # 3. Usando una red neuronal
+    def is_ingredient_v3(self, token):
+        return self.mlpc.predict(token)
 
 #   Detector de ingredientes en chunks:
     def is_ingredient_chunk(self, chunk):
