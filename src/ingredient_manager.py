@@ -5,6 +5,7 @@ import nltk
 import atexit
 import spacy
 import pandas as pd
+import owlready2 as owl
 
 from constants import PATH_CACHE, REQUIREMENT_LIST, API_KEY, SPACY_TOKENIZER
 from neural_network import NeuralNetwork
@@ -32,6 +33,7 @@ class IngredientManager:
 
         self.spacy = spacy.load(SPACY_TOKENIZER)
         self.mlpc = NeuralNetwork(ing_vocab, vocab)
+        self.onto = owl.get_ontology("http://purl.obolibrary.org/obo/foodon.owl").load()
 
         # proxy cache
         if os.path.exists(PATH_CACHE):
@@ -39,28 +41,54 @@ class IngredientManager:
                 self.usda_cache = json.load(json_file)
         else:
             self.usda_cache = dict()
-
         atexit.register(self.exit_handler)
 
     def load_recipe(self, recipe, tokenized_recipe):
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
-
         if not self.chunks:
-            self.ingredients = self.detect_ingredients()
+#           self.ingredients = self.detect_ingredients()
+            self.ingredients = self.detect_ingredients_onto()
         else:
             self.ingredients = self.detect_ingredients_chunks()
-
         self.unwanted = self.unwanted_ingredients()
-
         self.replacements = self.get_replacements()
 
-# MODULO 2
-    # 1. Tokenizar receta
-    def detect_ingredients(self):
-        return sorted(set([token for token in self.tokenized_recipe if self.is_ingredient_v3(token)]))
+    def tokenizar_receta_spacy_pro(self, recipe):
+        tokens = []
+        doc = list(self.spacy(recipe))
+        for token in doc:
+            # Se filtran signos de puntuación, números y palabras vacías
+            if not token.is_punct and not token.is_digit and not token.is_stop:
+                tokens.append(token)
+        return tokens
 
-    # 2. Sacar chunks de receta
+    @staticmethod
+    def word_similarity(token, string):
+        # Si un ingrediente compuesto contiene un token, la similitud es 1 / el número de palabras del ingrediente
+        tok_string = [word for word in nltk.word_tokenize(string) if word.isalnum()]
+        return min(tok_string.count(token), 1) / len(tok_string)
+
+# MODULO 2
+    # 1. Tokenizar receta y usar uno de los 3 primeros métodos
+    def detect_ingredients(self):
+        detected_ingredients = set()
+        for token in self.tokenized_recipe:
+            if self.is_ingredient_v1(token):
+#           if self.is_ingredient_v2(token):
+#           if self.is_ingredient_v3(token):
+                detected_ingredients.add(token)
+        return detected_ingredients
+
+    # 2. Tokenizar receta con spacy y usar ontología sobre los sustantivos
+    def detect_ingredients_onto(self):
+        detected_ingredients = set()
+        for token in self.tokenizar_receta_spacy_pro(self.recipe):
+            if token.pos_ in ['NOUN'] and self.is_ingredient_v4(token.text):
+                detected_ingredients.add(token.text)
+        return detected_ingredients
+
+    # 3. Sacar chunks de receta
     def detect_ingredients_chunks(self):
         detected_ingredients = []
         doc = self.spacy(self.recipe)
@@ -72,11 +100,11 @@ class IngredientManager:
         return sorted(set(detected_ingredients))
 
 #   Detectores de ingredientes:
-    # 1. Pertenece al vocabulario
+#   1. Pertenece al vocabulario
     def is_ingredient_v1(self, token):
         return token in self.ing_vocab
 
-    # 2. Usando la distancia de Levenshtein con el vocabulario
+#   2. Usando la distancia de Levenshtein con el vocabulario
     def is_ingredient_v2(self, token):
         for ingredient in self.ing_vocab:
             lev_patial_ratio = fuzz.partial_ratio(token, ingredient)
@@ -86,9 +114,26 @@ class IngredientManager:
                 return True
         return False
 
-    # 3. Usando una red neuronal
+#   3. Usando una red neuronal
     def is_ingredient_v3(self, token):
         return self.mlpc.predict(token)
+
+#   4. Usando una ontología
+    # Para usar este método es recomendable filtrar antes los sustantivos
+    def is_ingredient_v4(self, token):
+        # Buscar el término en la ontología
+        entity = self.onto.search_one(label=token + "*")
+
+        # Comprobar que lo que hemos encontrado se parece a lo que queremos
+        if entity is None or self.word_similarity(token, entity.label[0]) < 0.5:
+            return False
+
+        # Extraer sus ancestros
+        ancestors = set()
+        for item in entity.ancestors():
+            ancestors.update(item.label)
+        # Buscar entre sus ancestros, una entidad que lo clasifique como ingrediente
+        return 'food product' in ancestors or 'dietary nutritional component' in ancestors
 
 #   Detector de ingredientes en chunks:
     def is_ingredient_chunk(self, chunk):
