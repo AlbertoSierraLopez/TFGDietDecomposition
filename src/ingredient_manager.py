@@ -157,9 +157,7 @@ class IngredientManager:
     # Si por cualquier razón, una propiedad del ingrediente no se puede evaluar,
     # se da por buena y el ingrediente pasa como válido
     def passes_requirements(self, food):
-        nutrients = self.get_nutrients(food)
-        category = self.get_food_category(food)
-        ingredients = self.get_ingredients(food)
+        nutrients, category, ingredients = self.get_USDA_data(food)
 
         if 'Dieta vegetariana' in self.requirements:
             if food not in self.kg_tag['vegan']:
@@ -250,41 +248,26 @@ class IngredientManager:
         else:
             return None
 
-    # Devuelve la columna 'Food Nutrients' de la primera fila de la query, en forma de dataframe
-    def get_nutrients(self, food):
+    def get_USDA_data(self, food):
+        nutrients, category, ingredients = None, None, None
         info = self.get_info(food)
 
-        if info is None or 'foodNutrients' not in info:
-            return None
+        if info is not None:
+            if 'foodNutrients' in info:
+                nutrients = pd.json_normalize(info['foodNutrients'])
 
-        nutrients = info['foodNutrients']
-        return pd.json_normalize(nutrients)
+            if 'foodCategory' in info:
+                food_cat = [token.lower() for token in nltk.word_tokenize(info['foodCategory'])]
 
-    # Devuelve la columna 'Food Category' de la primera fila de la query, tokenizada
-    def get_food_category(self, food):
-        info = self.get_info(food)
-
-        if info is None or 'foodCategory' not in info:
-            return None
-
-        food_cat = info['foodCategory']
-        return [token.lower() for token in nltk.word_tokenize(food_cat)]        # Devolver en minuscula
-
-    # Devuelve la columna 'Ingredients' de la primera fila de la query, tokenizada
-    def get_ingredients(self, food):
-        info = self.get_info(food)
-
-        if info is None or 'ingredients' not in info:
-            return None
-
-        ingredients = info['ingredients']
-        return [token.lower() for token in nltk.word_tokenize(ingredients)]     # Devolver en minuscula
+            if 'ingredients' in info:
+                ingredients = [token.lower() for token in nltk.word_tokenize(info['ingredients'])]
+        return nutrients, category, ingredients
 
     def get_total_nutrients(self):
         total_nutrients = None
 
         for ingredient in self.ingredients:
-            nutrients = self.get_nutrients(ingredient)
+            nutrients, category, ingredients = self.get_USDA_data(ingredient)
 
             if total_nutrients is None:
                 total_nutrients = nutrients
