@@ -90,6 +90,11 @@ if DEBUG:
     print("\tExhaustividad:", recall)
     print("\tF1:", f1)
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
+    start_time = time()
+
+    print(">Procesando estándar...")
+    statistics.process_golden_standard()
+    print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
 
 

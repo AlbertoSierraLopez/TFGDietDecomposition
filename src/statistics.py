@@ -1,8 +1,9 @@
 import atexit
+import pandas as pd
 
 from fuzzywuzzy import fuzz
 
-from constants import TEST_SIZE, DEBUG
+from constants import TEST_SIZE, DEBUG, PATH_GOLDEN, PATH_OUTPUT
 from tokenizer import Tokenizer
 from data_loader import sentencizer
 
@@ -86,6 +87,23 @@ class Statistics:
                 return True
 
         return False
+
+    def process_golden_standard(self):
+        golden_standard = pd.read_csv(PATH_GOLDEN)
+        file_out = open(PATH_OUTPUT + "golden_standard.txt", 'w+')
+
+        for i, recipe_steps in enumerate(golden_standard['steps']):
+            recipe = ', '.join(recipe_steps)
+            tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe)
+
+            self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
+            new_recipe = self.ingredient_manager.replace_unwanted()
+
+            file_out.write('Recipe ' + str(i) + '.\n' + 'Original: ' + recipe + '\n' + 'New: ' + new_recipe + '\n' +
+                           'Detected ingredients: ' + self.ingredient_manager.ingredients + '\n' +
+                           'Replacements: ' + self.ingredient_manager.replacements + '\n\n')
+
+        file_out.close()
 
     def exit_handler(self):
         self.debug_file.close()
