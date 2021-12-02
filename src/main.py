@@ -2,7 +2,7 @@ import numpy as np
 from time import time
 import os
 
-from constants import DEBUG, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
+from constants import DEBUG, GOLDEN, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -81,9 +81,9 @@ ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model
                                        kg_ing=KG_ing, kg_tag=KG_tag, chunks=False)
 
 # Sacar estadísticas:
+statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
 if DEBUG:
     print(">Calculando estadísticas...")
-    statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
     print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
     precision, recall, f1 = statistics.compute_statistics()
     print("\tPrecisión:", precision)
@@ -91,11 +91,11 @@ if DEBUG:
     print("\tF1:", f1)
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
     start_time = time()
-
+if GOLDEN:
     print(">Procesando estándar...")
     statistics.process_golden_standard()
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
-start_time = time()
+    start_time = time()
 
 
 # Procesar recetas test una a una:

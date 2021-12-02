@@ -1,4 +1,5 @@
 import atexit
+import re
 import pandas as pd
 
 from fuzzywuzzy import fuzz
@@ -92,16 +93,21 @@ class Statistics:
         golden_standard = pd.read_csv(PATH_GOLDEN)
         file_out = open(PATH_OUTPUT + "golden_standard.txt", 'w+')
 
-        for i, recipe_steps in enumerate(golden_standard['steps']):
-            recipe = ', '.join(recipe_steps)
-            tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe)
+        for i in range(len(golden_standard)):
+            row = golden_standard.iloc[i]
+            recipe_steps = row['steps']
+            recipe = ', '.join(re.split('[\"\'], [\"\']', recipe_steps[2:-2]))
+            tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe_steps)
 
             self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
             new_recipe = self.ingredient_manager.replace_unwanted()
 
-            file_out.write('Recipe ' + str(i) + '.\n' + 'Original: ' + recipe + '\n' + 'New: ' + new_recipe + '\n' +
-                           'Detected ingredients: ' + self.ingredient_manager.ingredients + '\n' +
-                           'Replacements: ' + self.ingredient_manager.replacements + '\n\n')
+            file_out.write('Recipe ' + str(i) + '.\n' +
+                           'Original: ' + recipe + '\n' +
+                           'New: ' + new_recipe + '\n' +
+                           'Ingredients: ' + row['ingredients'] + '\n' +
+                           'Detected ingredients: ' + str(self.ingredient_manager.ingredients) + '\n' +
+                           'Replacements: ' + str(self.ingredient_manager.replacements) + '\n\n')
 
         file_out.close()
 
