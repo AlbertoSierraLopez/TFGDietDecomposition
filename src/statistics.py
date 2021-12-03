@@ -4,7 +4,7 @@ import pandas as pd
 
 from fuzzywuzzy import fuzz
 
-from constants import TEST_SIZE, DEBUG, PATH_GOLDEN, PATH_OUTPUT
+from constants import TEST_SIZE, DEBUG, PATH_GOLDEN, PATH_OUTPUT, REQUIREMENT_LIST
 from tokenizer import Tokenizer
 from data_loader import sentencizer
 
@@ -91,25 +91,30 @@ class Statistics:
 
     def process_golden_standard(self):
         golden_standard = pd.read_csv(PATH_GOLDEN)
-        file_out = open(PATH_OUTPUT + "golden_standard.txt", 'w+')
+        og_requirements = self.ingredient_manager.requirements
 
-        for i in range(len(golden_standard)):
-            row = golden_standard.iloc[i]
-            recipe_steps = row['steps']
-            recipe = ', '.join(re.split('[\"\'], [\"\']', recipe_steps[2:-2]))
-            tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe_steps)
+        for i in range(len(REQUIREMENT_LIST)):
+            file_out = open(PATH_OUTPUT + "/golden_standard/" + REQUIREMENT_LIST[i] + ".txt", 'w+')
+            self.ingredient_manager.requirements = REQUIREMENT_LIST[i]
 
-            self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
-            new_recipe = self.ingredient_manager.replace_unwanted()
+            for j in range(len(golden_standard)):
+                row = golden_standard.iloc[j]
+                recipe_steps = row['steps']
+                recipe = ', '.join(re.split('[\"\'], [\"\']', recipe_steps[2:-2]))
+                tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe_steps)
 
-            file_out.write('Recipe ' + str(i) + '.\n' +
-                           'Original: ' + recipe + '\n' +
-                           'New: ' + new_recipe + '\n' +
-                           'Ingredients: ' + row['ingredients'] + '\n' +
-                           'Detected ingredients: ' + str(self.ingredient_manager.ingredients) + '\n' +
-                           'Replacements: ' + str(self.ingredient_manager.replacements) + '\n\n')
+                self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
+                new_recipe = self.ingredient_manager.replace_unwanted()
 
-        file_out.close()
+                file_out.write('Recipe ' + str(j) + '.\n' +
+                               'Original: ' + recipe + '\n' +
+                               'New: ' + new_recipe + '\n' +
+                               'Ingredients: ' + row['ingredients'] + '\n' +
+                               'Detected ingredients: ' + str(self.ingredient_manager.ingredients) + '\n' +
+                               'Replacements: ' + str(self.ingredient_manager.replacements) + '\n\n')
+
+            file_out.close()
+        self.ingredient_manager.requirements = og_requirements
 
     def exit_handler(self):
         self.debug_file.close()
