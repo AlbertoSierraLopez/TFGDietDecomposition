@@ -40,7 +40,7 @@ tokenized_recipes = tokenizer.get_tokenized_recipes(recipes)
 
 # No se utiliza ahora mismo:
 print(">Extrayendo vocabulario...")
-vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes)
+vocab, word2ind, ind2word = tokenizer.get_vocab(tokenized_recipes, extended_vocab=False)
 ing_vocab = tokenizer.get_ing_vocab(ingredients)
 
 print(">Elaborando grafos de conocimiento...")
@@ -50,6 +50,7 @@ KG_tag = knowledge_manager.KG_tag
 
 print(">Entrenando modelo...")
 nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=1, pretrained=True)
+'''
 if DEBUG:
     print("\tWord2Vec")
     print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_word2vec(word='milk', n=5))
@@ -69,19 +70,22 @@ if DEBUG:
     print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_bert(word='salt', n=5))
     print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_bert(word='sugar', n=5))
     print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_bert(word='ham', n=5))
+'''
 
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
 
 
+print(">Inicializando Detector de Ingredientes...")
+chunks = True
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
 ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model=nlp.word2vec_model, model_type='word2vec',
-                                       kg_ing=KG_ing, kg_tag=KG_tag, chunks=False)
+                                       kg_ing=KG_ing, kg_tag=KG_tag, chunks=chunks)
 
 # Sacar estadísticas:
-statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager)
+statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=chunks)
 if DEBUG:
     print(">Calculando estadísticas...")
     print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")

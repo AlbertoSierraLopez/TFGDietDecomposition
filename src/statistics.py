@@ -10,11 +10,12 @@ from data_loader import sentencizer
 
 
 class Statistics:
-    def __init__(self, test, test_tuples, ingredient_manager):
+    def __init__(self, test, test_tuples, ingredient_manager, chunks=False):
         self.test = test
         self.test_ingredients = test['ingredients'].dropna().apply(sentencizer)
         self.test_tuples = test_tuples
         self.ingredient_manager = ingredient_manager
+        self.chunks = chunks
 
         self.tokenizer = Tokenizer()
 
@@ -66,23 +67,26 @@ class Statistics:
     def precision_by_coincidence(self, detected_ingredients, real_ingredients):
         true_positives = 0
         false_positives = 0
+        false_negatives = 0
 
-        for real_ingredient in real_ingredients:
-            if self.match(real_ingredient, detected_ingredients):
+        for detected_ingredient in detected_ingredients:
+            if self.match(detected_ingredient, real_ingredients):
                 true_positives += 1
             else:
                 false_positives += 1
 
-        false_negatives = len(self.test_ingredients) - true_positives
+        for real_ingredient in real_ingredients:
+            if not self.match(real_ingredient, detected_ingredients):
+                false_negatives += 1
 
         return true_positives, false_positives, false_negatives
 
-    def match(self, real_ingredient, detected_ingredients):
-        for detected_ingredient in detected_ingredients:
-            lev_ratio = fuzz.partial_ratio(real_ingredient, detected_ingredient)
+    def match(self, target, ingredient_list):
+        for ingredient in ingredient_list:
+            lev_ratio = fuzz.partial_ratio(ingredient, target)
 
             if DEBUG:
-                self.debug_file.write(real_ingredient + ' / ' + detected_ingredient + ' -> ' + str(lev_ratio) + '\n')
+                self.debug_file.write(ingredient + ' / ' + target + ' -> ' + str(lev_ratio) + '\n')
 
             if lev_ratio >= 80:
                 return True
