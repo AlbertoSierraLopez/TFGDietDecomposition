@@ -5,6 +5,7 @@ PATH_TOKENS = "../models/tokenized_recipes.pickle"
 PATH_OUTPUT = "../output/"
 PATH_TRAIN = "../datasets/train_recipes.csv"
 PATH_TEST = "../datasets/test_recipes.csv"
+PATH_OPENFOODFACTS = "../datasets/ingredients.json"
 PATH_CACHE = "../models/usda_cache.json"
 PATH_GOLDEN = "../datasets/golden_standard.csv"
 PATH_KG_ING = "../models/kg_ingredients.pickle"
@@ -22,8 +23,8 @@ SPACY_TOKENIZER = "C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/si
 API_KEY = "dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio"
 
 TEST_SIZE = 55
-DEBUG = False
-GOLDEN = True
+DEBUG = True
+GOLDEN = False
 REQUIREMENT_LIST = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                              'Dieta baja en carbohidratos', 'Dieta baja en sodio', 'Intolerancia a la lactosa',
                              'Alergia los frutos secos', 'Alergia al marisco', 'Intolerancia al gluten', 'Celiaquía'])
