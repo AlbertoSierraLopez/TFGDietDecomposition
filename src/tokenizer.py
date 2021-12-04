@@ -1,6 +1,6 @@
 from collections import Counter
 
-from constants import PATH_TOKENS, TORCH_TOKENIZER, SPACY_TOKENIZER
+from constants import PATH_TOKENS, TORCH_TOKENIZER, SPACY_TOKENIZER, PATH_OPENFOODFACTS
 import nltk
 import spacy
 import json
@@ -86,12 +86,22 @@ class Tokenizer:
         return tokenized_recipes
 
     @staticmethod
-    def get_vocab(recipes):
+    def get_vocab(recipes, extended_vocab=False):
         word_list = [token for recipe in recipes for token in recipe]
         word_counter = Counter(word_list)
 
-        vocab = sorted(set([token for token in word_list if word_counter[token] >= 45]))
+        vocab = set([token for token in word_list if word_counter[token] >= 45])
+        if extended_vocab:
+            with open(PATH_OPENFOODFACTS, encoding="utf8") as json_file:
+                off_json = json.load(json_file)
+            off_df = pd.json_normalize(off_json['tags'])
 
+            # Hay que hacer un pelín de limpieza en los datos, minúsculas y quitar guiones
+            vocab_expansion = [ingredient.lower().replace('-', ' ') for ingredient in off_df['name'] if len(ingredient)
+                               > 0 and ingredient[0] not in ['', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']]
+            vocab.update(set(vocab_expansion))
+
+        vocab = sorted(vocab)
         word2ind = dict(zip(vocab, range(0, len(vocab))))
         ind2word = dict(zip(range(0, len(vocab)), vocab))
 
