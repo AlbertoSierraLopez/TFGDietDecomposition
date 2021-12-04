@@ -47,8 +47,8 @@ class IngredientManager:
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
         if not self.chunks:
-#           self.ingredients = self.detect_ingredients()
-            self.ingredients = self.detect_ingredients_onto()
+            self.ingredients = self.detect_ingredients()
+#           self.ingredients = self.detect_ingredients_onto()
         else:
             self.ingredients = self.detect_ingredients_chunks()
         self.unwanted = self.unwanted_ingredients()
@@ -67,7 +67,10 @@ class IngredientManager:
     def word_similarity(token, string):
         # Si un ingrediente compuesto contiene un token, la similitud es 1 / el número de palabras del ingrediente
         tok_string = [word for word in nltk.word_tokenize(string) if word.isalnum()]
-        return min(tok_string.count(token), 1) / len(tok_string)
+        if len(tok_string) > 0 and token in string:
+            return min(tok_string.count(token), 1) / len(tok_string)
+        else:
+            return 0
 
 # MODULO 2
     # 1. Tokenizar receta y usar uno de los 3 primeros métodos
@@ -124,8 +127,8 @@ class IngredientManager:
         # Buscar el término en la ontología
         entity = self.onto.search_one(label=token + "*")
 
-        # Comprobar que lo que hemos encontrado se parece a lo que queremos
-        if entity is None or self.word_similarity(token, entity.label[0]) < 0.5:
+        # Comprobar que lo que hemos encontrado existe, es una entidad y que se parece a lo que queremos
+        if entity is None or entity.iri == '' or self.word_similarity(token, entity.label[0]) < 0.5:
             return False
 
         # Extraer sus ancestros
@@ -203,7 +206,7 @@ class IngredientManager:
                 return False
 
         if 'Alergia los frutos secos' in self.requirements and category is not None:
-            if 'nuts' in category:
+            if 'nut' in category or 'nuts' in category or 'seed' in category or 'seeds' in category:
                 return False
 
         if 'Alergia al marisco' in self.requirements and category is not None:
