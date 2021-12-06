@@ -2,139 +2,139 @@ Recipe 0.
 Original: in a 3 qt saucepan over medium high heat , saute the onions and scallions in the apple juice and oil for 5 minutes , stirring frequently, add the spinach , parsley and celery, cook for 5-7 minutes , stirring occasionally add the broth , oats , salt , thyme and pepper, bring to a boil , then lower the heat to medium, cover and simmer for 20 minutes, remove from the heat, let the soup cool for 10 minutes, working in batches , puree in a blender until thick and smooth, return to the pot, reheat and serve
 New: in a 3 qt saucepan over medium high heat, saute the onions and scallions in the apple juice and oil for 5 minutes, stirring frequently, add the spinach, parsley and celery, cook for 5-7 minutes, stirring occasionally add the broth, oats, salt, thyme and pepper, bring to a boil, then lower the heat to medium, cover and simmer for 20 minutes, remove from the heat, let the soup cool for 10 minutes, working in batches, puree in a blender until thick and smooth, return to the pot, reheat and serve
 Ingredients: ['onion', 'scallion', 'apple juice', 'olive oil', 'spinach', 'fresh parsley', 'celery', 'broth', 'rolled oats', 'salt', 'dried thyme', 'white pepper']
-Detected ingredients: ['celery', 'oats', 'oil', 'parsley', 'pepper', 'salt', 'scallions', 'the apple juice', 'the onions', 'thyme']
-Replacements: {'oil': 'water'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 1.
 Original: brown the meat & drain fat, stir in sugar , mustard , beer , cayenne , garlic and salt & pepper to taste, simmer until liquid has mostly cooked away, lay slices of cheese over top of meat , then cover for about 5 minutes , with heat on very low , until cheese has melted, stir cheese into meat, serve hot , on sandwich buns or bread , or over hot potatoes or rice
 New: brown the meat & drain fat, stir in sugar, mustard, beer, cayenne, garlic and salt & pepper to taste, simmer until liquid has mostly cooked away, lay slices of cheese over top of meat, then cover for about 5 minutes, with heat on very low, until cheese has melted, stir cheese into meat, serve hot, on sandwich buns or bread, or over hot potatoes or rice
 Ingredients: ['ground beef', 'sugar', 'prepared yellow mustard', 'beer', 'cayenne', 'garlic', 'salt & pepper', 'american cheese']
-Detected ingredients: ['beer', 'bread', 'cayenne', 'cheese', 'garlic', 'heat', 'hot potatoes', 'liquid', 'meat', 'mustard', 'pepper', 'rice', 'salt', 'sandwich buns', 'slices', 'sugar', 'the meat']
-Replacements: {'beer': 'coffee', 'cheese': 'bread', 'heat': '<None>', 'hot potatoes': 'pepper', 'meat': 'bread', 'mustard': 'pepper', 'the meat': '<None>'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 2.
 Original: in bowl , mix dry ingredients, add venison and mix well, add liquid ingredients and mix well with a fork , until bread crumbs are barely noticeable, on plastic wrap , form into 8 patties , making them round and very flat-- like a fast-food burger, they can be cooked immediately , but i prefer to freeze them first, place them on a large cookie sheet and freeze them several hours, remove from freezer and place waxed paper between each burger as you stack them, i stack them in 2 1-quart freezer zip-lock bags, preheat cast iron skillet to very hot, cook frozen burgers until they are slightly charred on one side and then turn and cook until the other side is slightly charred and burgers are medium-well, do not overcook, turn burner off and leave burgers in the pan while you put condiments on your hamburger bun, if cooking thawed burgers , cook about 2-3 minutes per side
-New: in bowl, mix dry ingredients, add venison and mix well, add liquid ingredients and mix well with a fork, until bread crumbs are barely noticeable, on plastic wrap, form into 8 patties, making them round and very flat-- like a fast-food burger, they can be cooked immediately, but i prefer to freeze them first, place them on a large cookie sheet and freeze them several hours, remove from freezer and place waxed paper between each burger as you stack them, i stack them in 2 1-quart freezer zip-lock bags, preheat cast iron skillet to very hot, cook frozen burgers until they are slightly charred on one side and then turn and cook until the other side is slightly charred and burgers are medium-well, do not overcook, turn burner off and leave burgers in the pan while you put condiments on your hamburger bun, if cooking thawed burgers, cook about 2-3 minutes per side
+New: in bowl, mix dry ingredients, add venison and mix well, add liquid ingredients and mix well with a fork, until bread crumbs are barely noticeable, on plastic wrap, form into 8 patties, making them round and very flat--like a fast-food burger, they can be cooked immediately, but i prefer to freeze them first, place them on a large cookie sheet and freeze them several hours, remove from freezer and place waxed paper between each burger as you stack them, i stack them in 2 1-quart freezer zip-lock bags, preheat cast iron skillet to very hot, cook frozen burgers until they are slightly charred on one side and then turn and cook until the other side is slightly charred and burgers are medium-well, do not overcook, turn burner off and leave burgers in the pan while you put condiments on your hamburger bun, if cooking thawed burgers, cook about 2-3 minutes per side
 Ingredients: ['ground venison', 'egg substitute', 'non-fat powdered milk', 'water', 'fresh breadcrumb', 'onion', 'salt', 'black pepper', 'dry mustard', 'worcestershire sauce']
-Detected ingredients: ['bread crumbs', 'condiments', 'paper', 'place', 'plastic wrap', 'venison', 'your hamburger bun']
-Replacements: {'condiments': '<None>', 'place': '<None>', 'venison': 'haggis'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 3.
 Original: place potatoes in a large pot of lightly salted water and bring to a gentle boil, cook until potatoes are just tender, drain, place potatoes in a large bowl and add all ingredients except the"alouette", mix well and transfer to a buttered 8x8 inch glass baking dish with 2 inch sides, press the potatoes with a spatula to make top as flat as possible, set aside for 2 hours at room temperature, preheat oven to 350^f, spread"alouette" evenly over potatoes and bake 15 minutes, divide between plates, garnish with finely diced red and yellow bell peppers
-New: place potatoes in a large pot of lightly salted water and bring to a gentle boil, cook until potatoes are just tender, drain, place potatoes in a large bowl and add all ingredients except the"alouette", mix well and transfer to a buttered 8x8 inch glass baking dish with 2 inch sides, press the potatoes with a spatula to make top as flat as possible, set aside for 2 hours at room temperature, preheat oven to 350^f, spread"alouette" evenly over potatoes and bake 15 minutes, divide between plates, garnish with finely diced red and yellow bell peppers
+New: place potatoes in a large pot of lightly salted water and bring to a gentle boil, cook until potatoes are just tender, drain, place potatoes in a large bowl and add all ingredients except the" alouette", mix well and transfer to a buttered 8x8 inch glass baking dish with 2 inch sides, press the potatoes with a spatula to make top as flat as possible, set aside for 2 hours at room temperature, preheat oven to 350^f, spread" alouette" evenly over potatoes and bake 15 minutes, divide between plates, garnish with finely diced red and yellow bell peppers
 Ingredients: ['spreadable cheese with garlic and herbs', 'new potatoes', 'shallots', 'parsley', 'tarragon', 'olive oil', 'red wine vinegar', 'salt', 'pepper', 'red bell pepper', 'yellow bell pepper']
-Detected ingredients: ['lightly salted water', 'place potatoes', 'potatoes', 'the potatoes']
-Replacements: {'place potatoes': 'bread', 'the potatoes': '<None>'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 4.
 Original: brown ground beef in large pot, add chopped onions to ground beef when almost brown and sautee until wilted, add all other ingredients, add kidney beans if you like beans in your chili, cook in slow cooker on high for 2-3 hours or 6-8 hours on low, serve with cold clean lettuce and shredded cheese
 New: brown ground beef in large pot, add chopped onions to ground beef when almost brown and sautee until wilted, add all other ingredients, add kidney beans if you like beans in your chili, cook in slow cooker on high for 2-3 hours or 6-8 hours on low, serve with cold clean lettuce and shredded cheese
 Ingredients: ['ground beef', 'yellow onions', 'diced tomatoes', 'tomato paste', 'tomato soup', 'rotel tomatoes', 'kidney beans', 'water', 'chili powder', 'ground cumin', 'salt', 'lettuce', 'cheddar cheese']
-Detected ingredients: ['beans', 'beef', 'kidney beans']
-Replacements: {'beans': 'rice', 'beef': 'noodles', 'kidney beans': 'rice'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 5.
 Original: preheat oven to 425 degrees f, press dough into the bottom and sides of a 12 inch pizza pan, bake for 5 minutes until set but not browned, cut sausage into small pieces, whisk eggs and milk in a bowl until frothy, spoon sausage over baked crust and sprinkle with cheese, pour egg mixture slowly over sausage and cheese, s& p to taste, bake 15-20 minutes or until eggs are set and crust is brown
-New: preheat oven to 425 degrees f, press dough into the bottom and sides of a 12 inch pizza pan, bake for 5 minutes until set but not browned, cut sausage into small pieces, whisk eggs and milk in a bowl until frothy, spoon sausage over baked crust and sprinkle with cheese, pour egg mixture slowly over sausage and cheese, s& p to taste, bake 15-20 minutes or until eggs are set and crust is brown
+New: preheat oven to 425 degrees f, press dough into the bottom and sides of a 12 inch pizza pan, bake for 5 minutes until set but not browned, cut sausage into small pieces, whisk eggs and milk in a bowl until frothy, spoon sausage over baked crust and sprinkle with cheese, pour egg mixture slowly over sausage and cheese, s & p to taste, bake 15-20 minutes or until eggs are set and crust is brown
 Ingredients: ['prepared pizza crust', 'sausage patty', 'eggs', 'milk', 'salt and pepper', 'cheese']
-Detected ingredients: ['cheese', 'eggs', 'milk', 'sausage']
-Replacements: {'cheese': 'bread', 'eggs': 'pancakes', 'milk': 'juice', 'sausage': 'toast'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 6.
 Original: preheat oven to 325, thaw spinach , and squeeze out as much moisture as possible, beat the eggs in medium bowl, stir in the cottage cheese , grated cheese , spinach and seasonings, stir until mixed thoroughly, lightly spray glass 13x9 pan w / olive oil or pam, distribute meat / chicken / ham evenly over bottom of pan, pour cottage cheese mixture over meat, push w / spatula to distribute evenly, top with extra grated cheese if desired, sprinkle top w / toasted wheat germ, bake 45-50 minutes , until set and slightly brown at edges, let sit a few minutes out of oven before serving, serve hot or at room temperature
 New: preheat oven to 325, thaw spinach, and squeeze out as much moisture as possible, beat the eggs in medium bowl, stir in the cottage cheese, grated cheese, spinach and seasonings, stir until mixed thoroughly, lightly spray glass 13x9 pan w / olive oil or pam, distribute meat / chicken / ham evenly over bottom of pan, pour cottage cheese mixture over meat, push w / spatula to distribute evenly, top with extra grated cheese if desired, sprinkle top w / toasted wheat germ, bake 45-50 minutes, until set and slightly brown at edges, let sit a few minutes out of oven before serving, serve hot or at room temperature
 Ingredients: ['eggs', 'cottage cheese', 'cheese', 'frozen chopped spinach', 'beef', 'salt', 'pepper', 'herbs', 'spices', 'olive oil flavored cooking spray', 'toasted wheat germ']
-Detected ingredients: ['cheese', 'meat', 'seasonings', 'spinach', 'the cottage cheese', 'top w / toasted wheat germ']
-Replacements: {'cheese': 'bread', 'meat': 'bread', 'seasonings': 'spices', 'spinach': 'quinoa', 'the cottage cheese': 'bread'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 7.
 Original: bring water and salt to a boil, cut the potatoes in half lengthwise , and then into 1 / 2" thick slices, boil over medium-high heat for twenty minutes, add the spinach and boil another 10 minutes being careful to not overcook in order to maintain it's bright green color, drain , reserving 1 1 / 4 cups cooking liquid, in a food processor , process the potatoes and spinach until very smooth , adding the butter 1 / 2 t at a time, return the puree to the pot and add the reserved liquid until the desired consistency, reheat slowly and season with salt and pepper, ladle into shallow soup plates and garnish with nutmeg or shaved cheese
 New: bring water and salt to a boil, cut the potatoes in half lengthwise, and then into 1 / 2" thick slices, boil over medium-high heat for twenty minutes, add the spinach and boil another 10 minutes being careful to not overcook in order to maintain it's bright green color, drain, reserving 1 1 / 4 cups cooking liquid, in a food processor, process the potatoes and spinach until very smooth, adding the butter 1 / 2 t at a time, return the puree to the pot and add the reserved liquid until the desired consistency, reheat slowly and season with salt and pepper, ladle into shallow soup plates and garnish with nutmeg or shaved cheese
 Ingredients: ['water', 'salt', 'boiling potatoes', 'fresh spinach leaves', 'unsalted butter', 'coarse salt', 'fresh ground black pepper', 'nutmeg']
-Detected ingredients: ['liquid', 'nutmeg', 'pepper', 'salt', 'shaved cheese', 'spinach', 'the potatoes', 'water']
-Replacements: {'nutmeg': 'marzipan', 'shaved cheese': 'bread', 'spinach': 'quinoa', 'the potatoes': '<None>'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 8.
 Original: mix all the ingredients using a blender, pour into popsicle molds, freeze and enjoy !
-New: mix all the ingredients using a blender, pour into popsicle molds, freeze and enjoy !
+New: mix all the ingredients using a blender, pour into popsicle molds, freeze and enjoy!
 Ingredients: ['milk', 'frozen juice concentrate', 'plain yogurt']
-Detected ingredients: ['popsicle molds']
+Detected ingredients: set()
 Replacements: {}
 
 Recipe 9.
 Original: heat the oil or margarine in a soup pot and add the onion and garlic, saute over medium heat until the onion is golden , about 10 minutes, add the cauliflower , potatoes , water , and seasonings, there should be enough broth to cover all but about an inch of the veggies, bring to a simmer , then simmer gently covered until the veggies are tender , about 25 minutes, remove from the heat transfer the vegetables from the soup pot to a food processor or blender and puree in batches until smooth, puree about half of the beans with each of the two batches of vegetables, transfer the puree back into the soup pot , stirring it back into whatever liquid remained, let the soup stand for 1-2 hours before serving , then heat through as needed, ladle into soup bowls and garnish the tops with 2-3 garnishes
 New: heat the oil or margarine in a soup pot and add the onion and garlic, saute over medium heat until the onion is golden, about 10 minutes, add the cauliflower, potatoes, water, and seasonings, there should be enough broth to cover all but about an inch of the veggies, bring to a simmer, then simmer gently covered until the veggies are tender, about 25 minutes, remove from the heat transfer the vegetables from the soup pot to a food processor or blender and puree in batches until smooth, puree about half of the beans with each of the two batches of vegetables, transfer the puree back into the soup pot, stirring it back into whatever liquid remained, let the soup stand for 1-2 hours before serving, then heat through as needed, ladle into soup bowls and garnish the tops with 2-3 garnishes
 Ingredients: ['canola oil', 'onion', 'garlic', 'cauliflower', 'potatoes', 'vegetable bouillon cubes', 'water', 'salt free herb and spice seasoning mix', 'ground coriander', 'great northern bean', 'salt and pepper', 'broccoli floret', 'escarole', 'green peas', 'red bell pepper', 'fresh herb']
-Detected ingredients: ['garlic', 'margarine', 'potatoes', 'seasonings', 'the cauliflower', 'the vegetables', 'vegetables', 'water']
-Replacements: {'margarine': 'butter', 'seasonings': 'spices', 'the cauliflower': '<None>'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 10.
 Original: cut the butter into several pieces and bring to room temperature, in the top of a double boiler , combine egg yolks , lemon juice , salt and pepper, add a piece of butter, cook , stirring steadily with a wooden spoon or wire whisk , over , but not touching , boiling water, when butter melts and sauce begins to thicken , add remaining butter , stirring constantly until melted, continue cooking as sauce thickens , about 2 more minutes, immediately remove from heat
 New: cut the butter into several pieces and bring to room temperature, in the top of a double boiler, combine egg yolks, lemon juice, salt and pepper, add a piece of butter, cook, stirring steadily with a wooden spoon or wire whisk, over, but not touching, boiling water, when butter melts and sauce begins to thicken, add remaining butter, stirring constantly until melted, continue cooking as sauce thickens, about 2 more minutes, immediately remove from heat
 Ingredients: ['butter', 'lemon, juice of', 'salt', 'white pepper', 'egg yolks']
-Detected ingredients: ['boiling water', 'butter', 'butter melts', 'egg yolks', 'heat', 'lemon juice', 'pepper', 'salt']
-Replacements: {'butter melts': 'cinnamon', 'egg yolks': 'toast', 'heat': '<None>'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 11.
 Original: brown the sausage and ground meat and drain all the fat, add all the other ingredients for the meat filling and simmer on the stove , uncovered , for about 1 / 2 hour, i usually add a bay leaf or two, mix up the cheese filling and set aside in fridge until ready to use, put the noodles in salted water and cook until soft when poked with a fork, when the noodles are done , drain the noodles and rinse off with cold water so they can be handled easily, spray the baking pan with a non-stick spray and put a layer of noodles down on the bottom of the pan, it is ok to cut some of the noodles to fit into the pan if they do not fit whole, spread half the cheese filling over the noodels , then half of the mozarella cheese on top of that , then half of the meat sauce over the grated mozarella cheese, repeat layers and then top with more mozarella cheese, bake at 375 degrees for 30 minutes, let stand for 10 minutes before cutting into it, leftovers can be easily stored in the freezer
 New: brown the sausage and ground meat and drain all the fat, add all the other ingredients for the meat filling and simmer on the stove, uncovered, for about 1 / 2 hour, i usually add a bay leaf or two, mix up the cheese filling and set aside in fridge until ready to use, put the noodles in salted water and cook until soft when poked with a fork, when the noodles are done, drain the noodles and rinse off with cold water so they can be handled easily, spray the baking pan with a non-stick spray and put a layer of noodles down on the bottom of the pan, it is ok to cut some of the noodles to fit into the pan if they do not fit whole, spread half the cheese filling over the noodels, then half of the mozarella cheese on top of that, then half of the meat sauce over the grated mozarella cheese, repeat layers and then top with more mozarella cheese, bake at 375 degrees for 30 minutes, let stand for 10 minutes before cutting into it, leftovers can be easily stored in the freezer
 Ingredients: ['italian sausage', 'ground beef', 'garlic', 'dried basil', 'salt', 'whole tomato', 'tomato paste', 'ricotta cheese', 'cottage cheese', 'parmesan cheese', 'parsley flakes', 'eggs', 'ground black pepper', 'lasagna noodle', 'mozzarella cheese']
-Detected ingredients: ['a bay leaf', 'cold water', 'more mozarella cheese', 'noodles', 'salted water', 'the cheese', 'the mozarella cheese', 'the noodles']
-Replacements: {'cold water': 'ice', 'salted water': 'salt', 'the cheese': '<None>', 'the mozarella cheese': 'bread'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 12.
 Original: mix all ingredients& boil for 2 1 / 2 hours , or until thick, pour into jars, i use'old' glass ketchup bottles, it is not necessary for these to'seal, 'my amish mother-in-law has been making this her entire life , and has never used a'sealed' jar for this recipe , and it's always been great !
-New: mix all ingredients& boil for 2 1 / 2 hours, or until thick, pour into jars, i use'old' glass ketchup bottles, it is not necessary for these to'seal, 'my amish mother-in-law has been making this her entire life, and has never used a'sealed' jar for this recipe, and it's always been great !
+New: mix all ingredients & boil for 2 1 / 2 hours, or until thick, pour into jars, i use'old' glass ketchup bottles, it is not necessary for these to'seal, 'my amish mother-in-law has been making this her entire life, and has never used a'sealed' jar for this recipe, and it's always been great!
 Ingredients: ['tomato juice', 'apple cider vinegar', 'sugar', 'salt', 'pepper', 'clove oil', 'cinnamon oil', 'dry mustard']
-Detected ingredients: ['jars']
+Detected ingredients: set()
 Replacements: {}
 
 Recipe 13.
 Original: in a large bowl , mix flour , granulated sugar , baking powder and salt, make a well in the center of the flour mixture , and pour in milk , vanilla , egg and 2 tablespoons oil, mix until smooth, heat remaining vegetable oil to 400 degrees in a small deep fryer, oil is hot enough when it starts to ripple, be careful not to overheat, butter one side of each bread slice, sprinkle the brown sugar and cinnamon evenly onto the buttered side of the bread slices, make sandwiches by placing the slices of bread together with the brown sugar on the inside, cut the sandwiches into quarters, now is a good time to test the oil by dropping in a very small amount of batter, batter should sizzle and brown in about 20 seconds, oil needs to be hot enough to melt the brown sugar inside the sandwiches but not so hot that it scorches the batter, dip the sandwiches into the batter mixture, using deep fryer tongs , carefully place the battered sandwiches into the heated oil, be cautious when deep frying, try to avoid burns from splattering hot oil, remove sandwiches from the oil when they are golden brown, set aside to cool for a couple of minutes, sprinkle with powdered sugar and serve
 New: in a large bowl, mix flour, granulated sugar, baking powder and salt, make a well in the center of the flour mixture, and pour in milk, vanilla, egg and 2 tablespoons oil, mix until smooth, heat remaining vegetable oil to 400 degrees in a small deep fryer, oil is hot enough when it starts to ripple, be careful not to overheat, butter one side of each bread slice, sprinkle the brown sugar and cinnamon evenly onto the buttered side of the bread slices, make sandwiches by placing the slices of bread together with the brown sugar on the inside, cut the sandwiches into quarters, now is a good time to test the oil by dropping in a very small amount of batter, batter should sizzle and brown in about 20 seconds, oil needs to be hot enough to melt the brown sugar inside the sandwiches but not so hot that it scorches the batter, dip the sandwiches into the batter mixture, using deep fryer tongs, carefully place the battered sandwiches into the heated oil, be cautious when deep frying, try to avoid burns from splattering hot oil, remove sandwiches from the oil when they are golden brown, set aside to cool for a couple of minutes, sprinkle with powdered sugar and serve
 Ingredients: ['all-purpose flour', 'granulated sugar', 'baking powder', 'salt', 'vanilla extract', 'egg', 'milk', 'vegetable oil', 'bread', 'brown sugar', 'ground cinnamon', 'butter', 'powdered sugar']
-Detected ingredients: ['batter', 'bread', 'burns', 'cinnamon', 'deep frying', 'egg', 'flour', 'granulated sugar', 'milk', 'oil', 'powdered sugar', 'salt', 'the brown sugar', 'vanilla']
-Replacements: {'batter': 'fudge', 'deep frying': 'salt', 'egg': 'toast', 'milk': 'juice', 'oil': 'water'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 14.
 Original: melt butterscotch chips in heavy saucepan over low heat, fold in peanuts and chinese noodles until coated, drop by tablespoon onto waxed paper, let stand in cool place until firm
 New: melt butterscotch chips in heavy saucepan over low heat, fold in peanuts and chinese noodles until coated, drop by tablespoon onto waxed paper, let stand in cool place until firm
 Ingredients: ['butterscotch chips', 'chinese noodles', 'salted peanuts']
-Detected ingredients: ['butterscotch chips', 'chinese noodles', 'peanuts', 'waxed paper']
-Replacements: {'butterscotch chips': 'butter', 'peanuts': 'raisins'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 15.
 Original: preheat oven to 350 degrees, place spinach in strainer and squeeze all extra liquid from it, in a large bowl , combine spinach with the rest of ingredients , except croutons , and combine well, pour into a 2 quart casserole dish and top with croutons, bake for 35 to 40 minutes , or until bubbling around edges
 New: preheat oven to 350 degrees, place spinach in strainer and squeeze all extra liquid from it, in a large bowl, combine spinach with the rest of ingredients, except croutons, and combine well, pour into a 2 quart casserole dish and top with croutons, bake for 35 to 40 minutes, or until bubbling around edges
 Ingredients: ['frozen chopped spinach', 'egg', 'salt', 'black pepper', 'onion', 'sharp cheddar cheese', 'condensed cream of mushroom soup', 'crouton']
-Detected ingredients: ['croutons', 'spinach']
-Replacements: {'croutons': 'jalapenos', 'spinach': 'quinoa'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 16.
 Original: preheat oven to 375 degrees, spray muffin tin with non-stick cooking spray and set aside, place the raisins in a small bowl and pour the 1 / 4 cup boiling water over them, cover and set aside while preparing batter, combine the flours , cocoa , baking powder , cinnamon , cloves , baking soda , and salt, lightly beat eggs with sorghum , oil , mashed yams and orange juice, add the egg mixture and buttermilk alternately to the dry ingredients , stir until well blended, drain the raisins and add to batter along with orange peel, spoon batter into prepared muffin tins , sprinkle 1 / 4 to 1 / 2 tsp of granulated sugar over each muffin, bake in preheated oven for 15 to 20 minutes
 New: preheat oven to 375 degrees, spray muffin tin with non-stick cooking spray and set aside, place the raisins in a small bowl and pour the 1 / 4 cup boiling water over them, cover and set aside while preparing batter, combine the flours, cocoa, baking powder, cinnamon, cloves, baking soda, and salt, lightly beat eggs with sorghum, oil, mashed yams and orange juice, add the egg mixture and buttermilk alternately to the dry ingredients, stir until well blended, drain the raisins and add to batter along with orange peel, spoon batter into prepared muffin tins, sprinkle 1 / 4 to 1 / 2 tsp of granulated sugar over each muffin, bake in preheated oven for 15 to 20 minutes
 Ingredients: ['all-purpose flour', 'buckwheat flour', 'unsweetened cocoa', 'baking powder', 'baking soda', 'salt', 'ground cinnamon', 'ground cloves', 'sorghum', 'eggs', 'yam', 'low-fat buttermilk', 'orange rind', 'orange juice', 'canola oil', 'raisins', 'boiling water', 'granulated sugar']
-Detected ingredients: ['batter', 'cinnamon', 'cloves', 'cocoa', 'eggs', 'granulated sugar', 'non-stick cooking spray', 'oil', 'orange juice', 'orange peel', 'sorghum', 'the raisins']
-Replacements: {'batter': 'fudge', 'cocoa': 'vanilla', 'eggs': 'pancakes', 'oil': 'water'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 17.
 Original: before you turn in for the night , grease a 10" bundt pan and add frozen rolls, sprinkle with brown sugar , pudding powder , cinnamon and raisins, pour melted butter over all, cover with a clean , damp cloth, off to bed you go !, in the morning , preheat oven to 350 and bake for 25 minutes, let sit for 5 minutes and then turn out on a serving plate
-New: before you turn in for the night, grease a 10" bundt pan and add frozen rolls, sprinkle with brown sugar, pudding powder, cinnamon and raisins, pour melted butter over all, cover with a clean, damp cloth, off to bed you go !, in the morning, preheat oven to 350 and bake for 25 minutes, let sit for 5 minutes and then turn out on a serving plate
+New: before you turn in for the night, grease a 10" bundt pan and add frozen rolls, sprinkle with brown sugar, pudding powder, cinnamon and raisins, pour melted butter over all, cover with a clean, damp cloth, off to bed you go!, in the morning, preheat oven to 350 and bake for 25 minutes, let sit for 5 minutes and then turn out on a serving plate
 Ingredients: ['rolls', 'brown sugar', 'instant vanilla pudding', 'cinnamon', 'raisins', 'butter']
-Detected ingredients: ['brown sugar', 'butter', 'cinnamon', 'frozen rolls', 'raisins']
-Replacements: {'frozen rolls': 'ice'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 18.
 Original: crush vanilla wafers into fine crumbs and line a square 8" x8" pan, mix butter or margarine and sugar, add beaten eggs, spread the mixture over the wafer crumbs, crush strawberries and spread over sugar , egg , and butter mixture, cover strawberries with whipped cream, sprinkle with chopped nuts, chill 24 hours
 New: crush vanilla wafers into fine crumbs and line a square 8" x8" pan, mix butter or margarine and sugar, add beaten eggs, spread the mixture over the wafer crumbs, crush strawberries and spread over sugar, egg, and butter mixture, cover strawberries with whipped cream, sprinkle with chopped nuts, chill 24 hours
 Ingredients: ['vanilla wafers', 'butter', 'powdered sugar', 'eggs', 'whipping cream', 'strawberry', 'walnuts']
-Detected ingredients: ['butter', 'chopped nuts', 'crush strawberries', 'crush vanilla wafers', 'egg', 'fine crumbs', 'margarine', 'strawberries', 'sugar', 'whipped cream']
-Replacements: {'chopped nuts': 'corn', 'crush vanilla wafers': 'caramel', 'egg': 'toast', 'fine crumbs': 'bread', 'margarine': 'butter', 'whipped cream': 'butter'}
+Detected ingredients: set()
+Replacements: {}
 
 Recipe 19.
 Original: preheat oven to 350 degrees, grease 13 x 9 baking pan, in a large bowl , whisk together butter , sugar and vanilla, add eggs and stir until well combined, combine dry ingredients and blend well with wet ingredients, reserve 2 cups of batter and set aside, spread remaining batter in prepared pan, arrange peppermint patties in a single layer over batter , about 1 / 2 inch apart, carefully spread reserved 2 cups of batter on top, bake for 50- 55 minutes or until brownies begin to pull away from sides of pan, cool completely on wire rack and cut into squares
 New: preheat oven to 350 degrees, grease 13 x 9 baking pan, in a large bowl, whisk together butter, sugar and vanilla, add eggs and stir until well combined, combine dry ingredients and blend well with wet ingredients, reserve 2 cups of batter and set aside, spread remaining batter in prepared pan, arrange peppermint patties in a single layer over batter, about 1 / 2 inch apart, carefully spread reserved 2 cups of batter on top, bake for 50- 55 minutes or until brownies begin to pull away from sides of pan, cool completely on wire rack and cut into squares
 Ingredients: ['butter', 'sugar', 'vanilla', 'eggs', 'all-purpose flour', 'baking cocoa', 'baking powder', 'salt', 'miniature peppermint patties']
-Detected ingredients: ['batter', 'brownies', 'butter', 'eggs', 'peppermint patties', 'prepared pan', 'sugar', 'vanilla', 'whisk', 'wire rack']
-Replacements: {'batter': 'fudge', 'brownies': 'pancakes', 'eggs': 'pancakes', 'prepared pan': '<None>', 'whisk': 'espresso'}
+Detected ingredients: set()
+Replacements: {}
 

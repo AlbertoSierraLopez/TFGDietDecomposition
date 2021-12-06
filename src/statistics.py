@@ -104,8 +104,8 @@ class Statistics:
             for j in range(len(golden_standard)):
                 row = golden_standard.iloc[j]
                 recipe_steps = row['steps']
-                recipe = ', '.join(re.split('[\"\'], [\"\']', recipe_steps[2:-2]))
-                tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe_steps)
+                recipe = sentencizer(recipe_steps)
+                tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe)
 
                 self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
                 new_recipe = self.ingredient_manager.replace_unwanted()
