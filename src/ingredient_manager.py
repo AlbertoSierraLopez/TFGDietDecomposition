@@ -77,9 +77,9 @@ class IngredientManager:
     def detect_ingredients(self):
         detected_ingredients = set()
         for token in self.tokenized_recipe:
-            if self.is_ingredient_v1(token):
+#           if self.is_ingredient_v1(token):
 #           if self.is_ingredient_v2(token):
-#           if self.is_ingredient_v3(token):
+            if self.is_ingredient_v3(token):
                 detected_ingredients.add(token)
         return detected_ingredients
 
