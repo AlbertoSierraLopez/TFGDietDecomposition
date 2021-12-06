@@ -105,9 +105,12 @@ class Statistics:
                 row = golden_standard.iloc[j]
                 recipe_steps = row['steps']
                 recipe = sentencizer(recipe_steps)
-                tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe)
 
-                self.ingredient_manager.load_recipe(recipe, tokenized_recipe)
+                tokenized_recipe = self.tokenizer.spacy_tokenize_pro_str(recipe)
+                clean_recipe = ', '.join(recipe)
+                clean_recipe = clean_recipe[0].upper() + clean_recipe[1:] + '.\n'
+
+                self.ingredient_manager.load_recipe(clean_recipe, tokenized_recipe)
                 new_recipe = self.ingredient_manager.replace_unwanted()
 
                 file_out.write('Recipe ' + str(j) + '.\n' +
