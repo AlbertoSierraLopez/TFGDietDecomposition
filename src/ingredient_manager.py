@@ -171,6 +171,8 @@ class IngredientManager:
                 return False
 
         if 'Dieta hipocalórica' in self.requirements and nutrients is not None:
+            if 'nutrientName' not in nutrients:
+                print()
             # La energía puede aparecer en julios, sólo la queremos en KCals:
             kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
             if len(kcals) > 0 and kcals['value'].item() > 300.0:
@@ -256,13 +258,13 @@ class IngredientManager:
         info = self.get_info(food)
 
         if info is not None:
-            if 'foodNutrients' in info:
+            if 'foodNutrients' in info and len(info['foodNutrients']) > 0:
                 nutrients = pd.json_normalize(info['foodNutrients'])
 
-            if 'foodCategory' in info:
+            if 'foodCategory' in info and len(info['foodCategory']) > 0:
                 food_cat = [token.lower() for token in nltk.word_tokenize(info['foodCategory'])]
 
-            if 'ingredients' in info:
+            if 'ingredients' in info and len(info['ingredients']) > 0:
                 ingredients = [token.lower() for token in nltk.word_tokenize(info['ingredients'])]
         return nutrients, category, ingredients
 

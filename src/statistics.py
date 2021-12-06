@@ -114,7 +114,7 @@ class Statistics:
                 new_recipe = self.ingredient_manager.replace_unwanted()
 
                 file_out.write('Recipe ' + str(j) + '.\n' +
-                               'Original: ' + recipe + '\n' +
+                               'Original: ' + clean_recipe + '\n' +
                                'New: ' + new_recipe + '\n' +
                                'Ingredients: ' + row['ingredients'] + '\n' +
                                'Detected ingredients: ' + str(self.ingredient_manager.ingredients) + '\n' +
