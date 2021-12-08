@@ -114,11 +114,11 @@ class Statistics:
                 new_recipe = self.ingredient_manager.replace_unwanted()
 
                 file_out.write('Recipe ' + str(j) + '.\n' +
-                               'Original: ' + clean_recipe + '\n' +
+                               'Original: ' + clean_recipe +
                                'New: ' + new_recipe + '\n' +
                                'Ingredients: ' + row['ingredients'] + '\n' +
-                               'Detected ingredients: ' + str(self.ingredient_manager.ingredients) + '\n' +
-                               'Replacements: ' + str(self.ingredient_manager.replacements) + '\n\n')
+                               'Detected ingredients: ' + str(sorted(self.ingredient_manager.ingredients)) + '\n' +
+                               'Replacements: ' + str(sorted(self.ingredient_manager.replacements.items())) + '\n\n')
 
             file_out.close()
         self.ingredient_manager.requirements = og_requirements
