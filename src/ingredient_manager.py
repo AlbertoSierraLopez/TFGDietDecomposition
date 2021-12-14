@@ -171,8 +171,6 @@ class IngredientManager:
                 return False
 
         if 'Dieta hipocalórica' in self.requirements and nutrients is not None:
-            if 'nutrientName' not in nutrients:
-                print()
             # La energía puede aparecer en julios, sólo la queremos en KCals:
             kcals = nutrients.loc[(nutrients['nutrientName'] == 'Energy') & (nutrients['unitName'] == 'KCAL')]
             if len(kcals) > 0 and kcals['value'].item() > 300.0:
