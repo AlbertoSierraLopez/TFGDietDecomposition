@@ -86,10 +86,10 @@ class LanguageProcesser:
 
         return sorted_dict.items()[1:n + 1]  # Se quita el primero porque es el target (cos_distance = 0.0)
 
-    def get_model(self, input):
-        if input in [1, 2, 3, 4]:
+    def get_model(self, input_nlp):
+        if input_nlp == 1:
             return self.word2vec_model, 'word2vec'
-        elif input == 5:
+        elif input_nlp == 2:
             return self.elmo_model, 'elmo'
-        elif input == 6:
+        elif input_nlp == 3:
             return self.bert_model, 'bert'

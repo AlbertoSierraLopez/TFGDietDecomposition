@@ -43,14 +43,22 @@ requirements = np.array(input_requirements, dtype=bool)
 
 # NLP
 input_nlp = 0
-while input_nlp not in [1, 2, 3, 4, 5, 6]:
+input_sg = 0
+input_pretrained = 0
+while input_nlp not in [1, 2, 3]:
     input_nlp = int(input("Selecciona el modelo de NLP:\n"
-                          "[1]: Word2Vec + SG + no-entrenado\n"
-                          "[2]: Word2Vec + SG + pre-entrenado\n"
-                          "[3]: Word2Vec + CBOW + no-entrenado\n"
-                          "[4]: Word2Vec + CBOW + pre-entrenado\n"
-                          "[5]: Elmo\n"
-                          "[6]: Bert\n"))
+                          "[1]: Word2Vec\n"
+                          "[2]: Elmo\n"
+                          "[3]: Bert\n"))
+if input_nlp == 1:
+    while input_sg not in [1, 2]:
+        input_sg = int(input("Selecciona el modelo de embedding de Word2Vec:\n"
+                             "[1]: CBOW\n"
+                             "[2]: Skip-gram\n"))
+    while input_pretrained not in [1, 2]:
+        input_pretrained = int(input("Selecciona el modo de entrenamiento del modelo Word2Vec:\n"
+                                     "[1]: Modelo Pre-Entrenado\n"
+                                     "[2]: Entrenar Modelo Ahora\n"))
 
 # Debug
 constants.DEBUG = input("¿Desea procesar el conjunto de test al completo? [S/N]").upper() == 'S'
@@ -96,16 +104,11 @@ KG_tag = knowledge_manager.KG_tag
 
 print(">Entrenando modelo...")
 if input_nlp == 1:
-    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=1, pretrained=False)
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True,
+                            sg=int(input_sg/2), pretrained=bool(int(input_pretrained/2)))
 elif input_nlp == 2:
-    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=1, pretrained=True)
-elif input_nlp == 3:
-    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=0, pretrained=False)
-elif input_nlp == 4:
-    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=0, pretrained=True)
-elif input_nlp == 5:
     nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=False, word2vec=False)
-elif input_nlp == 6:
+elif input_nlp == 3:
     nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=True, word2vec=False)
 else:
     nlp = LanguageProcesser(tokenized_recipes, ing_vocab)
@@ -115,7 +118,6 @@ start_time = time()
 
 
 print(">Inicializando Detector de Ingredientes...")
-chunks = False
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
 
@@ -124,7 +126,7 @@ ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model
                                        kg_ing=KG_ing, kg_tag=KG_tag, detection=input_detection)
 
 # Sacar estadísticas:
-statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=chunks)
+statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=input_detection==5)
 if DEBUG:
     print(">Calculando estadísticas...")
     print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
