@@ -3,6 +3,7 @@ from time import time
 import os
 
 from constants import DEBUG, GOLDEN, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
+import constants
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -21,8 +22,53 @@ if not os.path.exists('../output'):
     print(">Directorio 'output' creado")
     os.mkdir('../output')
 
-#                        1  2  3  4  5  6  7  8  9 10 11
-requirements = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=bool)
+## CONFIGURACION INICIAL
+# Requisitos
+input_requirements = []
+while len(input_requirements) != 11:
+    input_requirements = list(input("Introduce un array con las restricciones alimenticias:"
+                                    "1. Dieta Vegetariana"
+                                    "2. Dieta Vegana"
+                                    "3. Dieta Hipocalórica"
+                                    "4. Dieta Proteica"
+                                    "5. Dieta Baja en Carbohidratos"
+                                    "6. Dieta Baja en Sodio"
+                                    "7. Intolerancia a la Lactosa"
+                                    "8. Alergia a los Frutos Secos"
+                                    "9. Alergia al Marisco"
+                                    "10. Intolerancia al Gluten"
+                                    "11. Celiaquía"
+                                    "[___________]"))
+requirements = np.array(input_requirements, dtype=bool)
+
+# NLP
+input_nlp = 0
+while input_nlp not in [1, 2, 3, 4, 5, 6]:
+    input_nlp = int(input("Selecciona el modelo de NLP:\n"
+                          "[1]: Word2Vec + SG + no-entrenado\n"
+                          "[2]: Word2Vec + SG + pre-entrenado\n"
+                          "[3]: Word2Vec + CBOW + no-entrenado\n"
+                          "[4]: Word2Vec + CBOW + pre-entrenado\n"
+                          "[5]: Elmo\n"
+                          "[6]: Bert\n"))
+
+# Debug
+constants.DEBUG = input("¿Desea procesar el conjunto de test al completo? [S/N]").upper() == 'S'
+
+# Golden Standard
+constants.GOLDEN = input("¿Desea procesar el golden standard? [S/N]").upper() == 'S'
+
+# Detección de Ingredientes
+input_detection = 0
+while input_detection not in [1, 2, 3, 4, 5]:
+    input_detection = int(input("Selecciona el método de detección de ingredientes:\n"
+                                "[1]: Diccionario de Ingredientes\n"
+                                "[2]: Distancia de Levenshtein (no-recomendado)\n"
+                                "[3]: Red Neuronal\n"
+                                "[4]: Ontología\n"
+                                "[5]: Noun Chunks\n"))
+
+## COMIENZO
 start_time = time()
 
 # MODULO 1
@@ -49,29 +95,20 @@ KG_ing = knowledge_manager.KG_ing
 KG_tag = knowledge_manager.KG_tag
 
 print(">Entrenando modelo...")
-nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=True, word2vec=True, sg=1, pretrained=True)
-'''
-if DEBUG:
-    print("\tWord2Vec")
-    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_word2vec(word='milk', n=5))
-    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_word2vec(word='egg', n=5))
-    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_word2vec(word='salt', n=5))
-    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_word2vec(word='sugar', n=5))
-    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_word2vec(word='ham', n=5))
-    print("\tELMo")
-    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_elmo(word='milk', n=5))
-    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_elmo(word='egg', n=5))
-    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_elmo(word='salt', n=5))
-    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_elmo(word='sugar', n=5))
-    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_elmo(word='ham', n=5))
-    print("\tBert")
-    print("\t\tPalabras más próximas a 'milk':", nlp.closest_words_bert(word='milk', n=5))
-    print("\t\tPalabras más próximas a 'egg':", nlp.closest_words_bert(word='egg', n=5))
-    print("\t\tPalabras más próximas a 'salt':", nlp.closest_words_bert(word='salt', n=5))
-    print("\t\tPalabras más próximas a 'sugar':", nlp.closest_words_bert(word='sugar', n=5))
-    print("\t\tPalabras más próximas a 'ham':", nlp.closest_words_bert(word='ham', n=5))
-'''
-
+if input_nlp == 1:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=1, pretrained=False)
+elif input_nlp == 2:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=1, pretrained=True)
+elif input_nlp == 3:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=0, pretrained=False)
+elif input_nlp == 4:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=False, word2vec=True, sg=0, pretrained=True)
+elif input_nlp == 5:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=True, bert=False, word2vec=False)
+elif input_nlp == 6:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab, elmo=False, bert=True, word2vec=False)
+else:
+    nlp = LanguageProcesser(tokenized_recipes, ing_vocab)
 
 print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
 start_time = time()
@@ -81,8 +118,10 @@ print(">Inicializando Detector de Ingredientes...")
 chunks = False
 test_recipes_generator = data_loader.test_recipes_generator()
 test_recipes_tuples = data_loader.get_test_recipes()
-ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model=nlp.bert_model, model_type='bert',
-                                       kg_ing=KG_ing, kg_tag=KG_tag, chunks=chunks)
+
+nlp_model, nlp_name = nlp.get_model(input_nlp)
+ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model=nlp_model, model_type=nlp_name,
+                                       kg_ing=KG_ing, kg_tag=KG_tag, detection=input_detection)
 
 # Sacar estadísticas:
 statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=chunks)

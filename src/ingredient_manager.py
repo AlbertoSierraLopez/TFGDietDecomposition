@@ -15,7 +15,7 @@ from scipy.spatial import distance
 
 
 class IngredientManager:
-    def __init__(self, requirements, ing_vocab, vocab, nlp_model, model_type, kg_ing, kg_tag, chunks=False):
+    def __init__(self, requirements, ing_vocab, vocab, nlp_model, model_type, kg_ing, kg_tag, detection=3):
         self.recipe = None
         self.tokenized_recipe = None
         self.ingredients = None
@@ -29,7 +29,7 @@ class IngredientManager:
         self.kg_ing = kg_ing
         self.kg_tag = kg_tag
         self.ing_vocab = ing_vocab
-        self.chunks = chunks    # Si se usan chunks cambia la detección de ingredientes y la búsqueda de similares
+        self.detection = detection
 
         self.spacy = spacy.load(SPACY_TOKENIZER)
         self.mlpc = NeuralNetwork(ing_vocab, vocab)
@@ -46,11 +46,14 @@ class IngredientManager:
     def load_recipe(self, recipe, tokenized_recipe):
         self.recipe = recipe
         self.tokenized_recipe = tokenized_recipe
-        if not self.chunks:
+
+        if self.detection in [1, 2, 3]:
             self.ingredients = self.detect_ingredients()
-#           self.ingredients = self.detect_ingredients_onto()
-        else:
+        elif self.detection in [4]:
+            self.ingredients = self.detect_ingredients_onto()
+        elif not self.detection == 5:
             self.ingredients = self.detect_ingredients_chunks()
+
         self.unwanted = self.unwanted_ingredients()
         self.replacements = self.get_replacements()
 
@@ -77,10 +80,16 @@ class IngredientManager:
     def detect_ingredients(self):
         detected_ingredients = set()
         for token in self.tokenized_recipe:
-#           if self.is_ingredient_v1(token):
-#           if self.is_ingredient_v2(token):
-            if self.is_ingredient_v3(token):
-                detected_ingredients.add(token)
+            if self.detection == 1:
+                if self.is_ingredient_v1(token):
+                    detected_ingredients.add(token)
+            elif self.detection == 2:
+                if self.is_ingredient_v2(token):
+                    detected_ingredients.add(token)
+            elif self.detection == 3:
+                if self.is_ingredient_v3(token):
+                    detected_ingredients.add(token)
+
         return detected_ingredients
 
     # 2. Tokenizar receta con spacy y usar ontología sobre los sustantivos
@@ -291,7 +300,7 @@ class IngredientManager:
 
     def find_replacement(self, ingredient):
         # Los ingredientes son tokens:
-        if not self.chunks:
+        if not self.detection == 5:
             # Comprueba que exista la palabra en el modelo NLP:
             if ingredient in self.nlp_model:
                 # Comprueba los 25 ingredientes más cercanos:
@@ -347,7 +356,7 @@ class IngredientManager:
         if self.recipe is None:
             raise Exception("No recipe is loaded.")
 
-        if not self.chunks:
+        if not self.detection == 5:
             new_recipe = []
             for token in nltk.word_tokenize(self.recipe):
                 if token in self.unwanted:

@@ -85,3 +85,11 @@ class LanguageProcesser:
             sorted_dict.__setitem__(key, cos_distance)
 
         return sorted_dict.items()[1:n + 1]  # Se quita el primero porque es el target (cos_distance = 0.0)
+
+    def get_model(self, input):
+        if input in [1, 2, 3, 4]:
+            return self.word2vec_model, 'word2vec'
+        elif input == 5:
+            return self.elmo_model, 'elmo'
+        elif input == 6:
+            return self.bert_model, 'bert'
