@@ -26,19 +26,19 @@ if not os.path.exists('../output'):
 # Requisitos
 input_requirements = []
 while len(input_requirements) != 11:
-    input_requirements = list(input("Introduce un array con las restricciones alimenticias:"
-                                    "1. Dieta Vegetariana"
-                                    "2. Dieta Vegana"
-                                    "3. Dieta Hipocalórica"
-                                    "4. Dieta Proteica"
-                                    "5. Dieta Baja en Carbohidratos"
-                                    "6. Dieta Baja en Sodio"
-                                    "7. Intolerancia a la Lactosa"
-                                    "8. Alergia a los Frutos Secos"
-                                    "9. Alergia al Marisco"
-                                    "10. Intolerancia al Gluten"
-                                    "11. Celiaquía"
-                                    "[___________]"))
+    input_requirements = list(input("Introduce un array con las restricciones alimenticias:\n"
+                                    "1. Dieta Vegetariana\n"
+                                    "2. Dieta Vegana\n"
+                                    "3. Dieta Hipocalórica\n"
+                                    "4. Dieta Proteica\n"
+                                    "5. Dieta Baja en Carbohidratos\n"
+                                    "6. Dieta Baja en Sodio\n"
+                                    "7. Intolerancia a la Lactosa\n"
+                                    "8. Alergia a los Frutos Secos\n"
+                                    "9. Alergia al Marisco\n"
+                                    "10. Intolerancia al Gluten\n"
+                                    "11. Celiaquía\n"
+                                    "[___________]\n "))
 requirements = np.array(input_requirements, dtype=bool)
 
 # NLP
@@ -61,10 +61,10 @@ if input_nlp == 1:
                                      "[2]: Entrenar Modelo Ahora\n"))
 
 # Debug
-constants.DEBUG = input("¿Desea procesar el conjunto de test al completo? [S/N]").upper() == 'S'
+constants.DEBUG = input("¿Desea procesar el conjunto de test al completo? [S/N]\n").upper() == 'S'
 
 # Golden Standard
-constants.GOLDEN = input("¿Desea procesar el golden standard? [S/N]").upper() == 'S'
+constants.GOLDEN = input("¿Desea procesar el golden standard? [S/N]\n").upper() == 'S'
 
 # Detección de Ingredientes
 input_detection = 0
