@@ -23,8 +23,6 @@ SPACY_TOKENIZER = "C:/Users/Aussar/AppData/Local/Programs/Python/Python38/Lib/si
 API_KEY = "dGv22hi1mexUfPPHzeKpENdiVUag9gnFMaEbbKio"
 
 TEST_SIZE = 55
-DEBUG =  False
-GOLDEN = False
 REQUIREMENT_LIST = np.array(['Dieta vegetariana', 'Dieta vegana', 'Dieta hipocalórica', 'Dieta proteica',
                              'Dieta baja en carbohidratos', 'Dieta baja en sodio', 'Intolerancia a la lactosa',
                              'Alergia los frutos secos', 'Alergia al marisco', 'Intolerancia al gluten', 'Celiaquía'])

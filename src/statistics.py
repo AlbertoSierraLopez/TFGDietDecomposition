@@ -4,18 +4,19 @@ import pandas as pd
 
 from fuzzywuzzy import fuzz
 
-from constants import TEST_SIZE, DEBUG, PATH_GOLDEN, PATH_OUTPUT, REQUIREMENT_LIST
+from constants import TEST_SIZE, PATH_GOLDEN, PATH_OUTPUT, REQUIREMENT_LIST
 from tokenizer import Tokenizer
 from data_loader import sentencizer
 
 
 class Statistics:
-    def __init__(self, test, test_tuples, ingredient_manager, chunks=False):
+    def __init__(self, test, test_tuples, ingredient_manager, chunks=False, debug=False):
         self.test = test
         self.test_ingredients = test['ingredients'].dropna().apply(sentencizer)
         self.test_tuples = test_tuples
         self.ingredient_manager = ingredient_manager
         self.chunks = chunks
+        self.debug = debug
 
         self.tokenizer = Tokenizer()
 
@@ -28,7 +29,7 @@ class Statistics:
         tp_sum = 0
         fp_sum = 0
         fn_sum = 0
-        if DEBUG:
+        if self.debug:
             print('\t\t', 'Recetas procesadas:')
 
         for i, (input_recipe, clean_recipe) in enumerate(self.test_tuples):
@@ -43,10 +44,10 @@ class Statistics:
             fp_sum += false_positives
             fn_sum += false_negatives
 
-            if DEBUG:
+            if self.debug:
                 print('\t\t', i+1, '/', TEST_SIZE)
 
-        if DEBUG:
+        if self.debug:
             print("\tTrue Positives:",  tp_sum)
             print("\tFalse Positives:", fp_sum)
             print("\tFalse Negatives:", fn_sum)
@@ -85,7 +86,7 @@ class Statistics:
         for ingredient in ingredient_list:
             lev_ratio = fuzz.partial_ratio(ingredient, target)
 
-            if DEBUG:
+            if self.debug:
                 self.debug_file.write(ingredient + ' / ' + target + ' -> ' + str(lev_ratio) + '\n')
 
             if lev_ratio >= 80:

@@ -2,7 +2,7 @@ import os
 import numpy as np
 import gensim.downloader as api
 
-from constants import PATH_MLPC, PATH_WORD2VEC_PRETRAINED_MLPC_MODEL, DEBUG
+from constants import PATH_MLPC, PATH_WORD2VEC_PRETRAINED_MLPC_MODEL
 from joblib import dump, load
 from collections import Counter
 from gensim.models import Word2Vec, KeyedVectors
@@ -51,11 +51,12 @@ class NeuralNetwork:
 
             dump(self.mlp, PATH_MLPC)
 
-        if DEBUG:
+            '''
             predict_test = self.mlp.predict(X_test)
             # Evaluar
             print("\tRed Neuronal:")
             print(classification_report(y_test, predict_test))
+            '''
 
     def predict(self, token):
         if token in self.nlp:

@@ -2,8 +2,7 @@ import numpy as np
 from time import time
 import os
 
-from constants import DEBUG, GOLDEN, PATH_DATASET, PATH_OUTPUT, TEST_SIZE
-import constants
+from constants import PATH_DATASET, PATH_OUTPUT, TEST_SIZE
 from data_loader import DataLoader
 from knowledge_manager import KnowledgeManager
 from language_processer import LanguageProcesser
@@ -57,14 +56,14 @@ if input_nlp == 1:
                              "[2]: Skip-gram\n"))
     while input_pretrained not in [1, 2]:
         input_pretrained = int(input("Selecciona el modo de entrenamiento del modelo Word2Vec:\n"
-                                     "[1]: Modelo Pre-Entrenado\n"
-                                     "[2]: Entrenar Modelo Ahora\n"))
+                                     "[1]: Entrenar Modelo Ahora\n"
+                                     "[2]: Modelo Pre-Entrenado\n"))
 
 # Debug
-constants.DEBUG = input("¿Desea procesar el conjunto de test al completo? [S/N]\n").upper() == 'S'
+input_debug = input("¿Desea procesar el conjunto de test al completo? [S/N]\n").upper() == 'S'
 
 # Golden Standard
-constants.GOLDEN = input("¿Desea procesar el golden standard? [S/N]\n").upper() == 'S'
+input_golden = input("¿Desea procesar el golden standard? [S/N]\n").upper() == 'S'
 
 # Detección de Ingredientes
 input_detection = 0
@@ -126,8 +125,8 @@ ingredient_manager = IngredientManager(requirements, ing_vocab, vocab, nlp_model
                                        kg_ing=KG_ing, kg_tag=KG_tag, detection=input_detection)
 
 # Sacar estadísticas:
-statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=input_detection==5)
-if DEBUG:
+statistics = Statistics(data_loader.test, test_recipes_tuples, ingredient_manager, chunks=input_detection==5, debug=input_debug)
+if input_debug:
     print(">Calculando estadísticas...")
     print("\tTamaño del conjunto de test:", TEST_SIZE, sep="\t")
     precision, recall, f1 = statistics.compute_statistics()
@@ -136,7 +135,7 @@ if DEBUG:
     print("\tF1:", f1)
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
     start_time = time()
-if GOLDEN:
+if input_golden:
     print(">Procesando estándar...")
     statistics.process_golden_standard()
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos\n")
@@ -145,7 +144,7 @@ if GOLDEN:
 
 # Procesar recetas test una a una:
 counter = 1
-key_continue = input("\n¿Desea procesar recetas una a una? (Y/N)\n").upper()
+key_continue = input("\n¿Desea procesar recetas una a una? [S/N]\n").upper()
 file_in = open(PATH_OUTPUT + "in_recipes.txt", 'w+')
 file_out = open(PATH_OUTPUT + "out_recipes.txt", 'w+')
 
@@ -159,8 +158,12 @@ while (key_continue == 'Y') or (key_continue == 'S'):
     ingredient_manager.load_recipe(clean_recipe, tokenizer.spacy_tokenize_pro_str(input_recipe))
     print("\tIngredientes detectados:", ingredient_manager.ingredients)
     print("\tIngredientes incompatibles:", ingredient_manager.unwanted)
-    if DEBUG:
+
+    input_info = input("¿Desea consultar la información nutricional de la receta? [S/N]\n").upper() == 'S'
+    if input_info:
         print("\tInformación nutricional de la receta:", ingredient_manager.get_total_nutrients(), sep='\n')
+        with open(PATH_OUTPUT + "nutritional_info.txt", 'w+') as f:
+            f.write(ingredient_manager.get_total_nutrients().to_string())
 
     # MODULO 3
     print(">Buscando sustituciones...")
@@ -175,7 +178,7 @@ while (key_continue == 'Y') or (key_continue == 'S'):
 
     print(">Tiempo transcurrido:", round(time() - start_time, 4), "segundos")
 
-    key_continue = input("\n¿Desea procesar otra receta? (Y/N)\n").upper()
+    key_continue = input("\n¿Desea procesar otra receta? [S/N]\n").upper()
     start_time = time()
     counter += 1
 
