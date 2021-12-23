@@ -8,11 +8,11 @@ import os
 
 class KnowledgeManager:
     def __init__(self, ingredients, tags):  # Tanto ingredients como tags son List
-        self.KG_ing = None      # Grafo con pesos
-        self.KG_tag = None     # Grafo dirigido
+        self.KG_ing = None  # Grafo con pesos
+        self.KG_tag = None  # Grafo dirigido
 
-        self.relations_ing = []         # Relaciones ingrediente-ingrediente
-        self.relations_tags = set()     # Relaciones etiqueta-ingrediente
+        self.relations_ing = []     # Relaciones ingrediente-ingrediente
+        self.relations_tags = []    # Relaciones etiqueta-ingrediente
 
         if os.path.exists(PATH_KG_ING):
             self.KG_ing = nx.read_gpickle(PATH_KG_ING)
@@ -47,11 +47,16 @@ class KnowledgeManager:
             self.KG_ing.add_edge(relation[0], relation[1], weight=relation_counter[relation])
 
     def build_kg_tag(self, tags, ingredients):
-
+        # Construir lista de relaciones:
         for i in range(len(tags)):
-            self.relations_tags.update([(tag, ingredient) for ingredient in ingredients[i] for tag in tags[i]])
+            self.relations_tags += ([(tag, ingredient) for ingredient in ingredients[i] for tag in tags[i]])
 
-        self.KG_tag = nx.DiGraph(list(self.relations_tags))
+        # Mirar el número que se repiten las relaciones y eliminar aquellas extraordinarias (<25 veces):
+        rtags_count = Counter(self.relations_tags)
+        self.relations_tags = [relation for relation in rtags_count.keys() if rtags_count[relation] >= 25]
+
+        # Construir el grafo:
+        self.KG_tag = nx.DiGraph(self.relations_tags)
 
     def display(self, ing=0, tag=0):
         if ing != 0:
